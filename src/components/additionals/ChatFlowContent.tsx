@@ -1,0 +1,204 @@
+import React from "react"
+import styled from "styled-components"
+import MessageNotification from "./MessageNotification"
+import MessageNotificationReverted from "./MessageNotificationReverted"
+
+export default function ChatFlowContent() {
+  return (
+    <Wrapper>
+      <NotificationsWrapper>
+        <NotificationOne>
+          <MessageNotification
+            name="Frederik"
+            text="Hey, I'm about to rebrand my company website, can you help me create it? 👋🏼"
+            image="images/profiles/frederik.png"
+            nameColor="#6058fc"
+            borderColor="3px solid#6058fc"
+          />
+        </NotificationOne>
+        <NotificationTwo>
+          <MessageNotification
+            name="Andreas"
+            text="Hello, where do I join the Community?"
+            image="images/profiles/andreas.png"
+            nameColor="#ad48ff"
+            borderColor="3px solid #ad48ff"
+          />
+        </NotificationTwo>
+        <NotificationThree>
+          <MessageNotification
+            name="Melanie"
+            text="Gosh, CSS grid is tricking me. Can you help me? 😁"
+            image="images/profiles/melanie.png"
+            nameColor="#E7286F"
+            borderColor="3px solid#E7286F"
+          />
+        </NotificationThree>
+        <NotificationFour>
+          <MessageNotificationReverted
+            name="Code Shape"
+            text="Sure! We will be more than happy to help!"
+            image="images/profiles/logo.svg"
+            nameColor="#F28808"
+            borderColor="3px solid#F28808"
+          />
+        </NotificationFour>
+      </NotificationsWrapper>
+    </Wrapper>
+  )
+}
+
+const Wrapper = styled.div`
+  position: absolute;
+  max-width: 1234px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
+  top: 8rem;
+  right: 0rem;
+
+  @media screen and (max-width: 850px) {
+    display: none;
+  }
+`
+
+const NotificationsWrapper = styled.div`
+  max-width: 360px;
+  display: grid;
+  gap: 30px;
+  justify-self: center;
+  align-items: center;
+`
+
+const NotificationOne = styled.div`
+  -webkit-animation: slide-in-bck-right 0.6s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-bck-right 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+  @-webkit-keyframes slide-in-bck-right {
+    0% {
+      -webkit-transform: translateZ(700px) translateX(400px);
+      transform: translateZ(700px) translateX(400px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateX(0);
+      transform: translateZ(0) translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-bck-right {
+    0% {
+      -webkit-transform: translateZ(700px) translateX(400px);
+      transform: translateZ(700px) translateX(400px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateX(0);
+      transform: translateZ(0) translateX(0);
+      opacity: 1;
+    }
+  }
+`
+
+const NotificationTwo = styled.div`
+  position: relative;
+  right: 6rem;
+
+  -webkit-animation: slide-in-bck-right 0.8s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
+  animation: slide-in-bck-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s
+    both;
+
+  @-webkit-keyframes slide-in-bck-right {
+    0% {
+      -webkit-transform: translateZ(700px) translateX(400px);
+      transform: translateZ(700px) translateX(400px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateX(0);
+      transform: translateZ(0) translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-bck-right {
+    0% {
+      -webkit-transform: translateZ(700px) translateX(400px);
+      transform: translateZ(700px) translateX(400px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateX(0);
+      transform: translateZ(0) translateX(0);
+      opacity: 1;
+    }
+  }
+`
+
+const NotificationThree = styled.div`
+  -webkit-animation: slide-in-bck-right 0.6s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
+  animation: slide-in-bck-right 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s
+    both;
+
+  @-webkit-keyframes slide-in-bck-right {
+    0% {
+      -webkit-transform: translateZ(700px) translateX(400px);
+      transform: translateZ(700px) translateX(400px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateX(0);
+      transform: translateZ(0) translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-bck-right {
+    0% {
+      -webkit-transform: translateZ(700px) translateX(400px);
+      transform: translateZ(700px) translateX(400px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateX(0);
+      transform: translateZ(0) translateX(0);
+      opacity: 1;
+    }
+  }
+`
+
+const NotificationFour = styled.div`
+  position: relative;
+  right: 4rem;
+
+  -webkit-animation: slide-in-bck-right 0.6s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) 3s both;
+  animation: slide-in-bck-right 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3s
+    both;
+
+  @-webkit-keyframes slide-in-bck-right {
+    0% {
+      -webkit-transform: translateZ(700px) translateX(400px);
+      transform: translateZ(700px) translateX(400px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateX(0);
+      transform: translateZ(0) translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-bck-right {
+    0% {
+      -webkit-transform: translateZ(700px) translateX(400px);
+      transform: translateZ(700px) translateX(400px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateX(0);
+      transform: translateZ(0) translateX(0);
+      opacity: 1;
+    }
+  }
+`
