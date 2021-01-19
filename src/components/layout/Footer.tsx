@@ -18,7 +18,10 @@ export default function Footer() {
             This site is created using React, Gatsby, Contentful and deployed
             with Netlify.
           </Description>
-          <Copyright>{new Date().getFullYear()}</Copyright>
+          <Copyright>
+            Copyright © {new Date().getFullYear()} Code Shape. All rights
+            reserved.
+          </Copyright>
           <PrivacyPolicy href="/privacy-policy">Privacy Policy</PrivacyPolicy>
         </TextWrapper>
       </ContentWrapper>
@@ -48,7 +51,7 @@ const ContentWrapper = styled.div`
     grid-template-columns: repeat(1, auto);
     justify-self: center;
     align-items: center;
-}
+  }
 `
 
 const MenuWrapper = styled.div`
@@ -67,7 +70,7 @@ const TextWrapper = styled.div`
   justify-self: center;
   align-items: center;
   @media only screen and (max-width: 800px) {
-    margin-left:50px;
+    margin-left: 50px;
   }
 `
 
