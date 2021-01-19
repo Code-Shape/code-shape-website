@@ -18,14 +18,14 @@ export default function GradientIntro(props) {
 }
 
 const Wrapper = styled.div`
-  padding: 50px 10px;
+  padding: 3.75rem 0.75rem;
 `
 
 const ContentWrapper = styled.div`
-  max-width: 600px;
+  max-width: 37.5rem;
   margin: 0 auto;
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 1.875rem;
 `
 
 const Title = styled(H1)`
