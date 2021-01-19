@@ -1,5 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
+import GradientIntro from "../components/additionals/GradientIntro"
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import HeroSection from "../components/sections/HeroSection"
@@ -9,6 +10,7 @@ function IndexPage() {
     <Layout>
       <SEO title="Home" />
       <HeroSection />
+      <GradientIntro />
       <Helmet>
         <script
           type="text/javascript"
