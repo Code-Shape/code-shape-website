@@ -30,16 +30,13 @@ const Wrapper = styled.div`
   max-width: 360px;
   height: 77px;
   padding: 15px;
-  /* background: linear-gradient(180deg, #ffffff 0%, #d9dfff 100%); */
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
-    0px 20px 40px rgba(23, 0, 102, 0.2),
-    inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   border: 0px;
   display: grid;
   grid-template-columns: auto 80px;
   align-content: center;
   grid-gap: 40px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
   @supports (backdrop-filter: blur(40px)) or
     (-webkit-backdrop-filter: blur(40px)) {
@@ -47,6 +44,7 @@ const Wrapper = styled.div`
     background-color: transparent;
     -webkit-backdrop-filter: blur(40px);
     backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
   }
 
   @-moz-document url-prefix() {

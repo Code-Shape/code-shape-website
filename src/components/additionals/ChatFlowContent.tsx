@@ -9,9 +9,9 @@ export default function ChatFlowContent() {
       <NotificationsWrapper>
         <NotificationOne>
           <MessageNotification
-            name="Frederik"
+            name="Julius"
             text="Hey, I'm about to rebrand my company website, can you help me create it? 👋🏼"
-            image="images/profiles/frederik.png"
+            image="images/profiles/julius.png"
             nameColor="#6058fc"
             borderColor="3px solid#6058fc"
           />

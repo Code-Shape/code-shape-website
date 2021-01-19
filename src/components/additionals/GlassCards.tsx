@@ -3,20 +3,20 @@ import React from "react"
 import styled from "styled-components"
 import { BodyMain, MediumText } from "../styles/TextStyles"
 
-export default function MessageNotification(props) {
-  const { name, text, image, link, nameColor, borderColor } = props
+export default function GlassCards(props) {
+  const { title, titleColor, text, image, link, borderColor } = props
   return (
     <Link to={link || "/"}>
       <Wrapper>
         <ImageWrapper>
           <Image
             borderColor={borderColor || "3px solid white"}
-            src={image || "/images/profiles/logo.png"}
+            src={image || "/images/icons/account.svg"}
             className="icon"
           />
         </ImageWrapper>
         <TextWrapper>
-          <Name nameColor={nameColor}>{name || "Mr. Awesome"}</Name>
+          <Name titleColor={titleColor}>{title || "Mr. Awesome"}</Name>
           <Text>
             {text || "Can you help me learn how to engage my audience? 👋🏼"}
           </Text>
@@ -36,6 +36,7 @@ const Wrapper = styled.div`
   grid-template-columns: 53px auto;
   align-content: center;
   grid-gap: 40px;
+  background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
   @supports (backdrop-filter: blur(40px)) or
@@ -76,7 +77,7 @@ const ImageWrapper = styled.div`
 
 const Image = styled.img`
   width: 70px;
-  border: ${props => props.borderColor || "3px solid turquoise"};
+  border: ${props => props.borderColor || "3px solid white"};
   border-radius: 50%;
 `
 
@@ -88,7 +89,7 @@ const TextWrapper = styled.div`
 
 const Name = styled(BodyMain)`
   font-weight: 900;
-  color: ${props => props.nameColor || "turquoise"};
+  color: ${props => props.titleColor || "white"};
 `
 
 const Text = styled(MediumText)`
