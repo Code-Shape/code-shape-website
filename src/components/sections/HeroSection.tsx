@@ -3,10 +3,13 @@ import { H1, MediumText } from "../styles/TextStyles"
 import styled from "styled-components"
 import ChatFlowContent from "../additionals/ChatFlowContent"
 import ButtonWithAnimation from "../buttons/ButtonWithAnimation"
+import BlobAnimation from "../animations/BlobAnimation"
 
 export default function HeroSection() {
   return (
     <Wrapper>
+      <Blob src="/images/blobs/HeroSectionBlob.svg"></Blob>
+      <BlobAnimation />
       <ContentWrapper>
         <TextWrapper>
           <Title>Learn how to create great apps</Title>
@@ -41,3 +44,11 @@ const TextWrapper = styled.div`
 const Title = styled(H1)``
 
 const Description = styled(MediumText)``
+
+const Blob = styled.img`
+  position: absolute;
+  right: 0;
+  top: 0;
+  max-width: 70%;
+  z-index: -1;
+`

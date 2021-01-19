@@ -5,13 +5,11 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
 import FocusSection from "../components/sections/FocusSection"
 import HeroSection from "../components/sections/HeroSection"
-import BlobAnimation from "../components/animations/BlobAnimation"
 
 function IndexPage() {
   return (
     <Layout>
       <SEO title="Home" />
-      <BlobAnimation />
       <HeroSection />
       <GradientIntro />
       <FocusSection />
