@@ -23,18 +23,18 @@ export default function IntroText(props) {
 const Wrapper = styled.div``
 
 const ContentWrapper = styled.div`
-  max-width: 1234px;
-  padding: 50px auto;
+  max-width: 77rem;
+  padding: 3.125rem auto;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(22.5rem, 1fr));
+  grid-gap: 1.875rem;
 `
 
 const TextWrapper = styled.div`
-  max-width: 360px;
+  max-width: 22.5rem;
   display: grid;
-  gap: 20px;
+  gap: 1.25rem;
   justify-self: center;
   align-items: center;
 `

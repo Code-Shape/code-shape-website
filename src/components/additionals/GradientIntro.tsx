@@ -7,18 +7,20 @@ export default function GradientIntro(props) {
   return (
     <Wrapper>
       <ContentWrapper>
-        <Title>{title || "Create with Code"}</Title>
-        <Description>
-          {description ||
-            "People worldwide come here to learn more about how to create amazing things that change the way we interact with each other. We look forward to seeing what you can make!"}
-        </Description>
+        <TextWrapper>
+          <Title>{title || "Create with Code"}</Title>
+          <Description>
+            {description ||
+              "People worldwide come here to learn more about how to create amazing things that change the way we interact with each other. We look forward to seeing what you can make!"}
+          </Description>
+        </TextWrapper>
       </ContentWrapper>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  padding: 3.75rem 0.75rem;
+  padding: 3.75rem 1.875rem;
 `
 
 const ContentWrapper = styled.div`
@@ -26,6 +28,13 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
   display: grid;
   grid-gap: 1.875rem;
+`
+
+const TextWrapper = styled.div`
+  display: grid;
+  gap: 1.25rem;
+  justify-self: center;
+  align-items: center;
 `
 
 const Title = styled(H1)`
