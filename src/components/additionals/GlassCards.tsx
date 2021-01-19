@@ -27,15 +27,14 @@ export default function GlassCards(props) {
 }
 
 const Wrapper = styled.div`
-  max-width: 360px;
-  min-height: 77px;
-  padding: 15px;
-  border-radius: 20px;
-  border: 0px;
+  max-width: 22.5rem;
+  min-height: 4.813rem;
+  padding: 0.938rem;
+  border-radius: 1.25rem;
   display: grid;
-  grid-template-columns: 53px auto;
+  grid-template-columns: 3.313rem auto;
   align-content: center;
-  grid-gap: 40px;
+  grid-gap: 2.5rem;
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
