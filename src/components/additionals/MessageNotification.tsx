@@ -27,15 +27,12 @@ export default function MessageNotification(props) {
 }
 
 const Wrapper = styled.div`
-  max-width: 360px;
-  min-height: 77px;
-  padding: 15px;
-  border-radius: 20px;
-  border: 0px;
+  padding: 1rem;
   display: grid;
-  grid-template-columns: 53px auto;
+  grid-template-columns: auto auto;
   align-content: center;
-  grid-gap: 40px;
+  grid-gap: 1.25rem;
+  border-radius: 1.25rem;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
   @supports (backdrop-filter: blur(40px)) or
@@ -69,21 +66,30 @@ const Wrapper = styled.div`
 `
 
 const ImageWrapper = styled.div`
-  width: 45px;
-  height: 45px;
+  width: 4.375rem;
+  min-height: 4.375rem;
+  border-radius: 50%;
   display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-self: center;
+  position: relative;
+
+  ${Wrapper}:hover & {
+    filter: hue-rotate(10deg) brightness(150%) saturate(120%);
+  }
 `
 
 const Image = styled.img`
-  width: 70px;
+  width: 4.375rem;
   border: ${props => props.borderColor || "3px solid turquoise"};
   border-radius: 50%;
 `
 
 const TextWrapper = styled.div`
   display: grid;
-  gap: 4px;
-  min-height: 20px;
+  gap: 0.3rem;
+  min-height: 1.25rem;
 `
 
 const Name = styled(BodyMain)`
