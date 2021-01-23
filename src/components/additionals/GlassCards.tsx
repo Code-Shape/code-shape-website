@@ -29,13 +29,12 @@ export default function GlassCards(props) {
 const Wrapper = styled.div`
   max-width: 22.5rem;
   min-height: 4.813rem;
-  padding: 0.938rem;
-  border-radius: 1.25rem;
+  padding: 1rem;
   display: grid;
-  grid-template-columns: 3.313rem auto;
+  grid-template-columns: auto auto;
   align-content: center;
-  grid-gap: 2.5rem;
-  background: rgba(255, 255, 255, 0.25);
+  grid-gap: 1.25rem;
+  border-radius: 1.25rem;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
   @supports (backdrop-filter: blur(40px)) or
@@ -69,13 +68,22 @@ const Wrapper = styled.div`
 `
 
 const ImageWrapper = styled.div`
-  width: 45px;
-  height: 45px;
+  width: 4.375rem;
+  min-height: 4.375rem;
+  border-radius: 50%;
   display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-self: center;
+  position: relative;
+
+  ${Wrapper}:hover & {
+    filter: hue-rotate(10deg) brightness(150%) saturate(120%);
+  }
 `
 
 const Image = styled.img`
-  width: 70px;
+  width: 4.375rem;
   border: ${props => props.borderColor || "3px solid white"};
   border-radius: 50%;
 `

@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { BodyMain, H3 } from "../styles/TextStyles"
 
+//props are not fully implemented yet. Future improvements
 export default function QuestionIntro(props) {
   const { title, description, gradientColor } = props
   return (
@@ -26,12 +27,16 @@ export default function QuestionIntro(props) {
 }
 
 const Wrapper = styled.div`
-  margin: 0 auto;
+  position: relative;
+  margin: auto 1.875rem;
   padding: 1.875rem;
-  border-radius: 20px;
-  border: 0px;
   display: grid;
-  max-width: 22rem;
+  max-width: 35rem;
+  justify-content: center;
+  align-content: center;
+  justify-self: center;
+  border-radius: 1rem;
+
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
   @supports (backdrop-filter: blur(40px)) or
@@ -52,7 +57,6 @@ const Wrapper = styled.div`
 `
 
 const ContentWrapper = styled.div`
-  margin: 0 auto;
   display: grid;
   grid-gap: 1.875rem;
 `

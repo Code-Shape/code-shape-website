@@ -11,7 +11,7 @@ function IndexPage() {
     <Layout>
       <SEO title="Home" />
       <HeroSection />
-      <GradientIntro />
+
       <FocusSection />
       <Helmet>
         <script

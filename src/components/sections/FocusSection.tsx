@@ -1,11 +1,13 @@
 import React from "react"
 import styled from "styled-components"
+import GradientIntro from "../additionals/GradientIntro"
 import GlassCards from "../additionals/GlassCards"
 import IntroText from "../additionals/IntroText"
 
 export default function FocusSection() {
   return (
     <Wrapper>
+      <GradientIntro />
       <ContentWrapper>
         <TextWrapper>
           <IntroText
@@ -45,7 +47,9 @@ export default function FocusSection() {
   )
 }
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  margin: 3.125rem auto;
+`
 
 const ContentWrapper = styled.div`
   max-width: 60rem;

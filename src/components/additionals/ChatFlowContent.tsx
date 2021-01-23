@@ -50,22 +50,22 @@ export default function ChatFlowContent() {
 
 const Wrapper = styled.div`
   position: absolute;
-  max-width: 1234px;
+  max-width: 77rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
-  top: 8rem;
+  grid-template-columns: repeat(auto-fit, minmax(25.625rem, 1fr));
+  top: 6rem;
   right: 0rem;
 
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 53.125rem) {
     display: none;
   }
 `
 
 const NotificationsWrapper = styled.div`
-  max-width: 360px;
+  max-width: 22.5rem;
   display: grid;
-  gap: 30px;
+  gap: 1.875rem;
   justify-self: center;
   align-items: center;
 `
