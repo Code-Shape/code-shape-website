@@ -166,6 +166,7 @@ divide-gray-200
 lg:pb-0 
 lg:col-span-3 
 lg:row-span-2
+m-6
 `
 
 const Content = tw.div`
@@ -173,6 +174,7 @@ prose
 max-w-none 
 pt-10 
 pb-8
+
 `
 
 const Footer = tw.div`
@@ -183,4 +185,5 @@ divide-y
 divide-gray-200 
 lg:col-start-1 
 lg:row-start-2
+m-6
 `
