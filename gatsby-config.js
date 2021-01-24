@@ -1,22 +1,37 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
-    title: `Code Shape`,
-    description: `Learn to create great things.`,
-    author: `@codeshape`,
+    title: "Code Shape",
+    author: "Code Shape",
+    description: "Learn how to create great apps",
+    keywords:
+      "Code, Code Shape, Learn, Apps, Web Apps, Articles, Community, For Business",
   },
   plugins: [
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-mdx",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-react-svg",
+      ptions: {
+        rule: {
+          include: /svg/,
+        },
+      },
+    },
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-source-graphcms",
       options: {
-        name: `images`,
-        path: `${__dirname}/static/images`,
+        endpoint: process.env.GRAPHCMS_ENDPOINT,
+        token: process.env.GRAPHCMS_TOKEN,
+        buildMarkdownNodes: true,
+        downloadLocalImages: true,
       },
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
-    "gatsby-plugin-postcss",
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    "gatsby-transformer-sharp",
   ],
 }

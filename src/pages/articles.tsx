@@ -1,15 +1,177 @@
 import React from "react"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout/layout"
-import SEO from "../components/layout/seo"
-import ComingSoon from "../components/additionals/ComingSoon"
+import Img from "gatsby-image"
+import styled from "styled-components"
+import { H2, MediumText } from "../components/styles/TextStyles"
+import GradientIntro from "../components/additionals/GradientIntro"
 
-function ArticlesPage() {
+export default function ArticlesPage({ data: { allGraphCmsPost } }) {
   return (
     <Layout>
-      <SEO title="Articles" />
-      <ComingSoon />
+      <GradientIntro
+        title="Reading is making Meaning"
+        description="We believe we can create amazing things together by keeping our knowledge up to date. Therefore we will do our best to deliver that to you every week."
+        gradientColor="-webkit-linear-gradient(left, #7230ce, #3E16BB)"
+      />
+      <Wrapper>
+        <PostWrapper>
+          {allGraphCmsPost.nodes.map(post => {
+            return (
+              <Link to={`/articles/${post.slug}`}>
+                <ContentWrapper key={post.id}>
+                  <ArticleWrapper>
+                    <ImageWrapper>
+                      {post.coverImage.localFile.childImageSharp.fluid && (
+                        <Img
+                          fluid={
+                            post.coverImage.localFile.childImageSharp.fluid
+                          }
+                          alt={post.title}
+                          className="featuredImage"
+                        />
+                      )}
+                    </ImageWrapper>
+                    <TextWrapper>
+                      <Tags>{post.tags}</Tags>
+                      <PostTitle>{post.title}</PostTitle>
+                      <ExcerptWrapper>
+                        {post.excerpt && <Excerpt>{post.excerpt}</Excerpt>}
+                      </ExcerptWrapper>
+                      <ReadMore>
+                        <Link
+                          to={`/articles/${post.slug}`}
+                          className=""
+                          aria-label={`Read "${post.title}"`}
+                        >
+                          Read more &rarr;
+                        </Link>
+                      </ReadMore>
+                    </TextWrapper>
+                  </ArticleWrapper>
+                </ContentWrapper>
+              </Link>
+            )
+          })}
+        </PostWrapper>
+      </Wrapper>
     </Layout>
   )
 }
 
-export default ArticlesPage
+export const ArticlePageQuery = graphql`
+  {
+    allGraphCmsPost(sort: { fields: date, order: DESC }) {
+      nodes {
+        id
+        date: formattedDate
+        excerpt
+        slug
+        title
+        tags
+        coverImage {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 600) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+const Wrapper = styled.div``
+
+const PostWrapper = styled.div`
+  padding: 1.875rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 1.5rem;
+  justify-content: center;
+  align-content: center;
+`
+
+const ContentWrapper = styled.div`
+  margin: 0 auto;
+  max-width: 37.5rem;
+  display: grid;
+  grid-gap: 1rem;
+  border-radius: 1.875rem;
+  min-height: 28.125rem;
+
+  @media (prefers-color-scheme: dark) {
+    background: #151515;
+    color: white;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+      0px 20px 40px rgba(23, 23, 23, 0.2),
+      inset 0px 0px 0px 0.5px rgba(23, 23, 23, 0.5);
+
+    *,
+    & {
+      transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    :hover {
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+        0px 30px 60px rgba(24, 0, 102, 0.3),
+        inset 0px 0px 0px 0.5px rgba(63, 63, 63, 0.5);
+      transform: translateY(-3px);
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    background: #ffffff;
+    color: black;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+      0px 20px 40px rgba(23, 23, 23, 0.2),
+      inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+
+    *,
+    & {
+      transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    :hover {
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+        0px 30px 60px rgba(24, 0, 102, 0.3),
+        inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+      transform: translateY(-3px);
+    }
+  }
+`
+
+const ArticleWrapper = styled.div`
+  display: grid;
+  grid-gap: 1.875rem;
+`
+
+const ImageWrapper = styled.div`
+  .featuredImage {
+    height: 18.75rem;
+    border-radius: 1.875rem 1.875rem 0 0;
+  }
+`
+
+const PublishedDate = styled.div`
+  color: #6c7280;
+`
+
+const TextWrapper = styled.div`
+  display: grid;
+  grid-gap: 1.875rem;
+  padding: 1.5rem;
+`
+const Tags = styled.div`
+  border-radius: 1rem;
+  display: inline;
+  color: orange;
+`
+
+const ExcerptWrapper = styled(MediumText)``
+
+const Excerpt = styled.div``
+
+const ReadMore = styled.div``
+
+const PostTitle = styled(H2)``
