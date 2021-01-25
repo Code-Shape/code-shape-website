@@ -28,6 +28,7 @@
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
+    "@types/mdx-js__react": "^1.5.3",
     "gatsby-plugin-scss-typescript": "^4.0.13",
     "prettier": "2.1.2",
     "tailwind-styled-components": "^1.0.7"
