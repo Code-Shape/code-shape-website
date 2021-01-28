@@ -1,10 +1,10 @@
-import React from 'react'
-import { MDXProvider } from '@mdx-js/react';
-import Highlight, { defaultProps } from 'prism-react-renderer';
+import React from "react"
+import { MDXProvider } from "@mdx-js/react"
+import Highlight, { defaultProps } from "prism-react-renderer"
 
 /* eslint-disable */
 const components = {
-  wrapper: ({children}) => <>{children}</>,
+  wrapper: ({ children }) => <>{children}</>,
   h1: props => (
     <h1 style={{ fontSize: "60px", fontWeight: "bold" }} {...props} />
   ),
@@ -16,16 +16,14 @@ const components = {
   ),
   h4: props => (
     <h4 style={{ fontSize: "20px", fontWeight: "bold" }} {...props} />
-  ),  
-  p: props => (
-    <p style={{ fontSize: "16px", lineHeight: 1.6 }} {...props} />
   ),
+  p: props => <p style={{ fontSize: "16px", lineHeight: 1.6 }} {...props} />,
   strong: props => (
     <strong style={{ fontWeight: "900", lineHeight: 1.6 }} {...props} />
   ),
-  pre: (props) => {
-    const className = props.children.props.className || '';
-    const matches = className.match(/language-(?<lang>.*)/);
+  code: props => {
+    const className = props.children.props.className || ""
+    const matches = className.match(/language-(?<lang>.*)/)
     return (
       <Highlight
         {...defaultProps}
@@ -33,7 +31,7 @@ const components = {
         language={
           matches && matches.groups && matches.groups.lang
             ? matches.groups.lang
-            : ''
+            : ""
         }
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
@@ -48,7 +46,7 @@ const components = {
           </pre>
         )}
       </Highlight>
-    );
+    )
   },
 }
 

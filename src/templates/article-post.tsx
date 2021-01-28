@@ -10,6 +10,7 @@ import {
   H1,
   MediumText,
 } from "../components/styles/TextStyles"
+
 export default function BlogPostTemplate({
   data: { authorImage, coverImage },
   pageContext: { nextPost, page, previousPost },
@@ -21,37 +22,25 @@ export default function BlogPostTemplate({
           <PublishDate>{page.date}</PublishDate>
           <PageTitle>{page.title}</PageTitle>
         </Header>
-        <ArticleWrapper>
+        <InformationWrapper>
           <AuthorWrapper>
             <AuthorAvatar>
               <Img
                 fluid={authorImage.localFile.childImageSharp.fluid}
-                className="AuthorImage"
                 fadeIn={false}
+                className="Image"
               />
             </AuthorAvatar>
-            <TextWrapper>
+            <AuthorTextWrapper>
               <AuthorName>{page.author.name}</AuthorName>
               <AuthorTitle>{page.author.title}</AuthorTitle>
-            </TextWrapper>
+            </AuthorTextWrapper>
           </AuthorWrapper>
-          <Article>
-            <ContentWrapper>
-              <Img
-                fluid={coverImage.localFile.childImageSharp.fluid}
-                className="CoverImage"
-                fadeIn={false}
-              />
-              <MDXRenderer>
-                {page.content.markdownNode.childMdx.body}
-              </MDXRenderer>
-            </ContentWrapper>
-          </Article>
-          <Footer>
+          <Navigation>
             {(nextPost || previousPost) && (
               <div>
                 {nextPost && (
-                  <div className="Navigation">
+                  <div>
                     <h2>Next Post</h2>
                     <div>
                       <Link to={`/articles/${nextPost.slug}`}>
@@ -61,7 +50,7 @@ export default function BlogPostTemplate({
                   </div>
                 )}
                 {previousPost && (
-                  <div className="Navigation">
+                  <div>
                     <h2>Previous Post</h2>
                     <div>
                       <Link to={`/articles/${previousPost.slug}`}>
@@ -77,8 +66,15 @@ export default function BlogPostTemplate({
                 &larr; Back to the blog
               </Link>
             </div>
-          </Footer>
-        </ArticleWrapper>
+          </Navigation>
+        </InformationWrapper>
+        <ContentWrapper>
+          <Img
+            fluid={coverImage.localFile.childImageSharp.fluid}
+            fadeIn={false}
+          />
+          <MDXRenderer>{page.content.markdownNode.childMdx.body}</MDXRenderer>
+        </ContentWrapper>
       </Wrapper>
     </Layout>
   )
@@ -95,6 +91,7 @@ export const pageQuery = graphql`
       }
     }
   }
+
   query BlogPostQuery($id: String!) {
     authorImage: graphCmsAsset(
       authorAvatar: {
@@ -111,16 +108,9 @@ export const pageQuery = graphql`
   }
 `
 
-const Wrapper = styled.div``
-
-const ArticleWrapper = styled.div`
+const Wrapper = styled.div`
   margin: 1.875rem;
-  display: grid;
-  grid-gap: 1.875rem;
-  grid-template-columns: auto auto;
 `
-
-const Article = styled.div``
 
 const Header = styled.div`
   text-align: center;
@@ -133,83 +123,49 @@ const PublishDate = styled(BodyMain)`
 
 const PageTitle = styled(H1)``
 
-const AuthorWrapper = styled.div`
-  .Author {
-    grid-area: Author;
-  }
-  max-width: 20rem;
-  max-height: 4rem;
-  padding: 1rem;
+const InformationWrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto;
-  align-content: center;
-  grid-gap: 1.25rem;
-  border-radius: 1.25rem;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-  @supports (backdrop-filter: blur(40px)) or
-    (-webkit-backdrop-filter: blur(40px)) {
-    opacity: 0, 5;
-    background-color: transparent;
-    -webkit-backdrop-filter: blur(40px);
-    backdrop-filter: blur(40px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-  }
-
-  @-moz-document url-prefix() {
-    background-color: rgba(242, 242, 242, 0.7);
-    @media (prefers-color-scheme: dark) {
-      background-color: rgba(50, 50, 52, 0.7);
-    }
-  }
-`
-
-const AuthorAvatar = styled.div`
-  .AuthorImage {
-    border: 3px solid white;
-    border-radius: 50%;
-    width: 4rem;
-    height: 4rem;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    justify-self: center;
-    position: relative;
-  }
-`
-
-const TextWrapper = styled.div`
-  display: grid;
-  min-height: 1.25rem;
-`
-
-const AuthorName = styled(MediumText)`
-  font-weight: 900;
-  color: black;
-  @media (prefers-color-scheme: dark) {
-    color: white;
-  }
-`
-
-const AuthorTitle = styled(Caption)`
-  color: #757372;
 `
 
 const ContentWrapper = styled.div`
-  display: grid;
-  gap: 1.25rem;
+  grid-area: 1 / 2 / 2 / 3;
 
   .CoverImage {
     border-radius: 1.25rem;
   }
 `
 
-const Footer = styled.div`
+const AuthorWrapper = styled.div`
+  margin: 0 auto;
+  padding: 1.875rem;
   display: grid;
-  grid-gap: 1.25rem;
+  grid-template-columns: auto auto;
+  width: 18rem;
+`
 
-  .Navigation {
-    display: grid;
-    grid-gap: 1.25rem;
+const AuthorAvatar = styled.div`
+  .Image {
+    border-radius: 50%;
+    border: 3px solid white;
+    width: 4rem;
   }
 `
+
+const AuthorTextWrapper = styled.div``
+
+const AuthorName = styled(MediumText)`
+  font-weight: 900;
+`
+
+const AuthorTitle = styled(Caption)`
+  color: #757372;
+`
+
+const Navigation = styled.div`
+  margin: 0 auto;
+  padding: 1.875rem;
+  display: grid;
+  width: 18rem;
+`
+1
