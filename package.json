@@ -26,20 +26,17 @@
     "gatsby-source-graphcms": "^2.2.0",
     "gatsby-transformer-sharp": "^2.11.0",
     "node-sass": "^4.14.1",
-    "postcss": "^8.2.4",
     "prism-react-renderer": "^1.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
     "styled-components": "^5.2.1",
-    "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
     "@types/mdx-js__react": "^1.5.3",
     "gatsby-plugin-scss-typescript": "^4.0.13",
     "prettier": "2.1.2",
-    "tailwind-styled-components": "^1.0.7"
   },
   "keywords": [
     "gatsby"
