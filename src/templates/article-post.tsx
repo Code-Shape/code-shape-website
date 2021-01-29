@@ -36,17 +36,29 @@ export default function BlogPostTemplate({
               <AuthorTitle>{page.author.title}</AuthorTitle>
             </AuthorTextWrapper>
           </AuthorWrapper>
-          <Navigation>
+          
+        </InformationWrapper>
+        <ContentWrapper>
+          <Img
+            fluid={coverImage.localFile.childImageSharp.fluid}
+            fadeIn={false}
+            className="CoverImage"
+          />
+          <MDXRenderer>{page.content.markdownNode.childMdx.body}</MDXRenderer>
+        </ContentWrapper>
+        <Navigation>
             {(nextPost || previousPost) && (
-              <div>
+              <div className="Test">
+                <hr className="Divider"/>
                 {nextPost && (
-                  <div>
-                    <h2>Next Post</h2>
-                    <div>
+                  <div >
+                    <h2 >Next Post</h2>
+                    <div >
                       <Link to={`/articles/${nextPost.slug}`}>
                         {nextPost.title}
                       </Link>
                     </div>
+                    <hr className="Divider"/>
                   </div>
                 )}
                 {previousPost && (
@@ -57,6 +69,7 @@ export default function BlogPostTemplate({
                         {previousPost.title}
                       </Link>
                     </div>
+                    <hr className="Divider"/>
                   </div>
                 )}
               </div>
@@ -67,14 +80,6 @@ export default function BlogPostTemplate({
               </Link>
             </div>
           </Navigation>
-        </InformationWrapper>
-        <ContentWrapper>
-          <Img
-            fluid={coverImage.localFile.childImageSharp.fluid}
-            fadeIn={false}
-          />
-          <MDXRenderer>{page.content.markdownNode.childMdx.body}</MDXRenderer>
-        </ContentWrapper>
       </Wrapper>
     </Layout>
   )
@@ -110,6 +115,8 @@ export const pageQuery = graphql`
 
 const Wrapper = styled.div`
   margin: 1.875rem;
+  display: grid;
+  grid-gap: 1.875rem;
 `
 
 const Header = styled.div`
@@ -125,23 +132,33 @@ const PageTitle = styled(H1)``
 
 const InformationWrapper = styled.div`
   display: grid;
-  grid-template-columns: auto auto;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+
 `
 
 const ContentWrapper = styled.div`
-  grid-area: 1 / 2 / 2 / 3;
+display: grid;
+grid-gap: 1rem;
+margin 0 auto;
+max-width: 45rem;
 
   .CoverImage {
     border-radius: 1.25rem;
+    object-fit: cover;
   }
 `
 
 const AuthorWrapper = styled.div`
   margin: 0 auto;
-  padding: 1.875rem;
+  padding: 1rem;
   display: grid;
+  grid-gap: 1rem;
   grid-template-columns: auto auto;
-  width: 18rem;
+  width: 20rem;
+  justify-content: center;
+  align-content: center;
 `
 
 const AuthorAvatar = styled.div`
@@ -152,7 +169,11 @@ const AuthorAvatar = styled.div`
   }
 `
 
-const AuthorTextWrapper = styled.div``
+const AuthorTextWrapper = styled.div`
+display: grid;
+justify-content: center;
+align-content: center;`
+
 
 const AuthorName = styled(MediumText)`
   font-weight: 900;
@@ -164,8 +185,15 @@ const AuthorTitle = styled(Caption)`
 
 const Navigation = styled.div`
   margin: 0 auto;
+  text-align: center;
   padding: 1.875rem;
   display: grid;
+  grid-gap: 1rem;
   width: 18rem;
+
+  .Divider {
+    color: #757372;
+    line-height: 3rem;
+  }
 `
 1
