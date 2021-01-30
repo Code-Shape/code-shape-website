@@ -10,6 +10,36 @@ import {
   H1,
   MediumText,
 } from "../components/styles/TextStyles"
+import ReactDisqusComments from "react-disqus-comments"
+import LazyLoad from "react-lazy-load"
+
+export const pageQuery = graphql`
+  fragment AssetFields on GraphCMS_Asset {
+    id
+    localFile {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+
+  query BlogPostQuery($id: String!) {
+    authorImage: graphCmsAsset(
+      authorAvatar: {
+        elemMatch: { posts: { elemMatch: { id: { in: [$id] } } } }
+      }
+    ) {
+      ...AssetFields
+    }
+    coverImage: graphCmsAsset(
+      coverImagePost: { elemMatch: { id: { eq: $id } } }
+    ) {
+      ...AssetFields
+    }
+  }
+`
 
 export default function BlogPostTemplate({
   data: { authorImage, coverImage },
@@ -79,38 +109,19 @@ export default function BlogPostTemplate({
             </Link>
           </div>
         </Navigation>
+        <LazyLoad offsetTop={400}>
+          <ReactDisqusComments
+            shortname="codeshape"
+            identifier={page.id}
+            title={page.title}
+            url={page.url}
+            category_id={page.category_id}
+          />
+        </LazyLoad>
       </Wrapper>
     </Layout>
   )
 }
-
-export const pageQuery = graphql`
-  fragment AssetFields on GraphCMS_Asset {
-    id
-    localFile {
-      childImageSharp {
-        fluid(maxWidth: 600) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-
-  query BlogPostQuery($id: String!) {
-    authorImage: graphCmsAsset(
-      authorAvatar: {
-        elemMatch: { posts: { elemMatch: { id: { in: [$id] } } } }
-      }
-    ) {
-      ...AssetFields
-    }
-    coverImage: graphCmsAsset(
-      coverImagePost: { elemMatch: { id: { eq: $id } } }
-    ) {
-      ...AssetFields
-    }
-  }
-`
 
 const Wrapper = styled.div`
   margin: 1.875rem;
@@ -193,4 +204,3 @@ const Navigation = styled.div`
     line-height: 3rem;
   }
 `
-1
