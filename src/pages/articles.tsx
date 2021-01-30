@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import { H2, MediumText } from "../components/styles/TextStyles"
 import GradientIntro from "../components/additionals/GradientIntro"
+
 export default function ArticlesPage({ data: { allGraphCmsPost } }) {
   return (
     <Layout>
@@ -84,20 +85,25 @@ export const ArticlePageQuery = graphql`
 const Wrapper = styled.div``
 
 const PostWrapper = styled.div`
+  margin: 0 auto;
   padding: 1.875rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   grid-gap: 1.5rem;
+  max-width: 70rem;
   justify-content: center;
   align-content: center;
 `
 const ContentWrapper = styled.div`
-  margin: 0 auto;
-  max-width: 37.5rem;
-  display: grid;
-  grid-gap: 1rem;
-  border-radius: 1.875rem;
-  min-height: 28.125rem;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  position: relative;
+  top: 0;
+  border-radius: 1.2rem;
+  overflow: hidden;
+
   @media (prefers-color-scheme: dark) {
     background: #151515;
     color: white;
@@ -127,7 +133,7 @@ const ContentWrapper = styled.div`
     }
     :hover {
       box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
-        0px 30px 60px rgba(24, 0, 102, 0.3),
+        0px 30px 60px rgba(255, 255, 255, 0.3),
         inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
       transform: translateY(-3px);
     }
@@ -137,15 +143,8 @@ const ArticleWrapper = styled.div`
   display: grid;
   grid-gap: 1.875rem;
 `
-const ImageWrapper = styled.div`
-  .featuredImage {
-    height: 18.75rem;
-    border-radius: 1.875rem 1.875rem 0 0;
-  }
-`
-const PublishedDate = styled.div`
-  color: #6c7280;
-`
+const ImageWrapper = styled.div``
+
 const TextWrapper = styled.div`
   display: grid;
   grid-gap: 1.875rem;
