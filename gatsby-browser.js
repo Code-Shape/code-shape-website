@@ -21,6 +21,7 @@ const components = {
   strong: props => (
     <strong style={{ fontWeight: "900", lineHeight: 1.6 }} {...props} />
   ),
+  img: props => <img style={{ width: "100%" }} {...props} />,
   code: props => {
     const className = props.children.props.className || ""
     const matches = className.match(/language-(?<lang>.*)/)
