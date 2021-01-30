@@ -36,7 +36,6 @@ export default function BlogPostTemplate({
               <AuthorTitle>{page.author.title}</AuthorTitle>
             </AuthorTextWrapper>
           </AuthorWrapper>
-          
         </InformationWrapper>
         <ContentWrapper>
           <Img
@@ -47,39 +46,39 @@ export default function BlogPostTemplate({
           <MDXRenderer>{page.content.markdownNode.childMdx.body}</MDXRenderer>
         </ContentWrapper>
         <Navigation>
-            {(nextPost || previousPost) && (
-              <div className="Test">
-                <hr className="Divider"/>
-                {nextPost && (
-                  <div >
-                    <h2 >Next Post</h2>
-                    <div >
-                      <Link to={`/articles/${nextPost.slug}`}>
-                        {nextPost.title}
-                      </Link>
-                    </div>
-                    <hr className="Divider"/>
-                  </div>
-                )}
-                {previousPost && (
+          {(nextPost || previousPost) && (
+            <div className="Test">
+              <hr className="Divider" />
+              {nextPost && (
+                <div>
+                  <h2>Next Post</h2>
                   <div>
-                    <h2>Previous Post</h2>
-                    <div>
-                      <Link to={`/articles/${previousPost.slug}`}>
-                        {previousPost.title}
-                      </Link>
-                    </div>
-                    <hr className="Divider"/>
+                    <Link to={`/articles/${nextPost.slug}`}>
+                      {nextPost.title}
+                    </Link>
                   </div>
-                )}
-              </div>
-            )}
-            <div>
-              <Link to="/articles/" className="">
-                &larr; Back to the blog
-              </Link>
+                  <hr className="Divider" />
+                </div>
+              )}
+              {previousPost && (
+                <div>
+                  <h2>Previous Post</h2>
+                  <div>
+                    <Link to={`/articles/${previousPost.slug}`}>
+                      {previousPost.title}
+                    </Link>
+                  </div>
+                  <hr className="Divider" />
+                </div>
+              )}
             </div>
-          </Navigation>
+          )}
+          <div>
+            <Link to="/articles/" className="">
+              &larr; Back to the blog
+            </Link>
+          </div>
+        </Navigation>
       </Wrapper>
     </Layout>
   )
@@ -134,15 +133,13 @@ const InformationWrapper = styled.div`
   display: grid;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-
-
 `
 
 const ContentWrapper = styled.div`
-display: grid;
-grid-gap: 1rem;
-margin 0 auto;
-max-width: 45rem;
+  display: grid;
+  grid-gap: 1rem;
+  margin: 0 auto;
+  max-width: 80rem;
 
   .CoverImage {
     border-radius: 1.25rem;
@@ -170,10 +167,10 @@ const AuthorAvatar = styled.div`
 `
 
 const AuthorTextWrapper = styled.div`
-display: grid;
-justify-content: center;
-align-content: center;`
-
+  display: grid;
+  justify-content: center;
+  align-content: center;
+`
 
 const AuthorName = styled(MediumText)`
   font-weight: 900;
