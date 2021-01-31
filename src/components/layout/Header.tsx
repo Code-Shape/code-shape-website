@@ -17,13 +17,6 @@ export default function Header() {
           }
         }
       }
-      andreas: file(relativePath: { eq: "andreas.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 700) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
     }
   `)
   const [isOpen, setIsOpen] = useState(false)
