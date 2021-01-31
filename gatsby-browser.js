@@ -1,6 +1,6 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
-import Highlight, { defaultProps } from "prism-react-renderer"
+import Layout from "./src/components/layout/layout"
 
 /* eslint-disable */
 const components = {
@@ -22,7 +22,7 @@ const components = {
     <strong style={{ fontWeight: "900", lineHeight: 1.6 }} {...props} />
   ),
   img: props => <img style={{ width: "100%" }} {...props} />,
-  code: props => {
+  pre: props => {
     const className = props.children.props.className || ""
     const matches = className.match(/language-(?<lang>.*)/)
     return (
@@ -51,6 +51,12 @@ const components = {
   },
 }
 
-export const wrapRootElement = ({ element }) => (
+const wrapPageElement = ({ element, props }) => (
+  <Layout {...props}>{element}</Layout>
+)
+
+const wrapRootElement = ({ element }) => (
   <MDXProvider components={components}>{element}</MDXProvider>
 )
+
+export { wrapPageElement, wrapRootElement }

@@ -3,7 +3,6 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
-import Layout from "../components/layout/layout"
 import {
   BodyMain,
   Caption,
@@ -46,80 +45,78 @@ export default function ArticlePostTemplate({
   pageContext: { nextPost, page, previousPost },
 }) {
   return (
-    <Layout>
-      <Wrapper>
-        <Header>
-          <PublishDate>{page.date}</PublishDate>
-          <PageTitle>{page.title}</PageTitle>
-        </Header>
-        <InformationWrapper>
-          <AuthorWrapper>
-            <AuthorAvatar>
-              <Img
-                fluid={authorImage.localFile.childImageSharp.fluid}
-                fadeIn={false}
-                className="Image"
-              />
-            </AuthorAvatar>
-            <AuthorTextWrapper>
-              <AuthorName>{page.author.name}</AuthorName>
-              <AuthorTitle>{page.author.title}</AuthorTitle>
-            </AuthorTextWrapper>
-          </AuthorWrapper>
-        </InformationWrapper>
-        <ContentWrapper>
-          <Img
-            fluid={coverImage.localFile.childImageSharp.fluid}
-            fadeIn={false}
-            className="CoverImage"
-          />
-          <MDXRenderer>{page.content.markdownNode.childMdx.body}</MDXRenderer>
-        </ContentWrapper>
-        <Navigation>
-          {(nextPost || previousPost) && (
-            <div className="Test">
-              <hr className="Divider" />
-              {nextPost && (
-                <div>
-                  <h2>Next Post</h2>
-                  <div>
-                    <Link to={`/articles/${nextPost.slug}`}>
-                      {nextPost.title}
-                    </Link>
-                  </div>
-                  <hr className="Divider" />
-                </div>
-              )}
-              {previousPost && (
-                <div>
-                  <h2>Previous Post</h2>
-                  <div>
-                    <Link to={`/articles/${previousPost.slug}`}>
-                      {previousPost.title}
-                    </Link>
-                  </div>
-                  <hr className="Divider" />
-                </div>
-              )}
-            </div>
-          )}
+    <Wrapper>
+      <Header>
+        <PublishDate>{page.date}</PublishDate>
+        <PageTitle>{page.title}</PageTitle>
+      </Header>
+      <InformationWrapper>
+        <AuthorWrapper>
+          <AuthorAvatar>
+            <Img
+              fluid={authorImage.localFile.childImageSharp.fluid}
+              fadeIn={false}
+              className="Image"
+            />
+          </AuthorAvatar>
+          <AuthorTextWrapper>
+            <AuthorName>{page.author.name}</AuthorName>
+            <AuthorTitle>{page.author.title}</AuthorTitle>
+          </AuthorTextWrapper>
+        </AuthorWrapper>
+      </InformationWrapper>
+      <ContentWrapper>
+        <Img
+          fluid={coverImage.localFile.childImageSharp.fluid}
+          fadeIn={false}
+          className="CoverImage"
+        />
+        <MDXRenderer>{page.content.markdownNode.childMdx.body}</MDXRenderer>
+      </ContentWrapper>
+      <Navigation>
+        {(nextPost || previousPost) && (
           <div>
-            <Link to="/articles/" className="">
-              &larr; Back to the blog
-            </Link>
+            <hr className="Divider" />
+            {nextPost && (
+              <div>
+                <h2>Next Post</h2>
+                <div>
+                  <Link to={`/articles/${nextPost.slug}`}>
+                    {nextPost.title}
+                  </Link>
+                </div>
+                <hr className="Divider" />
+              </div>
+            )}
+            {previousPost && (
+              <div>
+                <h2>Previous Post</h2>
+                <div>
+                  <Link to={`/articles/${previousPost.slug}`}>
+                    {previousPost.title}
+                  </Link>
+                </div>
+                <hr className="Divider" />
+              </div>
+            )}
           </div>
-        </Navigation>
-        <LazyLoad offsetTop={400}>
-          <ReactDisqusComments
-            shortname="codeshape"
-            identifier={page.id}
-            title={page.title}
-            url={page.url}
-            category_id={page.category_id}
-          />
-        </LazyLoad>
-      </Wrapper>
-    </Layout>
+        )}
+        <div>
+          <Link to="/articles/" className="">
+            &larr; Back to the blog
+          </Link>
+        </div>
+      </Navigation>
+      <LazyLoad offsetTop={400}>
+        <ReactDisqusComments
+          shortname="codeshape"
+          identifier={page.id}
+          title={page.title}
+          url={page.url}
+          category_id={page.category_id}
+        />
+      </LazyLoad>
+    </Wrapper>
   )
 }
 

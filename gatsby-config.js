@@ -30,15 +30,20 @@ module.exports = {
         path: `${__dirname}/static/images/profiles`,
       },
     },
-    `gatsby-plugin-mdx`,
     {
-      resolve: "gatsby-plugin-react-svg",
-      ptions: {
-        rule: {
-          include: /svg/,
-        },
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts/`,
       },
     },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/src/posts`,
+      },
+    },
+    `gatsby-plugin-mdx`,
     {
       resolve: "gatsby-source-graphcms",
       options: {
@@ -50,7 +55,6 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
-    "gatsby-plugin-postcss",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
   ],

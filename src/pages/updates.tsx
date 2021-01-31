@@ -1,15 +1,17 @@
 import React from "react"
-import Layout from "../components/layout/layout"
+import styled from "styled-components"
 import SEO from "../components/layout/seo"
 import ComingSoon from "../components/additionals/ComingSoon"
 
 function UpdatesPage() {
   return (
-    <Layout>
+    <Wrapper>
       <SEO title="Updates" />
       <ComingSoon />
-    </Layout>
+    </Wrapper>
   )
 }
 
 export default UpdatesPage
+
+const Wrapper = styled.div``

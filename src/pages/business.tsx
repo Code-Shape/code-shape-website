@@ -1,12 +1,12 @@
 import React from "react"
 import GradientIntro from "../components/additionals/GradientIntro"
-import Layout from "../components/layout/layout"
+import styled from "styled-components"
 import SEO from "../components/layout/seo"
 import CommunicationBusiness from "../components/sections/CommunicationBusiness"
 
 function BusinessPage() {
   return (
-    <Layout>
+    <Wrapper>
       <SEO title="Business" />
       <GradientIntro
         title="People at it's core"
@@ -14,8 +14,10 @@ function BusinessPage() {
         gradientColor="-webkit-linear-gradient(left, #7230ce, #3E16BB)"
       />
       <CommunicationBusiness />
-    </Layout>
+    </Wrapper>
   )
 }
 
 export default BusinessPage
+
+const Wrapper = styled.div``

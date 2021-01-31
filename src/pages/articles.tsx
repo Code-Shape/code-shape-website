@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../components/layout/layout"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { H2, MediumText } from "../components/styles/TextStyles"
@@ -8,54 +7,50 @@ import GradientIntro from "../components/additionals/GradientIntro"
 
 export default function ArticlesPage({ data: { allGraphCmsPost } }) {
   return (
-    <Layout>
+    <Wrapper>
       <GradientIntro
         title="Reading is making Meaning"
         description="We believe we can create amazing things together by keeping our knowledge up to date. Therefore we will do our best to deliver that to you every week."
         gradientColor="-webkit-linear-gradient(left, #7230ce, #3E16BB)"
       />
-      <Wrapper>
-        <PostWrapper>
-          {allGraphCmsPost.nodes.map(post => {
-            return (
-              <Link to={`/articles/${post.slug}`}>
-                <ContentWrapper key={post.id}>
-                  <ArticleWrapper>
-                    <ImageWrapper>
-                      {post.coverImage.localFile.childImageSharp.fluid && (
-                        <Img
-                          fluid={
-                            post.coverImage.localFile.childImageSharp.fluid
-                          }
-                          alt={post.title}
-                          className="featuredImage"
-                        />
-                      )}
-                    </ImageWrapper>
-                    <TextWrapper>
-                      <Tags>{post.tags}</Tags>
-                      <PostTitle>{post.title}</PostTitle>
-                      <ExcerptWrapper>
-                        {post.excerpt && <Excerpt>{post.excerpt}</Excerpt>}
-                      </ExcerptWrapper>
-                      <ReadMore>
-                        <Link
-                          to={`/articles/${post.slug}`}
-                          className=""
-                          aria-label={`Read "${post.title}"`}
-                        >
-                          Read more &rarr;
-                        </Link>
-                      </ReadMore>
-                    </TextWrapper>
-                  </ArticleWrapper>
-                </ContentWrapper>
-              </Link>
-            )
-          })}
-        </PostWrapper>
-      </Wrapper>
-    </Layout>
+      <PostWrapper>
+        {allGraphCmsPost.nodes.map(post => {
+          return (
+            <Link to={`/articles/${post.slug}`}>
+              <ContentWrapper key={post.id}>
+                <ArticleWrapper>
+                  <ImageWrapper>
+                    {post.coverImage.localFile.childImageSharp.fluid && (
+                      <Img
+                        fluid={post.coverImage.localFile.childImageSharp.fluid}
+                        alt={post.title}
+                        className="featuredImage"
+                      />
+                    )}
+                  </ImageWrapper>
+                  <TextWrapper>
+                    <Tags>{post.tags}</Tags>
+                    <PostTitle>{post.title}</PostTitle>
+                    <ExcerptWrapper>
+                      {post.excerpt && <Excerpt>{post.excerpt}</Excerpt>}
+                    </ExcerptWrapper>
+                    <ReadMore>
+                      <Link
+                        to={`/articles/${post.slug}`}
+                        className=""
+                        aria-label={`Read "${post.title}"`}
+                      >
+                        Read more &rarr;
+                      </Link>
+                    </ReadMore>
+                  </TextWrapper>
+                </ArticleWrapper>
+              </ContentWrapper>
+            </Link>
+          )
+        })}
+      </PostWrapper>
+    </Wrapper>
   )
 }
 
