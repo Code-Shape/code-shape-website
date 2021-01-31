@@ -25,7 +25,7 @@ export const pageQuery = graphql`
     }
   }
 
-  query BlogPostQuery($id: String!) {
+  query ArticlePostQuery($id: String!) {
     authorImage: graphCmsAsset(
       authorAvatar: {
         elemMatch: { posts: { elemMatch: { id: { in: [$id] } } } }
@@ -41,7 +41,7 @@ export const pageQuery = graphql`
   }
 `
 
-export default function BlogPostTemplate({
+export default function ArticlePostTemplate({
   data: { authorImage, coverImage },
   pageContext: { nextPost, page, previousPost },
 }) {

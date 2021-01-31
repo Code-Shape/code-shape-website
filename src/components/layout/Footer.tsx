@@ -15,7 +15,7 @@ export default function Footer() {
         </MenuWrapper>
         <TextWrapper>
           <Description>
-            This site is created using React, Gatsby, Contentful and deployed
+            This site is created using React, Gatsby, GraphCMS and deployed
             with Netlify.
           </Description>
           <Copyright>

@@ -101,8 +101,8 @@ const ContentWrapper = styled.div`
   text-decoration: none;
   position: relative;
   top: 0;
-  border-radius: 1.2rem;
   overflow: hidden;
+  border-radius: 1.2rem;
 
   @media (prefers-color-scheme: dark) {
     background: #151515;

@@ -4,8 +4,28 @@ import { menuData } from "../../data/menuData"
 import MenuButton from "../buttons/MenuButton"
 import { Link } from "gatsby"
 import MenuTooltip from "../tooltips/MenuTooltip"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 export default function Header() {
+  const data = useStaticQuery(graphql`
+    query {
+      logo: file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 700) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      andreas: file(relativePath: { eq: "andreas.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 700) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   const [isOpen, setIsOpen] = useState(false)
   const ref = useRef()
   const tooltipRef = useRef()
@@ -36,7 +56,9 @@ export default function Header() {
   return (
     <Wrapper>
       <Link to="/">
-        <Logo src="/images/logos/logo.svg" alt="Logo" />
+        <Logo>
+          <Img fluid={data.logo.childImageSharp.fluid} alt="Code Shape Logo" />
+        </Logo>
       </Link>
       <MenuWrapper count={menuData.length} ref={ref}>
         {menuData.map((item, index) => (
@@ -85,4 +107,6 @@ const HamburgerWrapper = styled.div`
   }
 `
 
-const Logo = styled.img``
+const Logo = styled.div`
+  width: 100px;
+`

@@ -1,5 +1,7 @@
 require("dotenv").config()
 
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
     title: `Code Shape`,
@@ -10,8 +12,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages/`,
+        name: `images`,
+        path: `${__dirname}/static/images/icons`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static/images/logos`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static/images/profiles`,
       },
     },
     `gatsby-plugin-mdx`,
