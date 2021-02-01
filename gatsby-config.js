@@ -30,19 +30,6 @@ module.exports = {
         path: `${__dirname}/static/images/profiles`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `posts`,
-        path: `${__dirname}/src/posts/`,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-page-creator",
-      options: {
-        path: `${__dirname}/src/posts`,
-      },
-    },
     `gatsby-plugin-mdx`,
     {
       resolve: "gatsby-source-graphcms",
