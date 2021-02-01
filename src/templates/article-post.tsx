@@ -79,7 +79,7 @@ export default function ArticlePostTemplate({
             <hr className="Divider" />
             {nextPost && (
               <div>
-                <h2>Next Post</h2>
+                <h3>Next Post</h3>
                 <div>
                   <Link to={`/articles/${nextPost.slug}`}>
                     {nextPost.title}
@@ -90,8 +90,8 @@ export default function ArticlePostTemplate({
             )}
             {previousPost && (
               <div>
-                <h2>Previous Post</h2>
-                <div>
+                <h3>Previous Post</h3>
+                <div className="ArticleLink">
                   <Link to={`/articles/${previousPost.slug}`}>
                     {previousPost.title}
                   </Link>
@@ -199,5 +199,9 @@ const Navigation = styled.div`
   .Divider {
     color: #757372;
     line-height: 3rem;
+  }
+
+  .ArticleLink {
+    padding: 30px;
   }
 `
