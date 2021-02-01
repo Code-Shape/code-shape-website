@@ -124,6 +124,10 @@ ul {
   margin-right: 0;
   padding-left: 40px;
 }
+li {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 blockquote,
 q {
   quotes: none;
