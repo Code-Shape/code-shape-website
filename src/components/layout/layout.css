@@ -119,10 +119,16 @@ ul {
   display: block;
   list-style-type: disc;
   margin-top: 1em;
-  margin-bottom: 1 em;
+  margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
   padding-left: 40px;
+  font-size: 20px;
+}
+li {
+  display: list-item;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 blockquote,
 q {
@@ -164,11 +170,17 @@ pre {
 }
 
 code {
-  background-color: #1e1f26;
+  background-color: #151515;
   color: white;
-  border-radius: 0.3rem;
-  padding: 4px 5px 5px;
+  border-radius: 1.25rem;
+  padding: 1rem;
   white-space: nowrap;
+}
+
+iframe {
+  width: 100%;
+  min-height: 20rem;
+  border-radius: 1.25rem;
 }
 
 h1 {
@@ -202,4 +214,10 @@ h6 {
   font-weight: normal;
   font-size: 17px;
   line-height: 130%;
+}
+
+p {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 140%;
 }
