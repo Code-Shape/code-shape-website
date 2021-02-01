@@ -5,10 +5,10 @@ import ComingSoon from "../components/additionals/ComingSoon"
 
 function HelpPage() {
   return (
-    <Layout>
+    <Wrapper>
       <SEO title="Help" />
       <ComingSoon />
-    </Layout>
+    </Wrapper>
   )
 }
 
