@@ -103,6 +103,7 @@ nav,
 section {
   display: block;
 }
+
 html,
 body {
   position: relative;
@@ -114,6 +115,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 ol,
 ul {
   display: block;
@@ -125,15 +127,18 @@ ul {
   padding-left: 40px;
   font-size: 20px;
 }
+
 li {
   display: list-item;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -141,6 +146,7 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -187,7 +193,7 @@ p {
   font-weight: normal;
   font-size: 20px;
   line-height: 140%;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1.5rem;
 }
 
 strong {
