@@ -130,10 +130,6 @@ li {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-li {
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
 blockquote,
 q {
   quotes: none;
@@ -191,6 +187,7 @@ p {
   font-weight: normal;
   font-size: 20px;
   line-height: 140%;
+  padding-bottom: 0.5rem;
 }
 
 strong {
