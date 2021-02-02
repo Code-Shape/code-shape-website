@@ -35,6 +35,7 @@ const TextWrapper = styled.div`
 `
 
 const TitleWrapper = styled(H1)`
+padding: 0.2rem;
 font-weight: 900;
 background: -webkit-linear-gradient(left, #7230ce, #3E16BB)};
 -webkit-background-clip: text;
