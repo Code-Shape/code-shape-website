@@ -176,25 +176,17 @@ pre {
 }
 
 code {
+  display: block;
   background-color: #151515;
   color: white;
   border-radius: 1.25rem;
   padding: 1rem;
-  white-space: nowrap;
-  width: 100%
 }
 
 iframe {
   width: 100%;
   min-height: 20rem;
   border-radius: 1.25rem;
-}
-
-p {
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 140%;
-  padding-bottom: 1.5rem;
 }
 
 strong {
