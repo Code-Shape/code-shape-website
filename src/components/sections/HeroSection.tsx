@@ -1,5 +1,5 @@
 import React from "react"
-import { H1, MediumText } from "../styles/TextStyles"
+import { H1, BodyMain } from "../styles/TextStyles"
 import styled from "styled-components"
 import ChatFlowContent from "../additionals/ChatFlowContent"
 import ButtonWithAnimation from "../buttons/ButtonWithAnimation"
@@ -47,7 +47,7 @@ const Title = styled(H1)`
   }
 `
 
-const Description = styled(MediumText)``
+const Description = styled(BodyMain)``
 
 const Blob = styled.img`
   position: absolute;

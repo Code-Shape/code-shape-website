@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { H2, SmallText2 } from "../styles/TextStyles"
+import { BodyMain, H2, SmallText2 } from "../styles/TextStyles"
 
 export default function ComingSoonPage(props) {
   const { intro, title, description } = props
@@ -44,4 +44,4 @@ const Intro = styled(SmallText2)`
 
 const Title = styled(H2)``
 
-const Description = styled.div``
+const Description = styled(BodyMain)``

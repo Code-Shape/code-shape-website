@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { H2, MediumText, SmallText2 } from "../styles/TextStyles"
+import { BodyMain, H2, SmallText2 } from "../styles/TextStyles"
 
 export default function IntroText(props) {
   const { intro, title, description } = props
@@ -46,4 +46,4 @@ const Intro = styled(SmallText2)`
 
 const Title = styled(H2)``
 
-const Description = styled(MediumText)``
+const Description = styled(BodyMain)``
