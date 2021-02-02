@@ -5,15 +5,70 @@ import Layout from "./src/components/layout/layout"
 /* eslint-disable */
 const components = {
   wrapper: ({ children }) => <>{children}</>,
-  img: props => <img style={{ width: "100%" }} {...props} />,
-  h1: props => <he style={{ paddingTop: "1rem", fontWeight: "bold", fontSize: "60px" }} {...props} />,
-  h2: props => <he style={{ paddingTop: "1rem", fontWeight: "bold", fontSize: "40px" }} {...props} />,
-  h3: props => <he style={{ paddingTop: "1rem", fontWeight: "bold", fontSize: "30px" }} {...props} />,
-  h4: props => <he style={{ paddingTop: "1rem", fontWeight: "500", fontSize: "24px", lineHeight: "140%" }} {...props} />,
-  h5: props => <he style={{ paddingTop: "1rem", fontWeight: "normal", fontSize: "20px", lineHeight: "140%" }} {...props} />,
-  h6: props => <he style={{ paddingTop: "1rem", fontWeight: "normal", fontSize: "17px", lineHeight: "130%" }} {...props} />,
-  p: props => <p style={{fontWeight: "normal", fontSize: "20px", lineHeight: "140%", paddingBottom: "1.5rem"}} {...props} />,
-  strong: props => <strong style={{ fontWeight: "bold"}} {...props} />,
+  img: props => <img style={{ width: "100%", margin: "0 auto" }} {...props} />,
+  h1: props => (
+    <he
+      style={{ paddingTop: "1rem", fontWeight: "bold", fontSize: "60px" }}
+      {...props}
+    />
+  ),
+  h2: props => (
+    <he
+      style={{ paddingTop: "1rem", fontWeight: "bold", fontSize: "40px" }}
+      {...props}
+    />
+  ),
+  h3: props => (
+    <he
+      style={{ paddingTop: "1rem", fontWeight: "bold", fontSize: "30px" }}
+      {...props}
+    />
+  ),
+  h4: props => (
+    <he
+      style={{
+        paddingTop: "1rem",
+        fontWeight: "500",
+        fontSize: "24px",
+        lineHeight: "140%",
+      }}
+      {...props}
+    />
+  ),
+  h5: props => (
+    <he
+      style={{
+        paddingTop: "1rem",
+        fontWeight: "normal",
+        fontSize: "20px",
+        lineHeight: "140%",
+      }}
+      {...props}
+    />
+  ),
+  h6: props => (
+    <he
+      style={{
+        paddingTop: "1rem",
+        fontWeight: "normal",
+        fontSize: "17px",
+        lineHeight: "130%",
+      }}
+      {...props}
+    />
+  ),
+  p: props => (
+    <p
+      style={{
+        fontWeight: "normal",
+        fontSize: "20px",
+        lineHeight: "140%",
+        paddingBottom: "1.5rem",
+      }}
+      {...props}
+    />
+  ),
+  strong: props => <strong style={{ fontWeight: "bold" }} {...props} />,
   pre: props => {
     const className = props.children.props.className || ""
     const matches = className.match(/language-(?<lang>.*)/)
