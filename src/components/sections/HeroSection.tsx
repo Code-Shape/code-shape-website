@@ -32,7 +32,7 @@ const Wrapper = styled.div``
 
 const ContentWrapper = styled.div`
   max-width: 77rem;
-  padding: 6.25rem 1.875rem;
+  padding: 5rem 1.875rem;
   margin: 0 auto;
 `
 
@@ -41,7 +41,11 @@ const TextWrapper = styled.div`
   display: grid;
   gap: 1.875rem;
 `
-const Title = styled(H1)``
+const Title = styled(H1)`
+  @media only screen and (max-width: 600px) {
+    font-size: 50px;
+  }
+`
 
 const Description = styled(MediumText)``
 

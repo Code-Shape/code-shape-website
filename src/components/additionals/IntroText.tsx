@@ -37,6 +37,7 @@ const TextWrapper = styled.div`
   gap: 1.25rem;
   justify-self: center;
   align-items: center;
+  padding: 1rem;
 `
 
 const Intro = styled(SmallText2)`

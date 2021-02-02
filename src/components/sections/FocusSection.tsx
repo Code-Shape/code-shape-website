@@ -48,7 +48,7 @@ export default function FocusSection() {
 }
 
 const Wrapper = styled.div`
-  margin: 3.125rem auto;
+  margin: 1rem auto;
 `
 
 const ContentWrapper = styled.div`

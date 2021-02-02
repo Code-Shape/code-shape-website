@@ -10,7 +10,6 @@ import {
   MediumText,
 } from "../components/styles/TextStyles"
 import ReactDisqusComments from "react-disqus-comments"
-import LazyLoad from "react-lazy-load"
 
 export const pageQuery = graphql`
   fragment AssetFields on GraphCMS_Asset {
@@ -107,7 +106,7 @@ export default function ArticlePostTemplate({
           </Link>
         </div>
       </Navigation>
-      <LazyLoad offsetTop={400}>
+      <CommentsWrapper>
         <ReactDisqusComments
           shortname="codeshape"
           identifier={page.id}
@@ -115,27 +114,36 @@ export default function ArticlePostTemplate({
           url={page.url}
           category_id={page.category_id}
         />
-      </LazyLoad>
+      </CommentsWrapper>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  margin: 1rem;
+  margin: 0 auto;
   display: grid;
   grid-gap: 1.875rem;
 `
 
 const Header = styled.div`
+  display: grid;
+  grid-gap: 1rem;
   text-align: center;
-  margin: 0 auto;
+  padding: 1.2rem;
 `
 
 const PublishDate = styled(BodyMain)`
   color: #757372;
+  @media only screen and (max-width: 600px) {
+    font-size: 15px;
+  }
 `
 
-const PageTitle = styled(H1)``
+const PageTitle = styled(H1)`
+  @media only screen and (max-width: 600px) {
+    font-size: 40px;
+  }
+`
 
 const InformationWrapper = styled.div`
   display: grid;
@@ -148,6 +156,7 @@ const ContentWrapper = styled.div`
   grid-gap: 1rem;
   margin: 0 auto;
   max-width: 80rem;
+  padding: 1.2rem;
 
   .CoverImage {
     border-radius: 1.25rem;
@@ -204,4 +213,8 @@ const Navigation = styled.div`
   .ArticleLink {
     padding: 30px;
   }
+`
+
+const CommentsWrapper = styled.div`
+  padding: 1.2rem;
 `
