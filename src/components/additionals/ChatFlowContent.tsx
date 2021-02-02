@@ -9,6 +9,7 @@ export default function ChatFlowContent() {
       <NotificationsWrapper>
         <NotificationOne>
           <MessageNotification
+            link="business"
             name="Julius"
             text="Hey, I'm about to rebrand my company website, can you help me create it? 👋🏼"
             image="images/profiles/julius.png"
@@ -18,6 +19,7 @@ export default function ChatFlowContent() {
         </NotificationOne>
         <NotificationTwo>
           <MessageNotification
+            link="community"
             name="Andreas"
             text="Hello, where do I join the Community?"
             image="images/profiles/andreas.png"
@@ -27,6 +29,7 @@ export default function ChatFlowContent() {
         </NotificationTwo>
         <NotificationThree>
           <MessageNotification
+            link="learn"
             name="Melanie"
             text="Gosh, CSS grid is tricking me. Can you help me? 😁"
             image="images/profiles/melanie.png"
@@ -36,6 +39,7 @@ export default function ChatFlowContent() {
         </NotificationThree>
         <NotificationFour>
           <MessageNotificationReverted
+            link="help"
             name="Code Shape"
             text="Sure! We will be more than happy to help!"
             image="images/profiles/logo.svg"
