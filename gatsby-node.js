@@ -27,6 +27,29 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
             title
           }
         }
+        projects: allGraphCmsProject {
+          nodes {
+            id
+            content {
+              markdownNode {
+                childMdx {
+                  body
+                }
+              }
+            }
+            seo {
+              description
+              image {
+                url
+              }
+              keywords
+              title
+            }
+            slug
+            subtitle
+            title
+          }
+        }
         posts: allGraphCmsPost(sort: { fields: date, order: ASC }) {
           edges {
             nextPost: next {
@@ -92,6 +115,16 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
         page,
       },
       path: `/${page.slug}`,
+    })
+  })
+
+  data.projects.nodes.forEach(project => {
+    createPage({
+      component: path.resolve("./src/templates/project-page.tsx"),
+      context: {
+        project,
+      },
+      path: `/projects/${project.slug}`,
     })
   })
 }
