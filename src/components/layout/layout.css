@@ -181,6 +181,7 @@ code {
   border-radius: 1.25rem;
   padding: 1rem;
   white-space: nowrap;
+  width: 100%
 }
 
 iframe {
