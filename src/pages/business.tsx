@@ -4,7 +4,7 @@ import styled from "styled-components"
 import SEO from "../components/layout/seo"
 import CommunicationBusiness from "../components/sections/CommunicationBusiness"
 
-function BusinessPage() {
+export default function BusinessPage() {
   return (
     <Wrapper>
       <SEO title="Business" />
@@ -17,7 +17,5 @@ function BusinessPage() {
     </Wrapper>
   )
 }
-
-export default BusinessPage
 
 const Wrapper = styled.div``

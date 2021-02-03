@@ -1,17 +1,19 @@
 import React from "react"
 import styled from "styled-components"
 import SEO from "../components/layout/seo"
-import ComingSoon from "../components/additionals/ComingSoon"
+import GradientIntro from "../components/additionals/GradientIntro"
 
-function CommunityPage() {
+export default function CommunityPage() {
   return (
     <Wrapper>
       <SEO title="Community" />
-      <ComingSoon />
+      <GradientIntro
+        title="People at it's core"
+        description="We believe that we can create better products together. Join our community and make an impact on learning and sharing everyday."
+        gradientColor=""
+      />
     </Wrapper>
   )
 }
-
-export default CommunityPage
 
 const Wrapper = styled.div``
