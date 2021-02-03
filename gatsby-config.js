@@ -30,6 +30,13 @@ module.exports = {
         path: `${__dirname}/static/images/profiles`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static/images/screenshots`,
+      },
+    },
     `gatsby-plugin-mdx`,
     {
       resolve: "gatsby-source-graphcms",
@@ -43,9 +50,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [
-          `gatsby-remark-reading-time`,
-        ],
+        plugins: [`gatsby-remark-reading-time`],
       },
     },
     `gatsby-plugin-styled-components`,
