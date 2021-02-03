@@ -40,6 +40,14 @@ module.exports = {
         downloadLocalImages: true,
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-reading-time`,
+        ],
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     "gatsby-transformer-sharp",
