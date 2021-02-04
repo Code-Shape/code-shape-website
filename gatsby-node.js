@@ -82,10 +82,34 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
               }
               slug
               title
+              tags
             }
             previousPost: previous {
               slug
               title
+            }
+          }
+        }
+        categories: allGraphCmsCategory {
+          edges {
+            node {
+              icon {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      base64
+                      tracedSVG
+                      srcWebp
+                      srcSetWebp
+                      originalImg
+                      originalName
+                    } 
+                  }
+                }
+              }
+              title
+              slug
+              description
             }
           }
         }

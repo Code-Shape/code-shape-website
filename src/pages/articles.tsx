@@ -77,6 +77,7 @@ export const ArticlePageQuery = graphql`
     }
   }
 `
+
 const Wrapper = styled.div``
 
 const PostWrapper = styled.div`

@@ -1,0 +1,23 @@
+fragment Category on Category {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  icon {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
+  title
+  slug
+  description
+  posts {
+    ... on Post {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
+}
