@@ -9,7 +9,7 @@ export default function BusinessPage() {
     <Wrapper>
       <SEO title="Business" />
       <GradientIntro
-        title="People at it's core"
+        title="When time is of the essence"
         description="We believe that we can create better products for people to enjoy if people come first. To create an excellent experience for you, simplicity and a good communication are our top priorities."
         gradientColor="-webkit-linear-gradient(left, #7230ce, #3E16BB)"
       />
