@@ -1,14 +1,15 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
-import { H3, BodyMain } from "../styles/TextStyles"
+import { H3, MediumText } from "../styles/TextStyles"
 
 export default function CategorySection() {
   const data = useStaticQuery(graphql`
     query categoryQuery {
-      allGraphCmsCategory(filter: { title: { eq: "CSS" } }) {
+      allGraphCmsCategory {
         edges {
           node {
+            id
             title
             slug
             description
@@ -17,7 +18,8 @@ export default function CategorySection() {
       }
     }
   `)
-  return (
+
+   return (
     <Wrapper>
       <ContentWrapper>
         <TextWrapper>
@@ -27,9 +29,16 @@ export default function CategorySection() {
           </Description>
         </TextWrapper>
         <CategoryWrapper>
-          <Categories>{data.edges.node.title}</Categories>
+          {data.allGraphCmsCategory.edges.map(tags => {
+            return (
+              <Link to={`/articles/tags/${tags.node.slug}`}>
+              <Categories key={tags.node.id}>{tags.node.title}</Categories>
+              </Link>
+            )
+          })}
         </CategoryWrapper>
       </ContentWrapper>
+
     </Wrapper>
   )
 }
@@ -42,8 +51,18 @@ const TextWrapper = styled.div``
 
 const Title = styled(H3)``
 
-const Description = styled(BodyMain)``
+const Description = styled(MediumText)``
 
-const CategoryWrapper = styled.div``
+const CategoryWrapper = styled.div`
+  display: grid; 
+  grid-gap: 0.2rem;
+  grid-template-columns: auto auto auto auto;
+`
 
-const Categories = styled.div``
+const Categories = styled.div`
+  background-color: White;
+  border-radius: 0.8rem;
+  text-align: center;
+  padding: 0.2rem;
+`
+
