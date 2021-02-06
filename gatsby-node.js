@@ -91,26 +91,10 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
           }
         }
         categories: allGraphCmsCategory {
-          edges {
-            node {
-              icon {
-                localFile {
-                  childImageSharp {
-                    fluid {
-                      base64
-                      tracedSVG
-                      srcWebp
-                      srcSetWebp
-                      originalImg
-                      originalName
-                    } 
-                  }
-                }
-              }
-              title
-              slug
-              description
-            }
+          nodes {
+            title
+            slug
+            id
           }
         }
       }
@@ -149,6 +133,16 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
         project,
       },
       path: `/projects/${project.slug}`,
+    })
+  })
+
+  data.categories.nodes.forEach(category => {
+    createPage({
+      component: path.resolve("./src/templates/category-page.tsx"),
+      context: {
+        category,
+      },
+      path: `/articles/categories/${category.slug}`,
     })
   })
 }

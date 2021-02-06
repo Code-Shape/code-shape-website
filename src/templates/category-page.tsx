@@ -1,20 +1,16 @@
 import React from "react"
 import styled from "styled-components"
 import { H1, BodyMain } from "../components/styles/TextStyles"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 
-export default function DefaultPageTemplate({ pageContext: { page } }) {
+export default function CategoryPageTemplate({ pageContext: { category } }) {
   return (
     <Wrapper>
       <HeaderWrapper>
         <TextWrapper>
-          <TitleWrapper>{page.title}</TitleWrapper>
-          <SubtitleWrapper>{page.subtitle}</SubtitleWrapper>
+          <TitleWrapper>{category.title}</TitleWrapper>
+          <SubtitleWrapper>{category.subtitle}</SubtitleWrapper>
         </TextWrapper>
       </HeaderWrapper>
-      <ContentWrapper>
-        <MDXRenderer>{page.content.markdownNode.childMdx.body}</MDXRenderer>
-      </ContentWrapper>
     </Wrapper>
   )
 }
@@ -43,11 +39,3 @@ const TitleWrapper = styled(H1)`
 `
 
 const SubtitleWrapper = styled(BodyMain)``
-
-const ContentWrapper = styled.div`
-  max-width: 70rem;
-  margin: 0 auto;
-  padding: 1rem;
-  display: grid;
-  grid-gap: 1rem;
-`

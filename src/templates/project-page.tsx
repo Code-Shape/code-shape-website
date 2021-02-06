@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { H1, BodyMain } from "../components/styles/TextStyles"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-export default function DefaultPageTemplate({ pageContext: { project } }) {
+export default function ProjectPageTemplate({ pageContext: { project } }) {
   return (
     <Wrapper>
       <HeaderWrapper>

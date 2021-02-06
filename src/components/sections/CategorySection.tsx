@@ -19,7 +19,7 @@ export default function CategorySection() {
     }
   `)
 
-   return (
+  return (
     <Wrapper>
       <ContentWrapper>
         <TextWrapper>
@@ -31,14 +31,13 @@ export default function CategorySection() {
         <CategoryWrapper>
           {data.allGraphCmsCategory.edges.map(tags => {
             return (
-              <Link to={`/articles/tags/${tags.node.slug}`}>
-              <Categories key={tags.node.id}>{tags.node.title}</Categories>
+              <Link to={`/articles/categories/${tags.node.slug}`}>
+                <Categories key={tags.node.id}>{tags.node.title}</Categories>
               </Link>
             )
           })}
         </CategoryWrapper>
       </ContentWrapper>
-
     </Wrapper>
   )
 }
@@ -54,7 +53,7 @@ const Title = styled(H3)``
 const Description = styled(MediumText)``
 
 const CategoryWrapper = styled.div`
-  display: grid; 
+  display: grid;
   grid-gap: 0.2rem;
   grid-template-columns: auto auto auto auto;
 `
@@ -65,4 +64,3 @@ const Categories = styled.div`
   text-align: center;
   padding: 0.2rem;
 `
-
