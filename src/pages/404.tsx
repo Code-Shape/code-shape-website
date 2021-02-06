@@ -10,9 +10,13 @@ function NotFoundPage() {
       <SEO title="404: Page not found" />
       <ContentWrapper>
         <Title>Page not found</Title>
-        <Subtitle>Sorry :( — we couldn’t find what you were looking for.</Subtitle>
+        <Subtitle>
+          Sorry 😔 — we couldn’t find what you were looking for.
+        </Subtitle>
         <Question>Need help finding something?</Question>
-        <Contact>Start a chat in the lower right corner and we’ll help you.</Contact>
+        <Contact>
+          Start a chat in the lower right corner and we’ll help you.
+        </Contact>
       </ContentWrapper>
       <Helmet>
         <script
@@ -30,16 +34,16 @@ function NotFoundPage() {
 export default NotFoundPage
 
 const Wrapper = styled.div`
-margin: 1.2rem;
+  margin: 1.2rem;
 `
 
 const ContentWrapper = styled.div`
-padding-top: 5rem;
-padding-bottom: 5rem;
-margin: 0 auto;
-max-width: 60rem;
-display: grid;
-grid-gap: 1.2rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin: 0 auto;
+  max-width: 60rem;
+  display: grid;
+  grid-gap: 1.2rem;
 `
 
 const Title = styled(H1)``
@@ -47,6 +51,7 @@ const Title = styled(H1)``
 const Subtitle = styled(BodyIntro)``
 
 const Question = styled(MediumText)`
-font-weight: bold;`
+  font-weight: bold;
+`
 
 const Contact = styled(MediumText)``
