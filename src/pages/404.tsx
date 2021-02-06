@@ -10,7 +10,7 @@ function NotFoundPage() {
       <SEO title="404: Page not found" />
       <ContentWrapper>
         <Title>Page not found</Title>
-        <Subtitle>Sorry 😔 — we couldn’t find what you were looking for.</Subtitle>
+        <Subtitle>Sorry :( — we couldn’t find what you were looking for.</Subtitle>
         <Question>Need help finding something?</Question>
         <Contact>Start a chat in the lower right corner and we’ll help you.</Contact>
       </ContentWrapper>
