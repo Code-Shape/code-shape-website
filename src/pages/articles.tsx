@@ -15,6 +15,7 @@ export default function ArticlesPage({ data: { allGraphCmsPost } }) {
         gradientColor="-webkit-linear-gradient(left, #7230ce, #3E16BB)"
       />
       <CategorySection />
+      {/* Future project: Deconstruct PostWrapper and create new custom component */}
       <PostWrapper>
         {allGraphCmsPost.nodes.map(post => {
           return (

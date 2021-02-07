@@ -44,9 +44,18 @@ export default function CategorySection() {
 
 const Wrapper = styled.div``
 
-const ContentWrapper = styled.div``
+const ContentWrapper = styled.div`
+  display: grid;
+  grid-gap: 1rem;
+  margin: 0 auto;
+  max-width: 70rem;
+  padding: 1.875rem;
+`
 
-const TextWrapper = styled.div``
+const TextWrapper = styled.div`
+  display: grid;
+  grid-gap: 0.5rem;
+`
 
 const Title = styled(H3)``
 
@@ -59,8 +68,9 @@ const CategoryWrapper = styled.div`
 `
 
 const Categories = styled.div`
-  background-color: White;
+  color: white;
+  background-color: #ffa100;
   border-radius: 0.8rem;
   text-align: center;
-  padding: 0.2rem;
+  padding: 0.4rem;
 `

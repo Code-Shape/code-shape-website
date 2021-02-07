@@ -8,7 +8,7 @@ export default function CategoryPageTemplate({ pageContext: { category } }) {
       <HeaderWrapper>
         <TextWrapper>
           <TitleWrapper>{category.title}</TitleWrapper>
-          <SubtitleWrapper>{category.subtitle}</SubtitleWrapper>
+          <DescriptionWrapper>{category.description}</DescriptionWrapper>
         </TextWrapper>
       </HeaderWrapper>
     </Wrapper>
@@ -38,4 +38,4 @@ const TitleWrapper = styled(H1)`
   -webkit-text-fill-color: transparent;
 `
 
-const SubtitleWrapper = styled(BodyMain)``
+const DescriptionWrapper = styled(BodyMain)``

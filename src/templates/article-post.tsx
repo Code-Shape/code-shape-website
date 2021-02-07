@@ -108,7 +108,7 @@ export default function ArticlePostTemplate({
       </Navigation>
       <CommentsWrapper>
         <ReactDisqusComments
-          shortname="codeshape"
+          shortname={process.env.GATSBY_DISQUS_NAME}
           identifier={page.id}
           title={page.title}
           url={page.url}
