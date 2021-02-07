@@ -41,6 +41,7 @@ const TextWrapper = styled.div`
 
 const Title = styled(H1)`
   margin: 0 auto;
+  padding: 1rem;
   text-align: center;
   background: ${props =>
     props.gradientColor ||
