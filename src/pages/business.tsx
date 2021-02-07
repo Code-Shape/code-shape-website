@@ -3,6 +3,7 @@ import GradientIntro from "../components/additionals/GradientIntro"
 import styled from "styled-components"
 import SEO from "../components/layout/seo"
 import CommunicationBusiness from "../components/sections/CommunicationBusiness"
+import CasesSection from "../components/sections/CasesSection"
 
 export default function BusinessPage() {
   return (
@@ -14,6 +15,7 @@ export default function BusinessPage() {
         gradientColor="-webkit-linear-gradient(left, #7230ce, #3E16BB)"
       />
       <CommunicationBusiness />
+      <CasesSection />
     </Wrapper>
   )
 }
