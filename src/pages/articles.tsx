@@ -66,7 +66,6 @@ export const ArticlePageQuery = graphql`
         excerpt
         slug
         title
-        tags
         coverImage {
           localFile {
             childImageSharp {
