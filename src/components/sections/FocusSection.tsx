@@ -18,23 +18,23 @@ export default function FocusSection() {
         </TextWrapper>
         <CardWrapper>
           <GlassCards
-            title="For beginners"
+            title="Learners"
             titleColor="#FF9204"
-            text="It is never too late to start coding and change your career. Start in your own pace but be consistant."
+            text="It is never too late to start coding and change your career. Start in your own pace but be consistant. Get started with learning."
             image="images/icons/book.svg"
             link="/learn"
             borderColor=""
           />
           <GlassCards
-            title="Intermidiate"
+            title="Supporters"
             titleColor="#F9006F"
-            text="Enhance your already existing knowledge of programming and learn new features. "
+            text="Enhance your already existing knowledge and learn new features while helpings others. Get started with the community."
             image="images/icons/learn.svg"
-            link="/learn"
+            link="/community"
             borderColor=""
           />
           <GlassCards
-            title="For entrepreneurs"
+            title="Entrepreneurs"
             titleColor="#B53EFF"
             text="Don’t have time to do it yourself? No problem we will help you out so you can spend the time on what matters."
             image="images/icons/business.svg"

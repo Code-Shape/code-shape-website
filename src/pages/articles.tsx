@@ -32,7 +32,6 @@ export default function ArticlesPage({ data: { allGraphCmsPost } }) {
                     )}
                   </ImageWrapper>
                   <TextWrapper>
-                    <Tags>{post.tags}</Tags>
                     <PostTitle>{post.title}</PostTitle>
                     <ExcerptWrapper>
                       {post.excerpt && <Excerpt>{post.excerpt}</Excerpt>}
@@ -57,7 +56,7 @@ export default function ArticlesPage({ data: { allGraphCmsPost } }) {
   )
 }
 
-export const ArticlePageQuery = graphql`
+export const pageQuery = graphql`
   {
     allGraphCmsPost(sort: { fields: date, order: DESC }) {
       nodes {
@@ -148,12 +147,11 @@ const TextWrapper = styled.div`
   grid-gap: 1.875rem;
   padding: 1.5rem;
 `
-const Tags = styled.div`
-  border-radius: 1rem;
-  display: inline;
-  color: orange;
-`
+
 const ExcerptWrapper = styled(MediumText)``
+
 const Excerpt = styled.div``
+
 const ReadMore = styled.div``
+
 const PostTitle = styled(H2)``

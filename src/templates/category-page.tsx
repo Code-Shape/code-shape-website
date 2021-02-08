@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { H1, H2, BodyMain, MediumText } from "../components/styles/TextStyles"
@@ -14,46 +14,46 @@ export default function CategoryPageTemplate({
         <TextWrapper>
           <TitleWrapper>{category.title}</TitleWrapper>
           <DescriptionWrapper>{category.description}</DescriptionWrapper>
-          <PostWrapper>
-            {allGraphCmsPost.nodes.map(post => {
-              return (
-                <Link to={`/articles/${post.slug}`}>
-                  <ContentWrapper key={post.id}>
-                    <ArticleWrapper>
-                      <ImageWrapper>
-                        {post.coverImage.localFile.childImageSharp.fluid && (
-                          <Img
-                            fluid={
-                              post.coverImage.localFile.childImageSharp.fluid
-                            }
-                            alt={post.title}
-                            className="featuredImage"
-                          />
-                        )}
-                      </ImageWrapper>
-                      <TextWrapper>
-                        <PostTitle>{post.title}</PostTitle>
-                        <ExcerptWrapper>
-                          {post.excerpt && <Excerpt>{post.excerpt}</Excerpt>}
-                        </ExcerptWrapper>
-                        <ReadMore>
-                          <Link
-                            to={`/articles/${post.slug}`}
-                            className=""
-                            aria-label={`Read "${post.title}"`}
-                          >
-                            Read more &rarr;
-                          </Link>
-                        </ReadMore>
-                      </TextWrapper>
-                    </ArticleWrapper>
-                  </ContentWrapper>
-                </Link>
-              )
-            })}
-          </PostWrapper>
         </TextWrapper>
       </HeaderWrapper>
+      {/* Future project: Deconstruct PostWrapper and create new custom component */}
+      <PostWrapper>
+        {allGraphCmsPost.nodes.map(post => {
+          return (
+            <Link to={`/articles/${post.slug}`}>
+              <ContentWrapper key={post.id}>
+                <ArticleWrapper>
+                  <ImageWrapper>
+                    {post.coverImage.localFile.childImageSharp.fluid && (
+                      <Img
+                        fluid={post.coverImage.localFile.childImageSharp.fluid}
+                        alt={post.title}
+                        className="featuredImage"
+                      />
+                    )}
+                  </ImageWrapper>
+                  <InnerTextWrapper>
+                    <Category>{category.title}</Category>
+                    <PostTitle>{post.title}</PostTitle>
+                    <ExcerptWrapper>
+                      {post.excerpt && <Excerpt>{post.excerpt}</Excerpt>}
+                    </ExcerptWrapper>
+                    <ReadMore>
+                      <Link
+                        to={`/articles/${post.slug}`}
+                        className=""
+                        aria-label={`Read "${post.title}"`}
+                      >
+                        Read more &rarr;
+                      </Link>
+                    </ReadMore>
+                  </InnerTextWrapper>
+                </ArticleWrapper>
+              </ContentWrapper>
+            </Link>
+          )
+        })}
+      </PostWrapper>
     </Wrapper>
   )
 }
@@ -121,6 +121,7 @@ const PostWrapper = styled.div`
 `
 
 const ContentWrapper = styled.div`
+  margin: 0 auto;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -172,7 +173,22 @@ const ArticleWrapper = styled.div`
 `
 const ImageWrapper = styled.div``
 
+const InnerTextWrapper = styled.div`
+  display: grid;
+  grid-gap: 1.875rem;
+  padding: 1.5rem;
+`
+
+const Category = styled.div`
+  border-radius: 1rem;
+  display: inline;
+  color: #503cce;
+`
+
 const ExcerptWrapper = styled(MediumText)``
+
 const Excerpt = styled.div``
+
 const ReadMore = styled.div``
+
 const PostTitle = styled(H2)``
