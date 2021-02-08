@@ -141,6 +141,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       component: path.resolve("./src/templates/category-page.tsx"),
       context: {
         category,
+        slug: category.slug,
       },
       path: `/articles/categories/${category.slug}`,
     })
