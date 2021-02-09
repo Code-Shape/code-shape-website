@@ -15,7 +15,7 @@ export default function ArticlesPage({ data: { allGraphCmsPost } }) {
         description="We believe we can create amazing things together by keeping our knowledge up to date. Therefore we will do our best to deliver that to you every week."
         gradientColor="-webkit-linear-gradient(left, #7230ce, #3E16BB)"
       />
-      <Search />
+      {/* <Search /> */}
       <CategorySection />
       {/* Future project: Deconstruct PostWrapper and create new custom component */}
       <PostWrapper>
