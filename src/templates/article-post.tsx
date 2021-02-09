@@ -71,6 +71,15 @@ export default function ArticlePostTemplate({
           className="CoverImage"
         />
         <MDXRenderer>{page.content.markdownNode.childMdx.body}</MDXRenderer>
+        <CommentsWrapper>
+        <ReactDisqusComments
+          shortname={process.env.GATSBY_DISQUS_NAME}
+          identifier={page.id}
+          title={page.title}
+          url={page.url}
+          category_id={page.category_id}
+        />
+      </CommentsWrapper>
       </ContentWrapper>
       <Navigation>
         {(nextPost || previousPost) && (
@@ -106,15 +115,7 @@ export default function ArticlePostTemplate({
           </Link>
         </div>
       </Navigation>
-      <CommentsWrapper>
-        <ReactDisqusComments
-          shortname={process.env.GATSBY_DISQUS_NAME}
-          identifier={page.id}
-          title={page.title}
-          url={page.url}
-          category_id={page.category_id}
-        />
-      </CommentsWrapper>
+      
     </Wrapper>
   )
 }
