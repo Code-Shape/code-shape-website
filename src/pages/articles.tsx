@@ -5,6 +5,7 @@ import styled from "styled-components"
 import { H2, MediumText } from "../components/styles/TextStyles"
 import GradientIntro from "../components/additionals/GradientIntro"
 import CategorySection from "../components/sections/CategorySection"
+import Search from "../components/search/Search"
 
 export default function ArticlesPage({ data: { allGraphCmsPost } }) {
   return (
@@ -14,6 +15,7 @@ export default function ArticlesPage({ data: { allGraphCmsPost } }) {
         description="We believe we can create amazing things together by keeping our knowledge up to date. Therefore we will do our best to deliver that to you every week."
         gradientColor="-webkit-linear-gradient(left, #7230ce, #3E16BB)"
       />
+      <Search />
       <CategorySection />
       {/* Future project: Deconstruct PostWrapper and create new custom component */}
       <PostWrapper>
