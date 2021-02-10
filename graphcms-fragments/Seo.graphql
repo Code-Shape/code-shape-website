@@ -24,4 +24,10 @@ fragment Seo on Seo {
       remoteId: id
     }
   }
+  project {
+    ... on Project {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
 }

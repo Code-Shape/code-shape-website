@@ -32,7 +32,7 @@ export default function ArticlesPage({ data: { allGraphCmsPost } }) {
                     )}
                   </ImageWrapper>
                   <TextWrapper>
-                    <Tags>{post.tags}</Tags>
+                    <Tags></Tags>
                     <PostTitle>{post.title}</PostTitle>
                     <ExcerptWrapper>
                       {post.excerpt && <Excerpt>{post.excerpt}</Excerpt>}
@@ -66,7 +66,6 @@ export const ArticlePageQuery = graphql`
         excerpt
         slug
         title
-        tags
         coverImage {
           localFile {
             childImageSharp {

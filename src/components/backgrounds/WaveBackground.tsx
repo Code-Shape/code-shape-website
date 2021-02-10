@@ -29,5 +29,5 @@ const Background = styled.div`
   width: 100%;
   height: 800px;
   background: linear-gradient(180deg, #4316db 0%, #9076e7 100%);
-  z-index: -1;
+  z-index: -3;
 `

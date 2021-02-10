@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <Wrapper>
       <Blob src="/images/blobs/HeroSectionBlob.svg"></Blob>
-      <BlobAnimation />
+      {/* <BlobAnimation /> */}
       <ContentWrapper>
         <TextWrapper>
           <Title>Learn how to create great apps</Title>

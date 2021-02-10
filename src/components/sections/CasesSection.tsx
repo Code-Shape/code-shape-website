@@ -2,12 +2,15 @@ import React from "react"
 import { H1, BodyMain } from "../styles/TextStyles"
 import styled from "styled-components"
 import JuliusCase from "../additionals/CaseJulius"
+import BlobBackground01 from "../backgrounds/BlobBackground01"
+import BlobBackground02 from "../backgrounds/BlobBackground02"
+import StineCase from "../additionals/CaseStine"
 
 export default function CasesSection() {
     return (
       <Wrapper>
-          <Blob src="/images/blobs/CasesSectionBlob01.svg"></Blob>
-          <Blob2 src="/images/blobs/CasesSectionBlob02.svg"></Blob2>
+        <BlobBackground01 />
+        <BlobBackground02 />
         <ContentWrapper>
           <TextWrapper>
             <Title>Cases we have <span className="created">created</span></Title>
@@ -17,12 +20,15 @@ export default function CasesSection() {
             </Description>
           </TextWrapper>
           <JuliusCase />
+          <StineCase />
         </ContentWrapper>
       </Wrapper>
     )
   }
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+margin-bottom: 300px;
+`
 
 const ContentWrapper = styled.div`
   max-width: 77rem;
@@ -48,16 +54,3 @@ const Title = styled(H1)`
 
 const Description = styled(BodyMain)``
 
-const Blob = styled.img`
-  position: absolute;
-  right: 0;
-  top: 38vw;
-  z-index: -1;
-`
-
-const Blob2 = styled.img`
-  position: absolute;
-  right: 0;
-  top: 60vw;
-  z-index: -2;
-`
