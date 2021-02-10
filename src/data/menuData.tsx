@@ -11,9 +11,9 @@ export const menuData = [
     link: "/community",
   },
   {
-    title: "For Business",
+    title: "Entrepreneurs",
     icon: "/images/icons/business.svg",
-    link: "/business",
+    link: "/entrepreneurs",
   },
 ]
 export const footerMenuData = [
@@ -29,9 +29,9 @@ export const footerMenuData = [
     link: "/community",
   },
   {
-    title: "For Business",
+    title: "Entrepreneurs",
     icon: "/images/icons/business02_light.svg",
-    link: "/business",
+    link: "/entrepreneurs",
   },
   {
     title: "Updates",
@@ -58,8 +58,8 @@ export const tooltipData = [
     link: "/community",
   },
   {
-    title: "For Business",
+    title: "Entrepreneurs",
     icon: "/images/icons/business.svg",
-    link: "/business",
+    link: "/entrepreneurs",
   },
 ]

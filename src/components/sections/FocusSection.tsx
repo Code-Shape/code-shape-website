@@ -38,7 +38,7 @@ export default function FocusSection() {
             titleColor="#B53EFF"
             text="Don’t have time to do it yourself? No problem we will help you out so you can spend the time on what matters."
             image="images/icons/business.svg"
-            link="/business"
+            link="/entrepreneurs"
             borderColor=""
           />
         </CardWrapper>
