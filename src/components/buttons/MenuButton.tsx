@@ -23,7 +23,7 @@ const MenuItem = styled(Caption)`
     return props.hasTitle ? "10px" : "0px"
   }};
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px;
   border-radius: 10px;
   transition: 0.5s ease-out;
 
