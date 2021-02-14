@@ -29,11 +29,13 @@ export default function JuliusCase() {
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  max-width: 40rem;
+  max-width: 60rem;
 `
 
 const ContentWrapper = styled.div`
   margin: 0 auto;
+  padding: 1.875rem;
+  justify-content: center;
 
   *,
   & {
@@ -70,7 +72,6 @@ const TitleWrapper = styled.div`
   backdrop-filter: blur(10px);
   display: flex;
   border-radius: 30px;
-  width: 560px;
 `
 
 //Page content images
@@ -79,7 +80,6 @@ const BundleWrapper = styled.div`
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 30px;
-  width: 580px;
 `
 
 //Logo image
@@ -90,13 +90,13 @@ const Julius04 = styled.img`
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  width: 300px;
 `
 
 //Front page image
 const Julius06 = styled.img`
-width: 1000px;
-  z-index: 0;
+width: 100%;
+z-index: 0;
+justify-self: center;
     border-radius: 30px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   }
