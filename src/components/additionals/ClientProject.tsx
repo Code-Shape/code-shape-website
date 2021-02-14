@@ -16,7 +16,7 @@ export default function ClientProject(props) {
     <Link to={link || "/"}>
       <Wrapper>
         <ContentWrapper>
-          <ClientWrapper>
+          <ClientWrapper className="Client">
             <ImageWrapper>
               <ClientImage src={clientImage || "/images/profiles/logo.png"} />
             </ImageWrapper>
@@ -24,12 +24,12 @@ export default function ClientProject(props) {
               <Title titleColor={titleColor}>{title || "codeshape"}</Title>
             </TextWrapper>
           </ClientWrapper>
-          <BackgroundWrapper>
+          <BackgroundWrapper className="Background">
             <BackgroundImage
               src={backgroundImage || "/images/profiles/logo.png"}
             />
           </BackgroundWrapper>
-          <LogoWrapper>
+          <LogoWrapper className="Logo">
             <LogoImage src={logoImage || "/images/profiles/logo.png"} />
           </LogoWrapper>
         </ContentWrapper>
@@ -41,52 +41,46 @@ export default function ClientProject(props) {
 const Wrapper = styled.div`
   max-width: 60rem;
   margin: 0 auto;
-`
+  position: relative;
 
-{
-  /*
   *,
   & {
     transition: 0.3s ease-in;
   }
-`
-
-:hover {
-    transform: perspective(600px) translateZ(80px);
-    
-    .CaseOne {
+  :hover {
+    .Client {
       transform: perspective(900px) translate3d(-50px, -25px, 25px)
         rotate3d(0, 1, 0, 30deg);
       transition-delay: 0.01s;
     }
-    .CaseTwo {
-      transform: perspective(900px) translate3d(50px, 25px, 25px)
-        rotate3d(-1, 1, 0, -20deg);
-      transition-delay: 0.06s;
+    .Background {
+      transform: scale(1.1);
     }
-    .CaseThree {
+    .Logo {
       transform: perspective(900px) translate3d(50px, -25px, 25px)
-        rotate3d(1, 1, 0, -20deg);
+        rotate3d(1, 1, 0, -30deg);
       transition-delay: 0.1s;
     }
-    .CaseFour {
-      box-shadow: 10px 10px 30px #242424;
-    }
-  }*/
-}
+  }
+`
 
-const ContentWrapper = styled.div``
+const ContentWrapper = styled.div`
+  padding: 1.875rem;
+`
 
 const ClientWrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto;
+  grid-gap: 1rem;
   align-content: center;
   padding: 0.5rem;
+  max-width: 30rem;
+  left: 0;
+  top: 0px;
+  position: absolute;
+  z-index: 1;
   border-radius: 1.25rem;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  max-width: 30rem;
-  position: relative;
-  z-index: 1;
 
   @supports (backdrop-filter: blur(10px)) or
     (-webkit-backdrop-filter: blur(10px)) {
@@ -139,23 +133,24 @@ const BackgroundWrapper = styled.div`
 `
 
 const BackgroundImage = styled.img`
-width: 100%;
-z-index: 0;
-justify-self: center;
-    border-radius: 30px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  }
+  width: 100%;
+  z-index: 0;
+  justify-self: center;
+  border-radius: 30px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 `
 
-const LogoWrapper = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
-  align-content: center;
+const LogoWrapper = styled.div``
+
+const LogoImage = styled.img`
+  padding: 0.5rem;
+  max-width: 20%;
+  right: 0;
+  bottom: 0px;
+  position: absolute;
+  z-index: 1;
   border-radius: 1.25rem;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  max-width: 20rem;
-  position: relative;
-  z-index: 1;
 
   @supports (backdrop-filter: blur(10px)) or
     (-webkit-backdrop-filter: blur(10px)) {
@@ -170,12 +165,5 @@ const LogoWrapper = styled.div`
     @media (prefers-color-scheme: dark) {
       background-color: rgba(50, 50, 52, 0.7);
     }
-  }
-`
-
-const LogoImage = styled.img`
-width: 100%;
-z-index: 0;
-justify-self: center;
   }
 `
