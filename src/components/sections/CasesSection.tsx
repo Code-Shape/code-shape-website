@@ -1,10 +1,9 @@
 import React from "react"
 import { H1, BodyMain } from "../styles/TextStyles"
 import styled from "styled-components"
-import JuliusCase from "../additionals/CaseJulius"
+import ClientProject from "../additionals/ClientProject"
 import BlobBackground01 from "../backgrounds/BlobBackground01"
 import BlobBackground02 from "../backgrounds/BlobBackground02"
-import StineCase from "../additionals/CaseStine"
 
 export default function CasesSection() {
     return (
@@ -20,40 +19,40 @@ export default function CasesSection() {
             </Description>
           </TextWrapper>
         </ContentWrapper>
-        <JuliusCase />
-        <StineCase />
+        <ClientProject  
+        title="juliusmygind.dk" 
+        clientImage="/images/cases/juliusCaseImg07.jpg" 
+        link="https://juliusmygind.dk"
+        titleColor="#f51d7e" 
+        backgroundImage="/images/cases/juliusCaseImg06.png" 
+        logoImage="/images/cases/juliusCaseImg04.png"
+        />
+        <ClientProject  
+        title="oym.dk" 
+        clientImage="/images/cases/stineCaseImg01.jpg"
+        link="https://oym.dk"
+        titleColor="#f51d7e" 
+        backgroundImage="/images/cases/stineCaseImg02.png" 
+        logoImage="/images/cases/stineCaseImg04.png"
+        />
       </Wrapper>
     )
   }
 
 const Wrapper = styled.div`
-margin: 300px auto 0 auto;
+
 `
 
 const ContentWrapper = styled.div`
-  max-width: 77rem;
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 1.875rem;
+  
 `
 
 const TextWrapper = styled.div`
-display: grid;
-gap: 1.25rem;
-justify-self: center;
-align-items: center;
-max-width: 37.5rem;
+
 `
 
 const Title = styled(H1)`
-text-align: center;
-  @media only screen and (max-width: 600px) {
-    font-size: 50px;
-  }
 
-  .worked {
-      color: #4518c3;
-  }
 `
 
 const Description = styled(BodyMain)``
