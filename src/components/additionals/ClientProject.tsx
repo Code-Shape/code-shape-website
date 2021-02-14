@@ -1,42 +1,50 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import { BodyMain, MediumText } from "../styles/TextStyles"
+import { BodyMain } from "../styles/TextStyles"
 
 export default function ClientProject(props) {
-  const { title, clientImage, link, titleColor, backgroundImage, logoImage } = props
+  const {
+    title,
+    clientImage,
+    link,
+    titleColor,
+    backgroundImage,
+    logoImage,
+  } = props
   return (
     <Link to={link || "/"}>
       <Wrapper>
         <ContentWrapper>
           <ClientWrapper>
             <ImageWrapper>
-              <ClientImage
-                src={clientImage || "/images/profiles/logo.png"}
-              />
+              <ClientImage src={clientImage || "/images/profiles/logo.png"} />
             </ImageWrapper>
             <TextWrapper>
               <Title titleColor={titleColor}>{title || "codeshape"}</Title>
             </TextWrapper>
           </ClientWrapper>
           <BackgroundWrapper>
-            <BackgroundImage src={backgroundImage || "/images/profiles/logo.png"} />
+            <BackgroundImage
+              src={backgroundImage || "/images/profiles/logo.png"}
+            />
           </BackgroundWrapper>
           <LogoWrapper>
             <LogoImage src={logoImage || "/images/profiles/logo.png"} />
           </LogoWrapper>
         </ContentWrapper>
       </Wrapper>
-      </Link>
+    </Link>
   )
 }
 
 const Wrapper = styled.div`
-max-width: 60rem;
-margin: 0 auto;
+  max-width: 60rem;
+  margin: 0 auto;
 `
 
-{/*
+{
+  /*
   *,
   & {
     transition: 0.3s ease-in;
@@ -64,25 +72,21 @@ margin: 0 auto;
     .CaseFour {
       box-shadow: 10px 10px 30px #242424;
     }
-  }*/}
+  }*/
+}
 
-
-const ContentWrapper = styled.div`
-
-`
+const ContentWrapper = styled.div``
 
 const ClientWrapper = styled.div`
-display: grid;
-grid-template-columns: auto auto;
-align-content: center;
-padding: .5rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-content: center;
+  padding: 0.5rem;
   border-radius: 1.25rem;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   max-width: 30rem;
   position: relative;
   z-index: 1;
-    top: 4rem;
-    left: -4rem;
 
   @supports (backdrop-filter: blur(10px)) or
     (-webkit-backdrop-filter: blur(10px)) {
@@ -93,7 +97,7 @@ padding: .5rem;
   }
 
   @-moz-document url-prefix() {
-    background-color: rgba(255, 255, 255, .15);
+    background-color: rgba(255, 255, 255, 0.15);
     @media (prefers-color-scheme: dark) {
       background-color: rgba(50, 50, 52, 0.7);
     }
@@ -120,13 +124,12 @@ const Title = styled(BodyMain)`
   color: ${props => props.titleColor || "turquoise"};
 
   @media only screen and (min-width: 1200px) {
-    font-size: 1.5vw; 
-}
+    font-size: 1.5vw;
+  }
 
-
-@media only screen and (max-width: 1200px) {
-        font-size: 3vw; 
-}
+  @media only screen and (max-width: 1200px) {
+    font-size: 3vw;
+  }
 `
 
 const BackgroundWrapper = styled.div`
@@ -145,16 +148,14 @@ justify-self: center;
 `
 
 const LogoWrapper = styled.div`
-display: grid;
-grid-template-columns: auto auto;
-align-content: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-content: center;
   border-radius: 1.25rem;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   max-width: 20rem;
   position: relative;
   z-index: 1;
-    top: -6rem;
-    left: 40rem;
 
   @supports (backdrop-filter: blur(10px)) or
     (-webkit-backdrop-filter: blur(10px)) {
@@ -165,7 +166,7 @@ align-content: center;
   }
 
   @-moz-document url-prefix() {
-    background-color: rgba(255, 255, 255, .15);
+    background-color: rgba(255, 255, 255, 0.15);
     @media (prefers-color-scheme: dark) {
       background-color: rgba(50, 50, 52, 0.7);
     }
