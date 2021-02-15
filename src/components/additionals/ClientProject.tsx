@@ -86,16 +86,16 @@ const ClientWrapper = styled.div`
 
   @supports (backdrop-filter: blur(10px)) or
     (-webkit-backdrop-filter: blur(10px)) {
-    opacity: 0, 5;
+    opacity: 0, .15;
     background-color: transparent;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
   }
 
   @-moz-document url-prefix() {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.1);
     @media (prefers-color-scheme: dark) {
-      background-color: rgba(50, 50, 52, 0.7);
+      background-color: rgba(255, 255, 255, 0.1);
     }
   }
 `
@@ -163,9 +163,9 @@ const LogoImage = styled.img`
   }
 
   @-moz-document url-prefix() {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.1);
     @media (prefers-color-scheme: dark) {
-      background-color: rgba(50, 50, 52, 0.7);
+      background-color: rgba(255, 255, 255, 0.1);
     }
   }
 `

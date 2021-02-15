@@ -24,4 +24,14 @@ export default function EntrepreneursPage() {
   )
 }
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+background-image: url(/images/blobs/CasesSectionBlob02.svg), url(/images/blobs/CasesSectionBlob03.svg), url(/images/blobs/CasesSectionBlob01.svg);
+background-attachment: local;
+background-repeat: no-repeat;
+background-size: 3000px 1500px;
+background-position: top, center, bottom;
+
+@media only screen and (min-width: 3000px) {
+  background-size: 5200px 2000px;
+}
+`
