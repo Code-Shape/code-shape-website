@@ -40,6 +40,7 @@ const Wrapper = styled.div`
     transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
+  @media only screen and (min-width: 600px) {
   :hover {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
       0px 30px 60px rgba(23, 0, 102, 0.5),
@@ -50,6 +51,7 @@ const Wrapper = styled.div`
       transform: scale(1.2);
     }
   }
+}
 `
 
 const TextWrapper = styled.div`
@@ -75,9 +77,11 @@ const Ring = styled.img`
   top: -15px;
   left: -16px;
 
+  @media only screen and (min-width: 600px) {
   ${Wrapper}:hover & {
     transform: rotate(30deg) scale(1.2) translate(1px, 1px);
   }
+}
 `
 
 const IconWrapper = styled.div`
@@ -91,7 +95,9 @@ const IconWrapper = styled.div`
   justify-self: center;
   position: relative;
 
+  @media only screen and (min-width: 600px) {
   ${Wrapper}:hover & {
     filter: hue-rotate(10deg) brightness(150%) saturate(120%);
   }
+}
 `

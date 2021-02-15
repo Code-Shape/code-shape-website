@@ -12,17 +12,12 @@ export default function BlobBackground01() {
   
 
   const Wrapper = styled.div`
-  position: relative;
 `
 
 const Blob = styled.img`
-  position: absolute;
-  top: 0vw;
   z-index: -1;
 `
 
 const Blob2 = styled.img`
-  position: absolute;
-  top: 20vw;
   z-index: -2;
 `

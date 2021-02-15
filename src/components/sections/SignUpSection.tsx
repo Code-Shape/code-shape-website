@@ -22,7 +22,7 @@ export default function SignUpSection() {
 
 
   const Wrapper = styled.div`
-  margin-top: 200px;
+  margin-top: 100px;
   `
 
   const ContentWrapper = styled.div`

@@ -38,6 +38,7 @@ const Wrapper = styled.div`
     transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
+  @media only screen and (min-width: 600px) {
   :hover {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
       0px 30px 60px rgba(23, 0, 102, 0.5),
@@ -49,6 +50,7 @@ const Wrapper = styled.div`
       transform: scale(1.2);
     }
   }
+}
 `
 
 const TextWrapper = styled.div`
@@ -62,8 +64,10 @@ const Title = styled(Caption2)`
   font-size: 30px;
   line-height: 1em;
 
-  ${Wrapper}:hover & {
-    color: #fff;
+  @media only screen and (min-width: 600px) {
+    ${Wrapper}:hover & {
+      color: #fff;
+    }
   }
 `
 
@@ -74,10 +78,12 @@ const Subtitle = styled(SmallText)`
   font-size: 20px;
   margin-bottom: 15px;
 
+  @media only screen and (min-width: 600px) {
   ${Wrapper}:hover & {
     color: #fff;
     opacity: 1;
   }
+}
 `
 
 const Icon = styled.img`

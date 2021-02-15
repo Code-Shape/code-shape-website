@@ -60,6 +60,7 @@ const Wrapper = styled.div`
     transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
+  @media only screen and (min-width: 600px) {
   :hover {
     transform: translateY(-3px);
 
@@ -67,6 +68,7 @@ const Wrapper = styled.div`
       transform: scale(1.2);
     }
   }
+}
 `
 
 const ImageWrapper = styled.div`
@@ -79,9 +81,11 @@ const ImageWrapper = styled.div`
   justify-self: center;
   position: relative;
 
+  @media only screen and (min-width: 600px) {
   ${Wrapper}:hover & {
     filter: hue-rotate(10deg) brightness(150%) saturate(120%);
   }
+}
 `
 
 const Image = styled.img`

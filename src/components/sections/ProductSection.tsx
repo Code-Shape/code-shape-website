@@ -1,9 +1,7 @@
 import React from "react"
 import { H1, BodyMain } from "../styles/TextStyles"
 import styled from "styled-components"
-import ProductWeb from "../additionals/ProductWeb"
-import ProductApps from "../additionals/ProductApps"
-import ProductGames from "../additionals/ProductGames"
+import Products from "../additionals/Products"
 
 export default function ProductSection() {
   return (
@@ -19,14 +17,32 @@ export default function ProductSection() {
           </Description>
         </TextWrapper>
       </ContentWrapper>
-      <ProductWeb />
-      <ProductGames />
-      <ProductApps />
+      <ProductWrapper>
+        <Products
+            iconImage="/images/icons/web_dm_v002.svg"
+            title="Web"
+            titleColor="#f51d7e"
+            text="Websites tailored to your needs and target group."
+          />
+          <Products
+            iconImage="/images/icons/smartphone_dm_v002.svg"
+            title="Apps"
+            titleColor="#f51d7e"
+            text="Apps tailored to your needs and target group."
+          />
+          <Products
+            iconImage="/images/icons/controller_dm_v002.svg"
+            title="Games"
+            titleColor="#f51d7e"
+            text="Minor games to reach your audience."
+          />
+        </ProductWrapper>
     </Wrapper>
   )
 }
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+`
 
 const ContentWrapper = styled.div`
   padding: 5rem 1.875rem;
@@ -56,4 +72,14 @@ const Description = styled(BodyMain)`
   margin: 0 auto;
   text-align: center;
   max-width: 40rem;
+`
+
+const ProductWrapper = styled.div`
+display: grid;
+grid-template-columns: auto auto auto;
+grid-gap: 2rem;
+
+@media only screen and (max-width: 900px) {
+  grid-template-columns: none;
+}
 `

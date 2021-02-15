@@ -12,8 +12,7 @@ export default function CasesSection() {
             Cases we <span className="worked">worked</span> on
           </Title>
           <Description>
-            We bring people forward through technology, and learning is the best
-            way to introduce insanely cool new things.
+            A selection of projects we have worked on.
           </Description>
         </TextWrapper>
         <CaseWrapper>
@@ -29,7 +28,7 @@ export default function CasesSection() {
             title="oym.dk"
             clientImage="/images/cases/stineCaseImg01.jpg"
             link="https://oym.dk"
-            titleColor="#E7E1D5"
+            titleColor="#646757"
             backgroundImage="/images/cases/stineCaseImg02.png"
             logoImage="/images/cases/stineCaseImg04.png"
           />
@@ -40,9 +39,8 @@ export default function CasesSection() {
 }
 
 const Wrapper = styled.div`
-  margin: 0 auto;
+  margin: 200px auto 100px auto;
   padding: 2.5rem 1.875rem;
-  max-width: 70rem;
 `
 
 const ContentWrapper = styled.div`

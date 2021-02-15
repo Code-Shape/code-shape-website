@@ -13,7 +13,7 @@ export default function ClientProject(props) {
     logoImage,
   } = props
   return (
-    <Link to={link || "/"}>
+    <Link to={link || "/"} target= {"_blank"}>
       <Wrapper>
         <ContentWrapper>
           <ClientWrapper className="Client">
@@ -47,21 +47,23 @@ const Wrapper = styled.div`
   & {
     transition: 0.3s ease-in;
   }
+
+  @media only screen and (min-width: 600px) {
   :hover {
     .Client {
-      transform: perspective(900px) translate3d(-50px, -25px, 25px)
-        rotate3d(0, 1, 0, 30deg);
+      transform: perspective(900px) translate3d(-100px, -25px, 25px)
+        rotate3d(-1, 1, 0, 30deg);
       transition-delay: 0.01s;
     }
     .Background {
       transform: scale(1.1);
     }
     .Logo {
-      transform: perspective(900px) translate3d(50px, -25px, 25px)
-        rotate3d(1, 1, 0, -30deg);
-      transition-delay: 0.1s;
+      transform: perspective(900px) translate3d(50px, 50px, 25px)
+        rotate3d(-.5, 1, 0, -45deg);
     }
   }
+}
 `
 
 const ContentWrapper = styled.div`
@@ -146,7 +148,7 @@ const LogoImage = styled.img`
   padding: 0.5rem;
   max-width: 20%;
   right: 0;
-  bottom: 0px;
+  bottom: 0;
   position: absolute;
   z-index: 1;
   border-radius: 1.25rem;
