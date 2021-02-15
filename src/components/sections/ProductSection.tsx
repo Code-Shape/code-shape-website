@@ -75,11 +75,9 @@ const Description = styled(BodyMain)`
 `
 
 const ProductWrapper = styled.div`
+max-width: 70rem;
+margin: 0 auto;
 display: grid;
-grid-template-columns: auto auto auto;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 grid-gap: 2rem;
-
-@media only screen and (max-width: 900px) {
-  grid-template-columns: none;
-}
 `
