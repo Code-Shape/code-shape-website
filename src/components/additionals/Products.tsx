@@ -12,7 +12,7 @@ export default function Products(props) {
   return (
       <Wrapper>
         <ContentWrapper>
-            <ImageWrapper>
+            <ImageWrapper className="iconWrapper">
               <IconImage className="icon" src={iconImage || "/images/profiles/logo.png"} />
             </ImageWrapper>
             <TextWrapper>
@@ -27,7 +27,26 @@ export default function Products(props) {
 }
 
 const Wrapper = styled.div`
-  margin: 0 auto;  
+  margin: 0 auto; 
+  
+  *,
+  & {
+    transition: 0.3s ease-in;
+  }
+
+  @media only screen and (min-width: 600px) {
+  :hover {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+    0px 30px 60px rgba(23, 0, 102, 0.5),
+    inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+  transform: translate3d(0px, -3px, 0px) scale(1.2);
+  z-index: 1;
+    
+    .icon {
+      transform: perspective(200px) scale(1.3) rotate3d(1,0,0, 30deg) translate3d(0,-10px,0);
+      transition-delay: .06s;
+    }
+}
 `
 
 const ContentWrapper = styled.div`
@@ -63,6 +82,12 @@ const ImageWrapper = styled.div`
   align-content: center;
   padding: 1rem;
   background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%);
+
+  @media only screen and (min-width: 600px) {
+    ${Wrapper}:hover & {
+      filter: hue-rotate(10deg) brightness(150%) saturate(120%);
+    }
+  }
 `
 
 const IconImage = styled.img`
@@ -70,6 +95,7 @@ const IconImage = styled.img`
 `
 
 const TextWrapper = styled.div`
+max-width: 20rem;
 `
 
 const Title = styled(BodyMain)`

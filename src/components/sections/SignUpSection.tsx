@@ -15,7 +15,12 @@ export default function SignUpSection() {
             </Description>
           </TextWrapper>
         </ContentWrapper>
-        <SignUpButton />
+        <SignUpButton
+        link="window.HubSpotConversations.widget.open();"
+        icon="/images/icons/chat_dm_v002.svg"
+        title="Contact"
+        subtitle="Open chat"
+         />
       </Wrapper>
     )
   }

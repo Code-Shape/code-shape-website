@@ -4,14 +4,14 @@ import styled from "styled-components"
 import { Caption2, SmallText } from "../styles/TextStyles"
 
 export default function SignUpButton(props) {
-  const { title, subtitle, link, icon } = props
+  const { link, icon, title, subtitle } = props
   return (
-    <Link to={link || "#hs-chat-open"}>
+    <Link to={link || "/"}>
       <Wrapper>
-          <Icon src={icon || "/images/icons/chat_dm_v002.svg"} className="icon" />
+          <Icon src={icon || "/images/profiles/logo.png"} className="icon" />
         <TextWrapper>
-          <Title>{title || "Contact"}</Title>
-          <Subtitle>{subtitle || "Open chat"}</Subtitle>
+          <Title>{title || "Code Shape"}</Title>
+          <Subtitle>{subtitle || "Code Shape"}</Subtitle>
         </TextWrapper>
       </Wrapper>
     </Link>
