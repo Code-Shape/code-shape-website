@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import GradientIntro from "../additionals/GradientIntro"
-import GlassCards from "../additionals/GlassCards"
-import IntroText from "../additionals/IntroText"
+import GradientIntro from "../intros/GradientIntro"
+import GlassCard from "../cards/GlassCard"
+import IntroText from "../intros/IntroText"
 
 export default function FocusSection() {
   return (
@@ -17,7 +17,7 @@ export default function FocusSection() {
           />
         </TextWrapper>
         <CardWrapper>
-          <GlassCards
+          <GlassCard
             title="Learners"
             titleColor="#FF9204"
             text="It is never too late to start coding and change your career. Start in your own pace but be consistant. Get started with learning."
@@ -25,7 +25,7 @@ export default function FocusSection() {
             link="/learn"
             borderColor=""
           />
-          <GlassCards
+          <GlassCard
             title="Supporters"
             titleColor="#F9006F"
             text="Enhance your already existing knowledge and learn new features while helpings others. Get started with the community."
@@ -33,7 +33,7 @@ export default function FocusSection() {
             link="/community"
             borderColor=""
           />
-          <GlassCards
+          <GlassCard
             title="Entrepreneurs"
             titleColor="#B53EFF"
             text="Don’t have time to do it yourself? No problem we will help you out so you can spend the time on what matters."

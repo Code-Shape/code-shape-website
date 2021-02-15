@@ -13,7 +13,7 @@ export default function ClientProject(props) {
     logoImage,
   } = props
   return (
-    <Link to={link || "/"} target= {"_blank"}>
+    <Link to={link || "/"} target={"_blank"}>
       <Wrapper>
         <ContentWrapper>
           <ClientWrapper className="Client">
@@ -39,7 +39,7 @@ export default function ClientProject(props) {
 }
 
 const Wrapper = styled.div`
-  max-width: 60rem;
+  max-width: 65rem;
   margin: 0 auto;
   position: relative;
 
@@ -49,21 +49,21 @@ const Wrapper = styled.div`
   }
 
   @media only screen and (min-width: 600px) {
-  :hover {
-    .Client {
-      transform: perspective(900px) translate3d(-100px, -25px, 25px)
-        rotate3d(-1, 1, 0, 30deg);
-      transition-delay: 0.01s;
-    }
-    .Background {
-      transform: scale(1.1);
-    }
-    .Logo {
-      transform: perspective(900px) translate3d(50px, 50px, 25px)
-        rotate3d(-.5, 1, 0, -45deg);
+    :hover {
+      .Client {
+        transform: perspective(900px) translate3d(-100px, -25px, 25px)
+          rotate3d(-1, 1, 0, 30deg);
+        transition-delay: 0.01s;
+      }
+      .Background {
+        transform: scale(1.1);
+      }
+      .Logo {
+        transform: perspective(900px) translate3d(50px, 50px, 25px)
+          rotate3d(-0.5, 1, 0, -45deg);
+      }
     }
   }
-}
 `
 
 const ContentWrapper = styled.div`
@@ -86,7 +86,7 @@ const ClientWrapper = styled.div`
 
   @supports (backdrop-filter: blur(10px)) or
     (-webkit-backdrop-filter: blur(10px)) {
-    opacity: 0, .15;
+    opacity: 0, 0.15;
     background-color: transparent;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);

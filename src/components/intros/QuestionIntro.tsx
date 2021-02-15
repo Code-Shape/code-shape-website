@@ -41,17 +41,17 @@ const Wrapper = styled.div`
 
   @supports (backdrop-filter: blur(40px)) or
     (-webkit-backdrop-filter: blur(40px)) {
-    opacity: 0, 5;
+    opacity: 0, 0.15;
     background-color: transparent;
     -webkit-backdrop-filter: blur(40px);
     backdrop-filter: blur(40px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   @-moz-document url-prefix() {
-    background-color: rgba(242, 242, 242, 0.7);
+    background-color: rgba(242, 242, 242, 0.1);
     @media (prefers-color-scheme: dark) {
-      background-color: rgba(50, 50, 52, 0.7);
+      background-color: rgba(242, 242, 242, 0.1);
     }
   }
 `

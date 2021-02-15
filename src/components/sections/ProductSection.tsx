@@ -1,7 +1,7 @@
 import React from "react"
 import { H1, BodyMain } from "../styles/TextStyles"
 import styled from "styled-components"
-import Products from "../additionals/Products"
+import Products from "../cards/ProductCard"
 
 export default function ProductSection() {
   return (
@@ -12,40 +12,40 @@ export default function ProductSection() {
             <span className="products">Products</span> we offer{" "}
           </Title>
           <Description>
-            We bring people forward through technology, and learning is the best
-            way to introduce insanely cool new things.
+            We offer you a cool way to incorporate new products into your daily
+            routine, and make them seemingly work with your business.
           </Description>
         </TextWrapper>
       </ContentWrapper>
       <ProductWrapper>
         <Products
-            iconImage="/images/icons/web_dm_v002.svg"
-            title="Web"
-            titleColor="#f51d7e"
-            text="Websites tailored to your needs and target group."
-          />
-          <Products
-            iconImage="/images/icons/smartphone_dm_v002.svg"
-            title="Apps"
-            titleColor="#f51d7e"
-            text="Apps tailored to your needs and target group."
-          />
-          <Products
-            iconImage="/images/icons/controller_dm_v002.svg"
-            title="Games"
-            titleColor="#f51d7e"
-            text="Minor games to reach your audience."
-          />
-        </ProductWrapper>
+          iconImage="/images/icons/web_dm_v002.svg"
+          title="Web Apps"
+          titleColor="#FF7F00"
+          text="Having a website is a good way to express yourself to your audience"
+        />
+        <Products
+          iconImage="/images/icons/smartphone_dm_v002.svg"
+          title="Mobile Apps"
+          titleColor="#FF7F00"
+          text="Having a mobile app will let you reach your audience while on the road"
+        />
+        <Products
+          iconImage="/images/icons/controller_dm_v002.svg"
+          title="Games"
+          titleColor="#FF7F00"
+          text="Incorporating games in learning will enhance the experience overall"
+        />
+      </ProductWrapper>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
+  margin: 6rem 0;
 `
 
 const ContentWrapper = styled.div`
-  padding: 5rem 1.875rem;
   margin: 0 auto;
 `
 
@@ -56,7 +56,6 @@ const TextWrapper = styled.div`
   align-items: center;
 `
 const Title = styled(H1)`
-  margin: 0 auto;
   text-align: center;
 
   @media only screen and (max-width: 600px) {
@@ -75,9 +74,10 @@ const Description = styled(BodyMain)`
 `
 
 const ProductWrapper = styled.div`
-max-width: 80rem;
-margin: 0 auto;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-grid-gap: 2rem;
+  max-width: 65rem;
+  padding: 1.875rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1.875rem;
 `

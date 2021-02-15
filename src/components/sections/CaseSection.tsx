@@ -3,7 +3,7 @@ import { H1, BodyMain } from "../styles/TextStyles"
 import styled from "styled-components"
 import ClientProject from "../additionals/ClientProject"
 
-export default function CasesSection() {
+export default function CaseSection() {
   return (
     <Wrapper>
       <ContentWrapper>
@@ -12,7 +12,8 @@ export default function CasesSection() {
             Cases we <span className="worked">worked</span> on
           </Title>
           <Description>
-            A selection of projects we have worked on.
+            We want to bring people forward through technology. Have a look at
+            the projects we have worked on.
           </Description>
         </TextWrapper>
         <CaseWrapper>
@@ -39,13 +40,12 @@ export default function CasesSection() {
 }
 
 const Wrapper = styled.div`
-  margin: 200px auto 100px auto;
-  padding: 2.5rem 1.875rem;
+  margin: 6rem 0;
 `
 
 const ContentWrapper = styled.div`
   display: grid;
-  grid-gap: 3rem;
+  grid-gap: 1.875rem;
 `
 
 const TextWrapper = styled.div`
