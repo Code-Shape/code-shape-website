@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import SEO from "../components/layout/seo"
-import GradientIntro from "../components/additionals/GradientIntro"
+import GradientIntro from "../components/intros/GradientIntro"
 import CommunityWithImage from "../components/additionals/CommunityWithImage"
 
 export default function CommunityPage() {

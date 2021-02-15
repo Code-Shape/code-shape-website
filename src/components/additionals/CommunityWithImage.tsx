@@ -2,8 +2,8 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import IntroText from "./IntroText"
-import GlassButton from "./GlassButton"
+import IntroText from "../intros/IntroText"
+import GlassButton from "../buttons/GlassButton"
 
 export default function CommunityWithImage() {
   const data = useStaticQuery(graphql`

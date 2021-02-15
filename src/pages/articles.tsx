@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { H2, MediumText } from "../components/styles/TextStyles"
-import GradientIntro from "../components/additionals/GradientIntro"
+import GradientIntro from "../components/intros/GradientIntro"
 import CategorySection from "../components/sections/CategorySection"
 import Search from "../components/search/Search"
 

@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import QuestionIntro from "../additionals/QuestionIntro"
+import QuestionIntro from "../intros/QuestionIntro"
 
-export default function CommunicationBusiness() {
+export default function CommunicationEntrepreneurs() {
   return (
     <Wrapper>
       <ContentWrapper>
