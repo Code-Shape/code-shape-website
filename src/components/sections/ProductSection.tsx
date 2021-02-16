@@ -22,19 +22,19 @@ export default function ProductSection() {
           iconImage="/images/icons/web_dm_v002.svg"
           title="Web Apps"
           titleColor="#FF7F00"
-          text="Having a website is a good way to express yourself to your audience"
+          text="Having a website is a good way to express yourself to your audience and the world."
         />
         <Products
           iconImage="/images/icons/smartphone_dm_v002.svg"
           title="Mobile Apps"
           titleColor="#FF7F00"
-          text="Having a mobile app will let you reach your audience while on the road"
+          text="Having a mobile app will let you reach your audience while on the road."
         />
         <Products
           iconImage="/images/icons/controller_dm_v002.svg"
           title="Games"
           titleColor="#FF7F00"
-          text="Incorporating games in learning will enhance the experience overall"
+          text="Incorporating games in learning will enhance the experience overall."
         />
       </ProductWrapper>
     </Wrapper>
