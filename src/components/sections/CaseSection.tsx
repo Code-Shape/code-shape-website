@@ -72,4 +72,5 @@ const Description = styled(BodyMain)`
 const CaseWrapper = styled.div`
   display: grid;
   grid-gap: 3rem;
+  padding: 1.2rem;
 `
