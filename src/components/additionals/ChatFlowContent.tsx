@@ -9,7 +9,7 @@ export default function ChatFlowContent() {
       <NotificationsWrapper>
         <NotificationOne>
           <MessageNotification
-            link="business"
+            link="entrepreneurs"
             name="Julius"
             text="Hey, I'm about to rebrand my company website, can you help me create it? 👋🏼"
             image="images/profiles/julius.png"
