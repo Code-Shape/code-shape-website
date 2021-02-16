@@ -71,7 +71,6 @@ export default function ArticlePostTemplate({
           className="CoverImage"
         />
         <MDXRenderer>{page.content.markdownNode.childMdx.body}</MDXRenderer>
-        
       </ContentWrapper>
       <Navigation>
         {(nextPost || previousPost) && (
@@ -178,9 +177,26 @@ const AuthorWrapper = styled.div`
 
 const AuthorAvatar = styled.div`
   .Image {
-    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    padding-top: 1px;
+    height: 60px;
+    width: 60px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(255, 255, 255);
     border: 3px solid white;
-    width: 4rem;
   }
 `
 
