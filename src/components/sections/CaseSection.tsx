@@ -53,6 +53,7 @@ const TextWrapper = styled.div`
   gap: 1.875rem;
   justify-self: center;
   align-items: center;
+  padding: 0 1.2rem;
 `
 
 const Title = styled(H1)`
