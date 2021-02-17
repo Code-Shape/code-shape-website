@@ -72,7 +72,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
               slug
               title
             }
-            page: node {
+            project: node {
               id
               author {
                 id
@@ -143,12 +143,14 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     })
   })
 
-  data.projects.edges.forEach(project => {
+  data.projects.edges.forEach(({ nextProject, project, previousProject }) => {
     createPage({
       component: path.resolve("./src/templates/project-page.tsx"),
       context: {
+        id: project.id,
         project,
-        slug: project.slug,
+        previousProject,
+        nextProject,
       },
       path: `/projects/${project.slug}`,
     })

@@ -5,9 +5,9 @@ import styled from "styled-components"
 import { H2, MediumText } from "../components/styles/TextStyles"
 import GradientIntro from "../components/intros/GradientIntro"
 import CategorySection from "../components/sections/CategorySection"
-import Search from "../components/search/Search"
+import SectionIntro from "../components/intros/SectionIntro"
 
-export default function ArticlesPage({ data: { posts } }) {
+export default function ArticlesPage({ data: { posts, projects } }) {
   return (
     <Wrapper>
       <GradientIntro
@@ -38,15 +38,7 @@ export default function ArticlesPage({ data: { posts } }) {
                     <ExcerptWrapper>
                       {post.excerpt && <Excerpt>{post.excerpt}</Excerpt>}
                     </ExcerptWrapper>
-                    <ReadMore>
-                      <Link
-                        to={`/articles/${post.slug}`}
-                        className=""
-                        aria-label={`Read "${post.title}"`}
-                      >
-                        Read more &rarr;
-                      </Link>
-                    </ReadMore>
+                    <ReadMore>Read more &rarr;</ReadMore>
                   </TextWrapper>
                 </ArticleWrapper>
               </ContentWrapper>
@@ -54,6 +46,44 @@ export default function ArticlesPage({ data: { posts } }) {
           )
         })}
       </PostWrapper>
+      <ProjectWrapper>
+        <SectionIntro
+          title="Discover Customer Cases"
+          description="One of our goals is to bring people forward through technology. Read more about our customer cases and how we helped them reach their audience."
+        />
+        <Projects>
+          {projects.nodes.map(project => {
+            return (
+              <Link to={`/projects/${project.slug}`}>
+                <ContentWrapper key={project.id}>
+                  <ArticleWrapper>
+                    <ImageWrapper>
+                      {project.coverImage.localFile.childImageSharp.fluid && (
+                        <Img
+                          fluid={
+                            project.coverImage.localFile.childImageSharp.fluid
+                          }
+                          alt={project.title}
+                          className="featuredImage"
+                        />
+                      )}
+                    </ImageWrapper>
+                    <TextWrapper>
+                      <ProjectTitle>{project.title}</ProjectTitle>
+                      <ExcerptWrapper>
+                        {project.excerpt && (
+                          <Excerpt>{project.excerpt}</Excerpt>
+                        )}
+                      </ExcerptWrapper>
+                      <ReadMore>Read more &rarr;</ReadMore>
+                    </TextWrapper>
+                  </ArticleWrapper>
+                </ContentWrapper>
+              </Link>
+            )
+          })}
+        </Projects>
+      </ProjectWrapper>
     </Wrapper>
   )
 }
@@ -99,15 +129,17 @@ export const pageQuery = graphql`
   }
 `
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  max-width: 70rem;
+  margin: 0 auto;
+`
 
 const PostWrapper = styled.div`
-  margin: 0 auto;
   padding: 1.875rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   grid-gap: 1.5rem;
-  max-width: 70rem;
+
   justify-content: center;
   align-content: center;
 `
@@ -172,6 +204,25 @@ const ExcerptWrapper = styled(MediumText)``
 
 const Excerpt = styled.div``
 
-const ReadMore = styled.div``
+const ReadMore = styled.div`
+  color: #503cce;
+`
 
 const PostTitle = styled(H2)``
+
+const ProjectWrapper = styled.div`
+  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
+`
+
+const Projects = styled.div`
+  padding: 1.875rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  grid-gap: 1.5rem;
+  justify-content: center;
+  align-content: center;
+`
+
+const ProjectTitle = styled(H2)``
