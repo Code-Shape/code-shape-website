@@ -9,7 +9,7 @@ export default function ProjectPageTemplate({ pageContext: { project } }) {
       <HeaderWrapper>
         <TextWrapper>
           <TitleWrapper>{project.title}</TitleWrapper>
-          <SubtitleWrapper>{project.subtitle}</SubtitleWrapper>
+          {/* <SubtitleWrapper>{project.subtitle}</SubtitleWrapper> */}
         </TextWrapper>
       </HeaderWrapper>
       <ContentWrapper>

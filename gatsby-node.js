@@ -27,29 +27,6 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
             title
           }
         }
-        projects: allGraphCmsProject {
-          nodes {
-            id
-            content {
-              markdownNode {
-                childMdx {
-                  body
-                }
-              }
-            }
-            seo {
-              description
-              image {
-                url
-              }
-              keywords
-              title
-            }
-            slug
-            subtitle
-            title
-          }
-        }
         posts: allGraphCmsPost(sort: { fields: date, order: ASC }) {
           edges {
             nextPost: next {
@@ -89,6 +66,45 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
             }
           }
         }
+        projects: allGraphCmsProject(sort: { fields: date, order: ASC }) {
+          edges {
+            nextProject: next {
+              slug
+              title
+            }
+            page: node {
+              id
+              author {
+                id
+                name
+                title
+              }
+              content {
+                markdownNode {
+                  childMdx {
+                    body
+                  }
+                }
+              }
+              date: formattedDate
+              excerpt
+              seo {
+                description
+                image {
+                  url
+                }
+                keywords
+                title
+              }
+              slug
+              title
+            }
+            previousProject: previous {
+              slug
+              title
+            }
+          }
+        }
         categories: allGraphCmsCategory {
           nodes {
             title
@@ -121,16 +137,18 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       component: path.resolve("./src/templates/default-page.tsx"),
       context: {
         page,
+        slug: page.slug,
       },
       path: `/${page.slug}`,
     })
   })
 
-  data.projects.nodes.forEach(project => {
+  data.projects.edges.forEach(project => {
     createPage({
       component: path.resolve("./src/templates/project-page.tsx"),
       context: {
         project,
+        slug: project.slug,
       },
       path: `/projects/${project.slug}`,
     })
@@ -151,6 +169,21 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
 exports.createResolvers = ({ createResolvers }) => {
   const resolvers = {
     GraphCMS_Post: {
+      formattedDate: {
+        type: "String",
+        resolve: source => {
+          const date = new Date(source.date)
+
+          return new Intl.DateTimeFormat("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }).format(date)
+        },
+      },
+    },
+    GraphCMS_Project: {
       formattedDate: {
         type: "String",
         resolve: source => {

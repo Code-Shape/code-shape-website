@@ -6,13 +6,27 @@ fragment Project on Project {
   publishedAt
   title
   slug
-  subtitle
+  date
+  excerpt
+  coverImage {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+    }
+  }
   content {
     ... on RichText {
       raw
       html
       markdown
       text
+    }
+  }
+  author {
+    ... on Author {
+      remoteTypeName: __typename
+      remoteId: id
     }
   }
   seo {

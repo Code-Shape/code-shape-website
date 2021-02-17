@@ -20,4 +20,10 @@ fragment Author on Author {
       remoteId: id
     }
   }
+  projects {
+    ... on Project {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
 }

@@ -7,7 +7,7 @@ import GradientIntro from "../components/intros/GradientIntro"
 import CategorySection from "../components/sections/CategorySection"
 import Search from "../components/search/Search"
 
-export default function ArticlesPage({ data: { allGraphCmsPost } }) {
+export default function ArticlesPage({ data: { posts } }) {
   return (
     <Wrapper>
       <GradientIntro
@@ -19,7 +19,7 @@ export default function ArticlesPage({ data: { allGraphCmsPost } }) {
       <CategorySection />
       {/* Future project: Deconstruct PostWrapper and create new custom component */}
       <PostWrapper>
-        {allGraphCmsPost.nodes.map(post => {
+        {posts.nodes.map(post => {
           return (
             <Link to={`/articles/${post.slug}`}>
               <ContentWrapper key={post.id}>
@@ -60,7 +60,25 @@ export default function ArticlesPage({ data: { allGraphCmsPost } }) {
 
 export const pageQuery = graphql`
   {
-    allGraphCmsPost(sort: { fields: date, order: DESC }) {
+    posts: allGraphCmsPost(sort: { fields: date, order: DESC }) {
+      nodes {
+        id
+        date: formattedDate
+        excerpt
+        slug
+        title
+        coverImage {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 600) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+    projects: allGraphCmsProject(sort: { fields: date, order: DESC }) {
       nodes {
         id
         date: formattedDate

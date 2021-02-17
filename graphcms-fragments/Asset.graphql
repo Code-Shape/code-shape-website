@@ -35,5 +35,11 @@ fragment Asset on Asset {
       remoteId: id
     }
   }
+  coverImageProject {
+    ... on Project {
+      remoteTypeName: __typename
+      remoteId: id
+    }
+  }
   url
 }
