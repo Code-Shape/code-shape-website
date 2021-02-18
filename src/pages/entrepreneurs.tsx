@@ -11,7 +11,7 @@ import CommunicationEntrepreneurs from "../components/sections/CommunicationEntr
 export default function EntrepreneursPage() {
   return (
     <Wrapper>
-      <HeaderBackground image="../images/blobs/HeaderBlob01.svg" />
+      {/* <HeaderBackground image="../images/blobs/HeaderBlob01.svg" /> */}
       <SEO title="Entrepreneurs" />
       <GradientIntro
         title="When time is of the essence"

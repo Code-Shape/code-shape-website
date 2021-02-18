@@ -4,12 +4,21 @@ import styled from "styled-components"
 import { BodyMain, MediumText } from "../styles/TextStyles"
 
 export default function GlassCards(props) {
-  const { title, titleColor, text, image, link, borderColor } = props
+  const {
+    title,
+    titleColor,
+    text,
+    image,
+    link,
+    borderColor,
+    backgroundColor,
+  } = props
   return (
     <Link to={link || "/"}>
       <Wrapper>
         <ImageWrapper>
           <Image
+            backgroundColor={backgroundColor || " white"}
             borderColor={borderColor || "3px solid white"}
             src={image || "/images/icons/account.svg"}
             className="icon"
@@ -61,14 +70,14 @@ const Wrapper = styled.div`
   }
 
   @media only screen and (min-width: 600px) {
-  :hover {
-    transform: translateY(-3px);
+    :hover {
+      transform: translateY(-3px);
 
-    .icon {
-      transform: scale(1.2);
+      .icon {
+        transform: scale(1.2);
+      }
     }
   }
-}
 `
 
 const ImageWrapper = styled.div`
@@ -82,16 +91,34 @@ const ImageWrapper = styled.div`
   position: relative;
 
   @media only screen and (min-width: 600px) {
-  ${Wrapper}:hover & {
-    filter: hue-rotate(10deg) brightness(150%) saturate(120%);
+    ${Wrapper}:hover & {
+      filter: hue-rotate(10deg) brightness(150%) saturate(120%);
+    }
   }
-}
 `
 
 const Image = styled.img`
   width: 4.375rem;
+  padding: 0.2rem;
   border: ${props => props.borderColor || "3px solid white"};
-  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: ${props => props.backgroundColor || "white"};
 `
 
 const TextWrapper = styled.div`

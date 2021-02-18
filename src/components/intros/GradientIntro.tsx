@@ -22,7 +22,7 @@ export default function GradientIntro(props) {
 }
 
 const Wrapper = styled.div`
-  padding: 8rem 1.875rem;
+  padding: 3rem 1.875rem;
 `
 
 const ContentWrapper = styled.div`

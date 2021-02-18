@@ -24,14 +24,16 @@ export default function FocusSection() {
             image="images/icons/book_lm.svg"
             link="/learn"
             borderColor=""
+            backgroundColor="#FF9204"
           />
           <GlassCard
             title="Supporters"
-            titleColor="#F9006F"
+            titleColor="#FF3C88"
             text="Enhance your already existing knowledge and learn new features while helpings others. Get started with the community."
             image="images/icons/learner02_dm.svg"
             link="/community"
             borderColor=""
+            backgroundColor="#FF3C88"
           />
           <GlassCard
             title="Entrepreneurs"
@@ -40,6 +42,7 @@ export default function FocusSection() {
             image="images/icons/business02_light.svg"
             link="/entrepreneurs"
             borderColor=""
+            backgroundColor="#B53EFF"
           />
         </CardWrapper>
       </ContentWrapper>
@@ -53,7 +56,7 @@ const Wrapper = styled.div`
 
 const ContentWrapper = styled.div`
   max-width: 60rem;
-  padding: 3.125rem auto;
+  /* padding: 3.125rem auto; */
   margin: 0 auto;
   display: grid;
   grid-gap: 1.875rem;

@@ -16,6 +16,7 @@ const Image = styled.img`
   position: absolute;
   right: 0;
   top: 0;
-  max-width: 85%;
+  height: 100px;
+  width: 3000px;
   z-index: -1;
 `

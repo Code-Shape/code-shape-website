@@ -21,7 +21,7 @@ export default function CommunityPage() {
 
   return (
     <Wrapper>
-      <HeaderBackground image="../images/blobs/HeaderBlob03.svg" />
+      {/* <HeaderBackground image="../images/blobs/HeaderBlob03.svg" /> */}
       <SEO title="Community" />
       <GradientIntro
         title="People at it's core"

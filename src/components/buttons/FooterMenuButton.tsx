@@ -16,7 +16,7 @@ export default function FooterMenuButton(props) {
 }
 
 const MenuItem = styled(Caption)`
-  color: rgba(255, 255, 255, 0.7);
+  color: white;
   display: grid;
   grid-template-columns: 24px auto;
   gap: ${props => {
@@ -31,6 +31,5 @@ const MenuItem = styled(Caption)`
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1),
       inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.2);
-    color: black;
   }
 `

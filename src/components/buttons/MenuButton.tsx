@@ -16,7 +16,7 @@ export default function MenuButton(props) {
 }
 
 const MenuItem = styled(Caption)`
-  color: rgba(255, 255, 255, 0.7);
+  color: white;
   display: grid;
   grid-template-columns: 24px auto;
   gap: ${props => {
@@ -27,17 +27,9 @@ const MenuItem = styled(Caption)`
   border-radius: 10px;
   transition: 0.5s ease-out;
 
-  @media (prefers-color-scheme: light) {
-    color: #8a8988;
-  }
-
   :hover {
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1),
       inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.2);
-    color: black;
-    @media (prefers-color-scheme: dark) {
-      color: white;
-    }
   }
 `
