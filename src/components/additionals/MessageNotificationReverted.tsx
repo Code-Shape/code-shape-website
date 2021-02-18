@@ -81,9 +81,29 @@ const ImageWrapper = styled.div`
 `
 
 const Image = styled.img`
-  width: 4.375rem;
   border: ${props => props.borderColor || "3px solid turquoise"};
-  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgb(255, 255, 255);
+  
+  @media (prefers-color-scheme: dark) {
+    background-color: #202020;
+  }
 `
 
 const TextWrapper = styled.div`
