@@ -21,7 +21,7 @@ export default function CommunityPage() {
 
   return (
     <Wrapper>
-      {/* <HeaderBackground image="../images/blobs/HeaderBlob03.svg" /> */}
+      <HeaderBackground image="../images/blobs/HeaderBlob03.svg" />
       <SEO title="Community" />
       <GradientIntro
         title="People at it's core"
@@ -33,4 +33,6 @@ export default function CommunityPage() {
   )
 }
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  padding-top: 8rem;
+`

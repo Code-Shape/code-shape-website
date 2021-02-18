@@ -11,7 +11,7 @@ import HeaderBackground from "../components/backgrounds/HeaderBackground"
 export default function ArticlesPage({ data: { posts, projects } }) {
   return (
     <Wrapper>
-      {/* <HeaderBackground image="../images/blobs/HeaderBlob04.svg" /> */}
+      <HeaderBackground image="../images/blobs/HeaderBlob04.svg" />
       <GradientIntro
         title="Reading is making Meaning"
         description="We believe we can create amazing things together by keeping our knowledge up to date. Therefore we will do our best to deliver that to you every week."
@@ -134,6 +134,7 @@ export const pageQuery = graphql`
 const Wrapper = styled.div`
   max-width: 70rem;
   margin: 0 auto;
+  padding-top: 8rem;
 `
 
 const PostWrapper = styled.div`

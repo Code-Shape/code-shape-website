@@ -11,7 +11,7 @@ import CommunicationEntrepreneurs from "../components/sections/CommunicationEntr
 export default function EntrepreneursPage() {
   return (
     <Wrapper>
-      {/* <HeaderBackground image="../images/blobs/HeaderBlob01.svg" /> */}
+      <HeaderBackground image="../images/blobs/HeaderBlob01.svg" />
       <SEO title="Entrepreneurs" />
       <GradientIntro
         title="When time is of the essence"
@@ -27,15 +27,5 @@ export default function EntrepreneursPage() {
 }
 
 const Wrapper = styled.div`
-  /* background-image: url(/images/blobs/CasesSectionBlob02.svg),
-    url(/images/blobs/CasesSectionBlob03.svg),
-    url(/images/blobs/CasesSectionBlob01.svg);
-  background-attachment: local;
-  background-repeat: no-repeat;
-  background-size: 3000px 1500px;
-  background-position: top, center, bottom;
-
-  @media only screen and (min-width: 3000px) {
-    background-size: 5200px 2000px;
-  } */
+  padding-top: 8rem;
 `
