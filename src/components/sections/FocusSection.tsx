@@ -21,7 +21,7 @@ export default function FocusSection() {
             title="Learners"
             titleColor="#FF9204"
             text="It is never too late to start coding and change your career. Start in your own pace but be consistant. Get started with learning."
-            image="images/icons/book.svg"
+            image="images/icons/book_lm.svg"
             link="/learn"
             borderColor=""
           />
@@ -29,7 +29,7 @@ export default function FocusSection() {
             title="Supporters"
             titleColor="#F9006F"
             text="Enhance your already existing knowledge and learn new features while helpings others. Get started with the community."
-            image="images/icons/learn.svg"
+            image="images/icons/learner02_dm.svg"
             link="/community"
             borderColor=""
           />
@@ -37,7 +37,7 @@ export default function FocusSection() {
             title="Entrepreneurs"
             titleColor="#B53EFF"
             text="Don’t have time to do it yourself? No problem we will help you out so you can spend the time on what matters."
-            image="images/icons/business.svg"
+            image="images/icons/business02_light.svg"
             link="/entrepreneurs"
             borderColor=""
           />

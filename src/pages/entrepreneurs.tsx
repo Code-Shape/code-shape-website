@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import SEO from "../components/layout/seo"
-
+import HeaderBackgrounds from "../components/backgrounds/HeaderBackgrounds"
 import GradientIntro from "../components/intros/GradientIntro"
 import CaseSection from "../components/sections/CaseSection"
 import ProductSection from "../components/sections/ProductSection"
@@ -11,6 +11,7 @@ import CommunicationEntrepreneurs from "../components/sections/CommunicationEntr
 export default function EntrepreneursPage() {
   return (
     <Wrapper>
+      <HeaderBackgrounds image="../images/blobs/HeaderBlob01.svg" />
       <SEO title="Entrepreneurs" />
       <GradientIntro
         title="When time is of the essence"

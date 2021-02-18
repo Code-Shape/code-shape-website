@@ -31,8 +31,9 @@ export default function Footer() {
 
 const Wrapper = styled.div`
   overflow: hidden;
-  background-image: url("/images/waves/FooterWave.svg");
+  background-image: url("/images/waves/FooterWave04.svg");
   height: 669px;
+  background-size: cover;
   background-repeat: repeat;
   display: grid;
   align-items: center;

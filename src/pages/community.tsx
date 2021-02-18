@@ -4,6 +4,7 @@ import styled from "styled-components"
 import SEO from "../components/layout/seo"
 import GradientIntro from "../components/intros/GradientIntro"
 import CommunityWithImage from "../components/additionals/CommunityWithImage"
+import HeaderBackgrounds from "../components/backgrounds/HeaderBackgrounds"
 
 export default function CommunityPage() {
   const data = useStaticQuery(graphql`
@@ -20,6 +21,7 @@ export default function CommunityPage() {
 
   return (
     <Wrapper>
+      <HeaderBackgrounds image="../images/blobs/HeaderBlob03.svg" />
       <SEO title="Community" />
       <GradientIntro
         title="People at it's core"

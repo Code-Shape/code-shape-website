@@ -31,7 +31,7 @@ export default function CommunityWithImage() {
         </ImageWrapper>
       </ContentWrapper>
       <ButtonWrapper>
-        <GlassButton title="Join Now" link="https://discord.gg/rUV9mYWV8K" />
+        <GlassButton title="Join Now" link="https://discord.gg/rUV9mYWV8K" titleColor="#F89B29" />
       </ButtonWrapper>
     </Wrapper>
   )

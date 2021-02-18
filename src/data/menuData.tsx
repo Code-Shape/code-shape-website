@@ -1,23 +1,23 @@
 export const menuData = [
-  { title: "Learn", icon: "/images/icons/learn.svg", link: "/learn" },
+  { title: "Learn", icon: "/images/icons/learner02_dm.svg", link: "/learn" },
   {
     title: "Articles",
-    icon: "/images/icons/article.svg",
+    icon: "/images/icons/article_light.svg",
     link: "/articles",
   },
   {
     title: "Community",
-    icon: "/images/icons/community.svg",
+    icon: "/images/icons/community_light.svg",
     link: "/community",
   },
   {
     title: "Entrepreneurs",
-    icon: "/images/icons/business.svg",
+    icon: "/images/icons/business02_light.svg",
     link: "/entrepreneurs",
   },
 ]
 export const footerMenuData = [
-  { title: "Learn", icon: "/images/icons/learnLight.svg", link: "/learn" },
+  { title: "Learn", icon: "/images/icons/learner02_dm.svg", link: "/learn" },
   {
     title: "Articles",
     icon: "/images/icons/article_light.svg",
@@ -46,20 +46,20 @@ export const footerMenuData = [
 ]
 
 export const tooltipData = [
-  { title: "Learn", icon: "/images/icons/learn.svg", link: "/learn" },
+  { title: "Learn", icon: "/images/icons/learner02_dm.svg", link: "/learn" },
   {
     title: "Articles",
-    icon: "/images/icons/article.svg",
+    icon: "/images/icons/article_light.svg",
     link: "/articles",
   },
   {
     title: "Community",
-    icon: "/images/icons/community.svg",
+    icon: "/images/icons/community_light.svg",
     link: "/community",
   },
   {
     title: "Entrepreneurs",
-    icon: "/images/icons/business.svg",
+    icon: "/images/icons/business02_light.svg",
     link: "/entrepreneurs",
   },
 ]
