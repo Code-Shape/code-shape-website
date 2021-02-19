@@ -13,7 +13,7 @@ export default function HeaderBackground(props) {
 const Wrapper = styled.div``
 
 const Image = styled.img`
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 0;
   z-index: -1;
