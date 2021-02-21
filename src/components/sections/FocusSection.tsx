@@ -51,10 +51,8 @@ export default function FocusSection() {
 }
 
 const Wrapper = styled.div`
-  margin: 1rem auto;
-
-  @media only screen and (max-width: 1000wpx) {
-    margin: 8rem auto;
+  @media only screen and (max-width: 1000px) {
+    margin: 6rem auto;
   }
 `
 
