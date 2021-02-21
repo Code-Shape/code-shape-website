@@ -53,11 +53,7 @@ const Title = styled(H3)`
   text-align: left;
 
   .time {
-    color: #4518c3;
-  }
-
-  .yourself {
-    color: #ff006f;
+    color: #ff8022;
   }
 `
 
@@ -65,7 +61,7 @@ const Title2 = styled(H3)`
   text-align: left;
 
   .yourself {
-    color: #ff006f;
+    color: #ff006a;
   }
 `
 
