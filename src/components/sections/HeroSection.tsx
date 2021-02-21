@@ -41,11 +41,7 @@ const TextWrapper = styled.div`
   display: grid;
   gap: 1.875rem;
 `
-const Title = styled(H1)`
-  @media only screen and (max-width: 600px) {
-    font-size: 50px;
-  }
-`
+const Title = styled(H1)``
 
 const Description = styled(BodyMain)``
 
@@ -53,6 +49,5 @@ const Blob = styled.img`
   position: absolute;
   right: 0;
   top: 0;
-  max-width: 70%;
   z-index: -1;
 `
