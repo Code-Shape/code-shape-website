@@ -57,7 +57,7 @@ const Wrapper = styled.div`
 `
 
 const ContentWrapper = styled.div`
-  max-width: 60rem;
+  max-width: 70rem;
   /* padding: 3.125rem auto; */
   margin: 0 auto;
   display: grid;

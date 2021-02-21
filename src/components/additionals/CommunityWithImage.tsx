@@ -31,16 +31,22 @@ export default function CommunityWithImage() {
         </ImageWrapper>
       </ContentWrapper>
       <ButtonWrapper>
-        <GlassButton title="Join Now" link="https://discord.gg/rUV9mYWV8K" titleColor="#F89B29" />
+        <GlassButton
+          title="Join Now"
+          link="https://discord.gg/rUV9mYWV8K"
+          titleColor="#F89B29"
+        />
       </ButtonWrapper>
     </Wrapper>
   )
 }
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  margin-top: 4rem;
+`
 
 const ContentWrapper = styled.div`
-  max-width: 80rem;
+  max-width: 70rem;
   padding: 3.125rem auto;
   margin: 0 auto;
   display: grid;
