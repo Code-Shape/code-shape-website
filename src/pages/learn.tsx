@@ -18,5 +18,5 @@ export default LearnPage
 
 const Wrapper = styled.div`
   max-width: 70rem;
-  padding-top: 8rem 1.875rem;
+  padding-top: 6rem 1.875rem;
 `

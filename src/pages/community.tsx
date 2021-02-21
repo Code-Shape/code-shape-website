@@ -36,5 +36,5 @@ export default function CommunityPage() {
 const Wrapper = styled.div`
   max-width: 70rem;
   margin: 0 auto;
-  padding-top: 8rem;
+  padding-top: 6rem;
 `
