@@ -22,8 +22,15 @@ export default function GradientIntro(props) {
 }
 
 const Wrapper = styled.div`
-  max-width: 37.5rem;
-  margin: 3rem auto;
+  max-width: 40rem;
+  margin: 0 auto;
+`
+
+const ContentWrapper = styled.div`
+  display: grid;
+  grid-gap: 1.875rem;
+  padding: 1.875rem;
+  margin: 1.875rem;
   border-radius: 1.25rem;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
@@ -42,12 +49,6 @@ const Wrapper = styled.div`
       background-color: rgba(50, 50, 52, 0.7);
     }
   }
-`
-
-const ContentWrapper = styled.div`
-  display: grid;
-  grid-gap: 1.875rem;
-  padding: 1.875rem;
 `
 
 const TextWrapper = styled.div`
