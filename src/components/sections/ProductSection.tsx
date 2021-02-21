@@ -42,7 +42,7 @@ export default function ProductSection() {
 }
 
 const Wrapper = styled.div`
-  margin: 6rem 0;
+  margin: 4rem 0;
 `
 
 const ContentWrapper = styled.div`

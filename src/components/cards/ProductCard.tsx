@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { BodyMain, H3 } from "../styles/TextStyles"
+import { StyledIcon } from "@styled-icons/styled-icon"
 
 export default function ProductCard(props) {
   const { iconImage, title, text, titleColor } = props
@@ -86,7 +87,7 @@ const ImageWrapper = styled.div`
 `
 
 const IconImage = styled.img`
-  width: 120px;
+  width: 100px;
   padding: 1rem;
 `
 

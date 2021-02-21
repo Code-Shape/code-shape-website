@@ -35,25 +35,6 @@ const Wrapper = styled.div`
   justify-content: center;
   align-content: center;
   justify-self: center;
-  border-radius: 1rem;
-
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-  @supports (backdrop-filter: blur(40px)) or
-    (-webkit-backdrop-filter: blur(40px)) {
-    opacity: 0, 0.15;
-    background-color: transparent;
-    -webkit-backdrop-filter: blur(40px);
-    backdrop-filter: blur(40px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
-
-  @-moz-document url-prefix() {
-    background-color: rgba(242, 242, 242, 0.1);
-    @media (prefers-color-scheme: dark) {
-      background-color: rgba(242, 242, 242, 0.1);
-    }
-  }
 `
 
 const ContentWrapper = styled.div`
@@ -63,7 +44,7 @@ const ContentWrapper = styled.div`
 
 const TextWrapper = styled.div`
   display: grid;
-  gap: 1.25rem;
+  gap: 1rem;
   justify-self: center;
   align-items: center;
 `

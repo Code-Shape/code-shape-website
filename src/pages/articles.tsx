@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { H2, MediumText } from "../components/styles/TextStyles"
-import GradientIntro from "../components/intros/GradientIntro"
+import GlassGradientIntro from "../components/intros/GlassGradientIntro"
 import CategorySection from "../components/sections/CategorySection"
 import SectionIntro from "../components/intros/SectionIntro"
 import HeaderBackground from "../components/backgrounds/HeaderBackground"
@@ -11,11 +11,11 @@ import HeaderBackground from "../components/backgrounds/HeaderBackground"
 export default function ArticlesPage({ data: { posts, projects } }) {
   return (
     <Wrapper>
-      <HeaderBackground image="../images/blobs/HeaderBlob04.svg" />
-      <GradientIntro
+      <HeaderBackground image="../images/blobs/HeaderBlob02.svg" />
+      <GlassGradientIntro
         title="Reading is making Meaning"
         description="We believe we can create amazing things together by keeping our knowledge up to date. Therefore we will do our best to deliver that to you every week."
-        gradientColor="-webkit-linear-gradient(left, #7230ce, #3E16BB)"
+        gradientColor="-webkit-linear-gradient(left, #F89929, #F5217B)"
       />
       {/* <Search /> */}
       <CategorySection />

@@ -15,8 +15,8 @@ export default function Footer() {
         </MenuWrapper>
         <TextWrapper>
           <Description>
-            This site is created using React, Gatsby, GraphCMS and deployed
-            with Netlify.
+            This site is created using React, Gatsby, GraphCMS and deployed with
+            Netlify.
           </Description>
           <Copyright>
             Copyright © {new Date().getFullYear()} Code Shape. All rights
@@ -31,7 +31,7 @@ export default function Footer() {
 
 const Wrapper = styled.div`
   overflow: hidden;
-  background-image: url("/images/waves/FooterWave04.svg");
+  background-image: url("/images/waves/FooterWave.svg");
   height: 669px;
   background-size: cover;
   background-repeat: repeat;

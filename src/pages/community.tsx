@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import SEO from "../components/layout/seo"
-import GradientIntro from "../components/intros/GradientIntro"
+import GlassGradientIntro from "../components/intros/GlassGradientIntro"
 import CommunityWithImage from "../components/additionals/CommunityWithImage"
 import HeaderBackground from "../components/backgrounds/HeaderBackground"
 
@@ -23,10 +23,10 @@ export default function CommunityPage() {
     <Wrapper>
       <HeaderBackground image="../images/blobs/HeaderBlob03.svg" />
       <SEO title="Community" />
-      <GradientIntro
+      <GlassGradientIntro
         title="People at it's core"
         description="We believe that we can create better products together. Join our community and make an impact on learning and sharing everyday."
-        gradientColor=""
+        gradientColor="-webkit-linear-gradient(left, #F89929, #F5217B)"
       />
       <CommunityWithImage />
     </Wrapper>
@@ -34,5 +34,7 @@ export default function CommunityPage() {
 }
 
 const Wrapper = styled.div`
+  max-width: 70rem;
+  margin: 0 auto;
   padding-top: 8rem;
 `

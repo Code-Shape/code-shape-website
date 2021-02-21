@@ -7,7 +7,7 @@ import HeaderBackground from "../components/backgrounds/HeaderBackground"
 function LearnPage() {
   return (
     <Wrapper>
-      <HeaderBackground image="../images/blobs/HeaderBlob02.svg" />
+      <HeaderBackground image="../images/blobs/HeaderBlob01.svg" />
       <SEO title="Learn" />
       <ComingSoon />
     </Wrapper>
@@ -17,5 +17,6 @@ function LearnPage() {
 export default LearnPage
 
 const Wrapper = styled.div`
-  padding-top: 8rem;
+  max-width: 70rem;
+  padding-top: 8rem 1.875rem;
 `
