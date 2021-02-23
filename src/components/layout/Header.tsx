@@ -58,7 +58,7 @@ export default function Header() {
           <MenuButton key={index} item={item} />
         ))}
         <HamburgerWrapper onClick={event => handleClick(event)}>
-          <MenuButton item={{ icon: "/images/icons/hamburger_dm.svg" }} />
+          <MenuButton item={{ icon: "/images/icons/hamburger.svg" }} />
         </HamburgerWrapper>
       </MenuWrapper>
       <div ref={tooltipRef}>
