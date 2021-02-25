@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { H1, BodyMain } from "../styles/TextStyles"
 
+
 export default function GradientIntro(props) {
   const { title, description, gradientColor } = props
   return (

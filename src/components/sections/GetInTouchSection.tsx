@@ -2,11 +2,20 @@ import React from "react"
 import { H1, BodyMain } from "../styles/TextStyles"
 import styled from "styled-components"
 import SignUpButton from "../buttons/SignUpButton"
+import BlobBackground from "../backgrounds/BlobBackground"
+import "animate.css/animate.min.css";
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export default function GetInTouchSection() {
   return (
     <Wrapper>
+      <BlobBackground image="../images/blobs/BackGroundBlob03.svg" />
       <ContentWrapper>
+      <ScrollAnimation
+        animateIn="animate__fadeInUpBig"
+        animateOut="animate__fadeOutDownBig"
+        duration="2"
+      >
         <TextWrapper>
           <Title>Get in touch</Title>
           <Description>
@@ -14,6 +23,7 @@ export default function GetInTouchSection() {
             and start a chat when you are ready.
           </Description>
         </TextWrapper>
+        </ScrollAnimation>
       </ContentWrapper>
     </Wrapper>
   )
