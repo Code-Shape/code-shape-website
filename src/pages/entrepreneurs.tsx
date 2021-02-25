@@ -7,26 +7,18 @@ import CaseSection from "../components/sections/CaseSection"
 import ProductSection from "../components/sections/ProductSection"
 import GetInTouchSection from "../components/sections/GetInTouchSection"
 import CommunicationEntrepreneurs from "../components/sections/CommunicationEntrepreneurs"
-import "animate.css/animate.min.css";
-import ScrollAnimation from 'react-animate-on-scroll';
 
 export default function EntrepreneursPage() {
   return (
     <Wrapper>
       <HeaderBackground image="../images/blobs/HeaderBlob04.svg" />
       <SEO title="Entrepreneurs" />
-      <ScrollAnimation
-        animateIn="animate__fadeInDownBig"
-        animateOut="animate__fadeOutUpBig"
-        duration="2"
-      >
-        <GlassGradientIntro
-          title="When time is of the essence"
-          description="We believe that we can create better products for people to enjoy if people come first. To create an excellent experience for you, simplicity and a good communication are our top priorities."
-          gradientColor="-webkit-linear-gradient(left, #F89929, #F5217B)"
-        />
+      <GlassGradientIntro
+        title="When time is of the essence"
+        description="We believe that we can create better products for people to enjoy if people come first. To create an excellent experience for you, simplicity and a good communication are our top priorities."
+        gradientColor="-webkit-linear-gradient(left, #F89929, #F5217B)"
+      />
       <CommunicationEntrepreneurs />
-      </ScrollAnimation>
       <CaseSection />
       <ProductSection />
       <GetInTouchSection />
@@ -35,7 +27,7 @@ export default function EntrepreneursPage() {
 }
 
 const Wrapper = styled.div`
-
+  max-width: 70rem;
   margin: 0 auto;
   padding-top: 6rem;
 `

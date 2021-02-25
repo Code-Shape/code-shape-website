@@ -2,20 +2,11 @@ import React from "react"
 import { H1, BodyMain } from "../styles/TextStyles"
 import styled from "styled-components"
 import Products from "../cards/ProductCard"
-import BlobBackground from "../backgrounds/BlobBackground"
-import "animate.css/animate.min.css";
-import ScrollAnimation from 'react-animate-on-scroll';
 
 export default function ProductSection() {
   return (
     <Wrapper>
-      <BlobBackground image="../images/blobs/BackGroundBlob02.svg" />
       <ContentWrapper>
-      <ScrollAnimation 
-      animateIn="animate__fadeInUpBig"
-      animateOut="animate__fadeOutUpBig"
-      duration="2"
-      >
         <TextWrapper>
           <Title>
             <span className="products">Products</span> we offer{" "}
@@ -25,45 +16,26 @@ export default function ProductSection() {
             routine, and make them seemingly work with your business.
           </Description>
         </TextWrapper>
-        </ScrollAnimation>
       </ContentWrapper>
       <ProductWrapper>
-      <ScrollAnimation 
-          animateIn="animate__flipInY"
-          animateOut="animate__flipOutY"
-          duration="1.5"
-          >
         <Products
           iconImage="/images/icons/web_dm_v002.svg"
           title="Web Apps"
           titleColor="#FF7F00"
           text="Having a website is a good way to express yourself to your audience and the world."
         />
-        </ScrollAnimation>
-        <ScrollAnimation 
-          animateIn="animate__flipInY"
-          animateOut="animate__flipOutY"
-          duration="1.6"
-          >
         <Products
           iconImage="/images/icons/smartphone_dm_v002.svg"
           title="Mobile Apps"
           titleColor="#FF7F00"
           text="Having a mobile app will let you reach your audience while on the road."
         />
-        </ScrollAnimation>
-        <ScrollAnimation 
-          animateIn="animate__flipInY"
-          animateOut="animate__flipOutY"
-          duration="1.7"
-          >
         <Products
           iconImage="/images/icons/controller_dm_v002.svg"
           title="Games"
           titleColor="#FF7F00"
           text="Incorporating games in learning will enhance the experience overall."
         />
-        </ScrollAnimation>
       </ProductWrapper>
     </Wrapper>
   )
