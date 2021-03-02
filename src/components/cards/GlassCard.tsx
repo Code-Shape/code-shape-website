@@ -14,7 +14,7 @@ export default function GlassCards(props) {
     backgroundColor,
   } = props
   return (
-    <Link to={link || "/"}>
+    <Link to={link || "/"} key={props}>
       <Wrapper>
         <ImageWrapper>
           <Image

@@ -6,7 +6,7 @@ import { Caption2, SmallText } from "../styles/TextStyles"
 export default function RingButtonWithAnimation(props) {
   const { title, subtitle, link, icon } = props
   return (
-    <Link to={link || "/"}>
+    <Link to={link || "/"} key={props}>
       <Wrapper>
         <IconWrapper>
           <Icon src={icon || "/images/icons/image.svg"} className="icon" />

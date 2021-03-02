@@ -6,7 +6,7 @@ import { Caption } from "../styles/TextStyles"
 export default function MenuButton(props) {
   const { item } = props
   return (
-    <Link to={item.link} onClick={props.onClick}>
+    <Link to={item.link} onClick={props.onClick} key={props}>
       <MenuItem hasTitle={!item.title ? false : true}>
         <img src={item.icon} />
         {item.title}

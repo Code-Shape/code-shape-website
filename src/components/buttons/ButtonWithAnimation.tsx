@@ -6,7 +6,7 @@ import { Caption2, SmallText } from "../styles/TextStyles"
 export default function ButtonWithAnimation(props) {
   const { title, subtitle, link, icon } = props
   return (
-    <Link to={link || "/"}>
+    <Link to={link || "/"} key={props}>
       <Wrapper>
         <IconWrapper>
           <Icon src={icon || "/images/icons/image.svg"} className="icon" />
@@ -41,17 +41,17 @@ const Wrapper = styled.div`
   }
 
   @media only screen and (min-width: 600px) {
-  :hover {
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
-      0px 30px 60px rgba(23, 0, 102, 0.5),
-      inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
-    transform: translateY(-3px);
+    :hover {
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+        0px 30px 60px rgba(23, 0, 102, 0.5),
+        inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+      transform: translateY(-3px);
 
-    .icon {
-      transform: scale(1.2);
+      .icon {
+        transform: scale(1.2);
+      }
     }
   }
-}
 `
 
 const TextWrapper = styled.div`
@@ -78,10 +78,10 @@ const Ring = styled.img`
   left: -16px;
 
   @media only screen and (min-width: 600px) {
-  ${Wrapper}:hover & {
-    transform: rotate(30deg) scale(1.2) translate(1px, 1px);
+    ${Wrapper}:hover & {
+      transform: rotate(30deg) scale(1.2) translate(1px, 1px);
+    }
   }
-}
 `
 
 const IconWrapper = styled.div`
@@ -96,8 +96,8 @@ const IconWrapper = styled.div`
   position: relative;
 
   @media only screen and (min-width: 600px) {
-  ${Wrapper}:hover & {
-    filter: hue-rotate(10deg) brightness(150%) saturate(120%);
+    ${Wrapper}:hover & {
+      filter: hue-rotate(10deg) brightness(150%) saturate(120%);
+    }
   }
-}
 `

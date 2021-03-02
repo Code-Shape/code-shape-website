@@ -6,7 +6,7 @@ import { BodyMain } from "../styles/TextStyles"
 export default function GlassButton(props) {
   const { link, title, titleColor } = props
   return (
-    <Link to={link || "/"} target="_blank">
+    <Link to={link || "/"} target="_blank" key={props}>
       <Wrapper>
         <Title titleColor={titleColor}>{title || "Join Now!"}</Title>
       </Wrapper>

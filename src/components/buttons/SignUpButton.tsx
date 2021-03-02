@@ -6,9 +6,9 @@ import { Caption2, SmallText } from "../styles/TextStyles"
 export default function SignUpButton(props) {
   const { link, icon, title, subtitle } = props
   return (
-    <Link to={link || "/"}>
+    <Link to={link || "/"} key={props}>
       <Wrapper>
-          <Icon src={icon || "/images/profiles/logo.png"} className="icon" />
+        <Icon src={icon || "/images/profiles/logo.png"} className="icon" />
         <TextWrapper>
           <Title>{title || "Code Shape"}</Title>
           <Subtitle>{subtitle || "Code Shape"}</Subtitle>
@@ -39,18 +39,18 @@ const Wrapper = styled.div`
   }
 
   @media only screen and (min-width: 600px) {
-  :hover {
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
-      0px 30px 60px rgba(23, 0, 102, 0.5),
-      inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
-    transform: translateY(-3px) scale(1.1);
-    filter: hue-rotate(10deg) brightness(150%) saturate(120%);
+    :hover {
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+        0px 30px 60px rgba(23, 0, 102, 0.5),
+        inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+      transform: translateY(-3px) scale(1.1);
+      filter: hue-rotate(10deg) brightness(150%) saturate(120%);
 
-    .icon {
-      transform: scale(1.2);
+      .icon {
+        transform: scale(1.2);
+      }
     }
   }
-}
 `
 
 const TextWrapper = styled.div`
@@ -79,11 +79,11 @@ const Subtitle = styled(SmallText)`
   margin-bottom: 15px;
 
   @media only screen and (min-width: 600px) {
-  ${Wrapper}:hover & {
-    color: #fff;
-    opacity: 1;
+    ${Wrapper}:hover & {
+      color: #fff;
+      opacity: 1;
+    }
   }
-}
 `
 
 const Icon = styled.img`
@@ -91,4 +91,3 @@ const Icon = styled.img`
   height: 70px;
   margin: 0 auto -15px auto;
 `
-

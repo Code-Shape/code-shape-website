@@ -6,7 +6,7 @@ import { BodyMain, MediumText } from "../styles/TextStyles"
 export default function MessageNotification(props) {
   const { name, text, image, link, nameColor, borderColor } = props
   return (
-    <Link to={link || "/"}>
+    <Link to={link || "/"} key={props}>
       <Wrapper>
         <ImageWrapper>
           <Image
@@ -74,7 +74,6 @@ const ImageWrapper = styled.div`
   align-content: center;
   justify-self: center;
   position: relative;
-  
 
   ${Wrapper}:hover & {
     filter: hue-rotate(10deg) brightness(150%) saturate(120%);

@@ -6,7 +6,7 @@ import { BodyMain, MediumText } from "../styles/TextStyles"
 export default function MessageNotificationReverted(props) {
   const { name, text, image, link, nameColor, borderColor } = props
   return (
-    <Link to={link || "/"}>
+    <Link to={link || "/"} key={props}>
       <Wrapper>
         <TextWrapper>
           <Name nameColor={nameColor}>{name || "Mr. Awesome"}</Name>
@@ -100,7 +100,7 @@ const Image = styled.img`
   background-origin: initial;
   background-clip: initial;
   background-color: rgb(255, 255, 255);
-  
+
   @media (prefers-color-scheme: dark) {
     background-color: #202020;
   }
