@@ -9,7 +9,7 @@ import {
   H1,
   MediumText,
 } from "../components/styles/TextStyles"
-import ReactDisqusComments from "react-disqus-comments"
+import Utterances from "utterances-react"
 
 export const pageQuery = graphql`
   fragment AssetFields on GraphCMS_Asset {
@@ -107,12 +107,18 @@ export default function ArticlePostTemplate({
         </div>
       </Navigation>
       <CommentsWrapper>
-        <ReactDisqusComments
-          shortname={process.env.GATSBY_DISQUS_NAME}
-          identifier={page.id}
-          title={page.title}
-          url={page.url}
-          category_id={page.category_id}
+        <Utterances
+          repo="Code-Shape/code-shape-website"
+          issueTerm="pathname"
+          label=""
+          theme="preferred-color-scheme"
+          crossorigin="anonymous"
+          async={false}
+          style={`
+            & .utterances {
+              max-width: 77rem;
+            }
+          `}
         />
       </CommentsWrapper>
     </Wrapper>
