@@ -1,18 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
-import "./FramerExample.css"
 import styled from "styled-components"
-
-/**
- * This is an example of layout animations in Framer Motion 2.
- *
- * It's as simple as adding a `layout` prop to the `motion.div`. When
- * the flexbox changes, the handle smoothly animates between layouts.
- *
- * Try adding whileHover={{ scale: 1.2 }} to the handle - the layout
- * animation is now fully compatible with user-set transforms.
- */
 
 export default function App() {
   const [isOn, setIsOn] = useState(false)
@@ -20,13 +9,17 @@ export default function App() {
   const toggleSwitch = () => setIsOn(!isOn)
 
   return (
-    <Wrapper className="switch" data-isOn={isOn} onClick={toggleSwitch}>
-      <motion.div
-        className="handle"
-        layout
-        transition={spring}
-        whileHover={{ scale: 1.1 }}
-      />
+    <Wrapper>
+      <Switch className="switch" data-isOn={isOn} onClick={toggleSwitch}>
+        <Handle>
+          <motion.div
+            className="handle"
+            layout
+            transition={spring}
+            whileHover={{ scale: 1.1 }}
+          />
+        </Handle>
+      </Switch>
     </Wrapper>
   )
 }
@@ -37,7 +30,17 @@ const spring = {
   damping: 30,
 }
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled.div`
+  * {
+    box-sizing: border-box;
+  }
+  .switch[data-isOn="true"] {
+    justify-content: flex-end;
+    background-color: #8f33d7;
+  }
+`
+
+const Switch = styled(motion.div)`
   margin: 0 auto;
 
   width: 120px;
@@ -48,4 +51,12 @@ const Wrapper = styled(motion.div)`
   border-radius: 50px;
   padding: 10px;
   cursor: pointer;
+`
+const Handle = styled.div`
+  .handle {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 40px;
+  }
 `
