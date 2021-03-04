@@ -36,7 +36,7 @@ const Wrapper = styled.div`
   }
   .switch[data-isOn="true"] {
     justify-content: flex-end;
-    background-color: #8f33d7;
+    background-color: #ff9400;
   }
 `
 
