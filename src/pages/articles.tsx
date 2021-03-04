@@ -140,7 +140,7 @@ const Wrapper = styled.div`
 const PostWrapper = styled.div`
   padding: 1.875rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 1.5rem;
 
   justify-content: center;
