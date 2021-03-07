@@ -23,28 +23,7 @@ export default function ProductCard(props) {
   )
 }
 
-const Wrapper = styled.div`
-
-  
-  *,
-  & {
-    transition: 0.3s ease-in;
-  }
-
-  @media only screen and (min-width: 600px) {
-  :hover {
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
-    0px 30px 60px rgba(23, 0, 102, 0.5),
-    inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
-  transform: translate3d(0px, -3px, 0px) scale(1.2);
-  z-index: 1;
-    
-  .icon {
-      transform: perspective(200px) scale(1.3) rotate3d(1,0,0, 30deg) translate3d(0,-10px,0);
-      transition-delay: .06s;
-    }
-}
-`
+const Wrapper = styled.div``
 
 const ContentWrapper = styled.div`
   display: grid;
@@ -54,9 +33,9 @@ const ContentWrapper = styled.div`
   justify-content: center;
   align-self: center;
   background: rgba(255, 255, 255, 0.15);
-  border-radius: 1.25rem;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1.25rem;
 
   @supports (backdrop-filter: blur(10px)) or
     (-webkit-backdrop-filter: blur(10px)) {
@@ -70,6 +49,26 @@ const ContentWrapper = styled.div`
     background-color: rgba(255, 255, 255, 0.1);
     @media (prefers-color-scheme: dark) {
       background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  *,
+  & {
+    transition: 0.3s ease-in;
+  }
+
+  @media only screen and (min-width: 600px) {
+  :hover {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+    0px 30px 60px rgba(23, 0, 102, 0.5),
+    inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+  transform: translate3d(0px, -3px, 0px) scale(1.2);
+  z-index: 1;
+  
+    
+  .icon {
+      transform: perspective(200px) scale(1.3) rotate3d(1,0,0, 30deg) translate3d(0,-10px,0);
+      transition-delay: .06s;
     }
   }
 `
