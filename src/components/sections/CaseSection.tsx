@@ -2,10 +2,12 @@ import React from "react"
 import { H1, BodyMain } from "../styles/TextStyles"
 import styled from "styled-components"
 import ClientProject from "../additionals/ClientProject"
+import BlobBackground from "../backgrounds/BlobBackground"
 
 export default function CaseSection() {
   return (
     <Wrapper>
+      <BlobBackground image="../images/blobs/BackgroundBlob02.svg" />
       <ContentWrapper>
         <TextWrapper>
           <Title>

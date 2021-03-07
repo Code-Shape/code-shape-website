@@ -2,10 +2,12 @@ import React from "react"
 import { H1, BodyMain } from "../styles/TextStyles"
 import styled from "styled-components"
 import Products from "../cards/ProductCard"
+import BlobBackground from "../backgrounds/BlobBackground"
 
 export default function ProductSection() {
   return (
     <Wrapper>
+      <BlobBackground image="../images/blobs/BackgroundBlob01.svg" />
       <ContentWrapper>
         <TextWrapper>
           <Title>

@@ -2,10 +2,12 @@ import React from "react"
 import { H1, BodyMain } from "../styles/TextStyles"
 import styled from "styled-components"
 import SignUpButton from "../buttons/SignUpButton"
+import BlobBackground from "../backgrounds/BlobBackground"
 
 export default function GetInTouchSection() {
   return (
     <Wrapper>
+      <BlobBackground image="../images/blobs/BackgroundBlob03.svg" />
       <ContentWrapper>
         <TextWrapper>
           <Title>Get in touch</Title>
