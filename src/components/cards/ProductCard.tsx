@@ -8,10 +8,7 @@ export default function ProductCard(props) {
   const { iconImage, title, text, titleColor } = props
   return (
     <Wrapper>
-      <ContentWrapper
-        whileHover={{ scale: 1.2 }}
-        whileTap={{ scale: 0.8, borderRadius: "100%" }}
-      >
+      <ContentWrapper whileHover={{ scale: 1.2 }}>
         <ImageWrapper className="iconWrapper">
           <IconImage
             className="icon"
