@@ -61,7 +61,7 @@ const TextWrapper = styled.div`
 const Title = styled(H1)`
   text-align: center;
   .worked {
-    color: #4518c3;
+    color: #ff8c00;
   }
 `
 

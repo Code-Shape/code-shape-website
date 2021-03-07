@@ -66,7 +66,7 @@ const Title = styled(H1)`
   }
 
   .products {
-    color: #4518c3;
+    color: #ff7f00;
   }
 `
 
