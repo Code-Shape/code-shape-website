@@ -8,7 +8,7 @@ export default function ProductCard(props) {
   const { iconImage, title, text, titleColor } = props
   return (
     <Wrapper>
-      <ContentWrapper whileHover={{ scale: 1.2 }}>
+      <ContentWrapper whileHover={{ scale: 1.1 }}>
         <ImageWrapper className="iconWrapper">
           <IconImage
             className="icon"
@@ -52,18 +52,35 @@ const ContentWrapper = styled(motion.div)`
       background-color: rgba(255, 255, 255, 0.1);
     }
   }
+
+  *,
+  & {
+    transition: 0.1s ease-in;
+  }
+  @media only screen and (min-width: 600px) {
+  :hover {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+    0px 30px 60px rgba(23, 0, 102, 0.5),
+    inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
+  z-index: 1;
+     
+  .iconWrapper {
+    filter: hue-rotate(10deg) brightness(150%) saturate(120%);
+    transform: perspective(200px) scale(1.1);
+  }
+
+  .icon {
+      transform: perspective(200px) scale(1.3) rotate3d(1,0,0, 30deg) translate3d(0,-10px,0);
+
+    }
+  }
+
 `
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled(motion.div)`
   margin: 0 auto;
   border-radius: 50%;
   background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%);
-
-  @media only screen and (min-width: 600px) {
-    ${Wrapper}:hover & {
-      filter: hue-rotate(10deg) brightness(110%) saturate(120%);
-    }
-  }
 `
 
 const IconImage = styled.img`
