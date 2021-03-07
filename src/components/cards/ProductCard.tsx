@@ -2,12 +2,16 @@ import React from "react"
 import styled from "styled-components"
 import { BodyMain, H3 } from "../styles/TextStyles"
 import { StyledIcon } from "@styled-icons/styled-icon"
+import { motion } from "framer-motion"
 
 export default function ProductCard(props) {
   const { iconImage, title, text, titleColor } = props
   return (
     <Wrapper>
-      <ContentWrapper>
+      <ContentWrapper
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.8, borderRadius: "100%" }}
+      >
         <ImageWrapper className="iconWrapper">
           <IconImage
             className="icon"
@@ -25,7 +29,7 @@ export default function ProductCard(props) {
 
 const Wrapper = styled.div``
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1.875rem;
@@ -49,26 +53,6 @@ const ContentWrapper = styled.div`
     background-color: rgba(255, 255, 255, 0.1);
     @media (prefers-color-scheme: dark) {
       background-color: rgba(255, 255, 255, 0.1);
-    }
-  }
-
-  *,
-  & {
-    transition: 0.3s ease-in;
-  }
-
-  @media only screen and (min-width: 600px) {
-  :hover {
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
-    0px 30px 60px rgba(23, 0, 102, 0.5),
-    inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
-  transform: translate3d(0px, -3px, 0px) scale(1.2);
-  z-index: 1;
-  
-    
-  .icon {
-      transform: perspective(200px) scale(1.3) rotate3d(1,0,0, 30deg) translate3d(0,-10px,0);
-      transition-delay: .06s;
     }
   }
 `
