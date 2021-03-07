@@ -5,7 +5,6 @@ import SEO from "../components/layout/seo"
 import GlassGradientIntro from "../components/intros/GlassGradientIntro"
 import CommunityWithImage from "../components/additionals/CommunityWithImage"
 import HeaderBackground from "../components/backgrounds/HeaderBackground"
-import FramerExample from "../components/buttons/FramerExample"
 
 export default function CommunityPage() {
   const data = useStaticQuery(graphql`
@@ -30,7 +29,6 @@ export default function CommunityPage() {
         gradientColor="-webkit-linear-gradient(left, #F89929, #F5217B)"
       />
       <CommunityWithImage />
-      <FramerExample />
     </Wrapper>
   )
 }
