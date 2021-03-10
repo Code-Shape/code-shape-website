@@ -75,36 +75,39 @@ export default function ArticlePostTemplate({
       <Navigation>
         {(nextProject || previousProject) && (
           <div>
-            <hr className="Divider" />
-            {nextProject && (
-              <div>
-                <h3>Next Post</h3>
-                <div>
-                  <Link to={`/articles/${nextProject.slug}`}>
-                    {nextProject.title}
-                  </Link>
-                </div>
-                <hr className="Divider" />
-              </div>
-            )}
             {previousProject && (
-              <div>
+              <Link to={`/articles/${previousProject.slug}`}>
+              <div className="prevPost">
+              <div className="prevSymbol">
+                </div>
                 <h3>Previous Post</h3>
                 <div className="ArticleLink">
-                  <Link to={`/articles/${previousProject.slug}`}>
-                    {previousProject.title}
-                  </Link>
+                    {previousProject.title} 
                 </div>
-                <hr className="Divider" />
               </div>
+              </Link>
+            )}
+            <Link to="/articles/">
+            <div className="blogBack">
+            <div className="blogSymbol">
+              </div>
+            &larr; Back to the blog
+        </div>
+        </Link>
+            {nextProject && (
+              <Link to={`/articles/${nextProject.slug}`}>
+              <div className="nextPost">
+              <div className="nextSymbol">
+                  </div>
+                <h3>Next Post</h3>
+                <div>
+                    {nextProject.title}
+                </div>
+              </div>
+              </Link>
             )}
           </div>
         )}
-        <div>
-          <Link to="/articles/" className="">
-            &larr; Back to the blog
-          </Link>
-        </div>
       </Navigation>
       <CommentsWrapper>
         <Utterances
@@ -221,21 +224,67 @@ const AuthorTitle = styled(Caption)`
 `
 
 const Navigation = styled.div`
+margin: 0 auto;
+text-align: center;
+padding: 1.875rem;
+display: inline;
+line-height: 1.5rem;
+
+
+.prevPost {
+  background: rgba(255, 255, 255, .1);
+  padding: 1rem;
+  border 1px solid #888888;
+  border-radius: 1rem;
+  color: #f89b29;
+  width: 12rem;
+  display: inline-block;
+}
+
+.prevSymbol {
+background: #f89b29;
+height: 2rem;
+width: 4rem;
+margin: 0 auto;
+clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}
+
+.blogBack {
+background: rgba(255, 255, 255, .1);
+  padding: 1rem;
+  border 1px solid #888888;
+  border-radius: 1rem;
+  width: 12rem;
+  color: #ad4bde;
+  display: inline-block;
+  margin: 1rem 4rem;
+}
+
+.blogSymbol {
+background: #ad4bde;
+height: 2rem;
+width: 4rem;
+margin: 0 auto;
+clip-path: polygon(0 1%, 50% 44%, 100% 0, 100% 65%, 50% 100%, 0 65%);;
+}
+
+.nextPost {
+  background: rgba(255, 255, 255, .1);
+  padding: 1rem;
+  border 1px solid #888888;
+  border-radius: 1rem;
+  color: #f51d7e;
+  width: 12rem;
+  display: inline-block;
+}
+
+.nextSymbol {
+  background: #f51d7e;
+  height: 2rem;
+  width: 4rem;
   margin: 0 auto;
-  text-align: center;
-  padding: 1.875rem;
-  display: grid;
-  grid-gap: 1rem;
-  width: 18rem;
-
-  .Divider {
-    color: #757372;
-    line-height: 3rem;
-  }
-
-  .ArticleLink {
-    padding: 30px;
-  }
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
 `
 
 const CommentsWrapper = styled.div`
