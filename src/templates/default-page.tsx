@@ -2,10 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import { H1, BodyMain } from "../components/styles/TextStyles"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import HeaderBackground from "../components/backgrounds/HeaderBackground"
 
 export default function DefaultPageTemplate({ pageContext: { page } }) {
   return (
     <Wrapper>
+      <HeaderBackground image="../images/blobs/HeaderBlob06.svg" />
       <HeaderWrapper>
         <TextWrapper>
           <TitleWrapper>{page.title}</TitleWrapper>
@@ -35,7 +37,7 @@ const TextWrapper = styled.div`
 `
 
 const TitleWrapper = styled(H1)`
-  padding: 0.2rem;
+  padding: 0.6rem;
   font-weight: 900;
   background: -webkit-linear-gradient(left, #7230ce, #3E16BB)};
   -webkit-background-clip: text;
