@@ -20,7 +20,9 @@ export default function DefaultPageTemplate({ pageContext: { page } }) {
     </Wrapper>
   )
 }
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+margin 3rem auto;
+`
 
 const HeaderWrapper = styled.div`
   min-height: 250px;
