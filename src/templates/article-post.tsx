@@ -91,7 +91,7 @@ export default function ArticlePostTemplate({
             <div className="blogBack">
             <div className="blogSymbol">
               </div>
-            &larr; Back to the blog
+            &larr; Back to articles
         </div>
         </Link>
           {nextPost && (
@@ -228,22 +228,25 @@ const Navigation = styled.div`
   margin: 0 auto;
   text-align: center;
   padding: 1.875rem;
-  display: inline;
   line-height: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1.875rem;
 
 
   .prevPost {
-    background: rgba(255, 255, 255, .1);
     padding: 1rem;
-    border 1px solid #888888;
     border-radius: 1rem;
-    color: #f89b29;
+    color: #4f1ec0;
     width: 12rem;
-    display: inline-block;
+    display: grid;
+    grid-gap: .5rem;
+    height: 7rem;
+    align-content: center;
   }
 
 .prevSymbol {
-  background: #f89b29;
+  background: #4f1ec0;
   height: 2rem;
   width: 4rem;
   margin: 0 auto;
@@ -251,18 +254,18 @@ const Navigation = styled.div`
 }
 
 .blogBack {
-  background: rgba(255, 255, 255, .1);
     padding: 1rem;
-    border 1px solid #888888;
     border-radius: 1rem;
     width: 12rem;
-    color: #ad4bde;
-    display: inline-block;
-    margin: 1rem 4rem;
+    color: #f51d7e;
+    display: grid;
+    grid-gap: .5rem;
+    height: 7rem;
+    align-content: center;
 }
 
 .blogSymbol {
-  background: #ad4bde;
+  background: #f51d7e;
   height: 2rem;
   width: 4rem;
   margin: 0 auto;
@@ -270,17 +273,18 @@ const Navigation = styled.div`
 }
 
   .nextPost {
-    background: rgba(255, 255, 255, .1);
     padding: 1rem;
-    border 1px solid #888888;
     border-radius: 1rem;
-    color: #f51d7e;
+    color: #4f1ec0;
     width: 12rem;
-    display: inline-block;
+    display: grid;
+    grid-gap: .5rem;
+    height: 7rem;
+    align-content: center;
   }
 
   .nextSymbol {
-    background: #f51d7e;
+    background: #4f1ec0;
     height: 2rem;
     width: 4rem;
     margin: 0 auto;

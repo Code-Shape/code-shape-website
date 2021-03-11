@@ -76,7 +76,7 @@ export default function ArticlePostTemplate({
         {(nextProject || previousProject) && (
           <div>
             {previousProject && (
-              <Link to={`/articles/${previousProject.slug}`}>
+              <Link to={`/projects/${previousProject.slug}`}>
               <div className="prevPost">
               <div className="prevSymbol">
                 </div>
@@ -95,7 +95,7 @@ export default function ArticlePostTemplate({
         </div>
         </Link>
             {nextProject && (
-              <Link to={`/articles/${nextProject.slug}`}>
+              <Link to={`/projects/${nextProject.slug}`}>
               <div className="nextPost">
               <div className="nextSymbol">
                   </div>
