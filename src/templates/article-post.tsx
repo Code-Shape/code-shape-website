@@ -10,6 +10,7 @@ import {
   MediumText,
 } from "../components/styles/TextStyles"
 import Utterances from "utterances-react"
+import HeaderBackground from "../components/backgrounds/HeaderBackground"
 
 export const pageQuery = graphql`
   fragment AssetFields on GraphCMS_Asset {
@@ -45,6 +46,7 @@ export default function ArticlePostTemplate({
 }) {
   return (
     <Wrapper>
+      <HeaderBackground image="../images/blobs/HeaderBlob05.svg" />
       <Header>
         <PublishDate>{page.date}</PublishDate>
         <PageTitle>{page.title}</PageTitle>
