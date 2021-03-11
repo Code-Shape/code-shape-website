@@ -74,41 +74,33 @@ export default function ArticlePostTemplate({
       </ContentWrapper>
       <Navigation>
         {(nextPost || previousPost) && (
-          <div>
+          <NavigationButtons>
             {previousPost && (
               <Link to={`/articles/${previousPost.slug}`}>
-              <div className="prevPost">
-                <div className="prevSymbol">
+                <div className="prevPost">
+                  <div className="prevSymbol"></div>
+                  <h3>Previous Post</h3>
+                  <div>{previousPost.title}</div>
                 </div>
-                <h3>Previous Post</h3>
-                <div>
-                    {previousPost.title}
-                </div>
-              </div>
               </Link>
             )}
             <Link to="/articles/">
-            <div className="blogBack">
-            <div className="blogSymbol">
+              <div className="blogBack">
+                <div className="blogSymbol"></div>
+                Back to articles
               </div>
-            &larr; Back to articles
-        </div>
-        </Link>
-          {nextPost && (
-            <Link to={`/articles/${nextPost.slug}`}>
-              <div className="nextPost">
-                <div className="nextSymbol">
-                  </div>
-                <h3>Next Post</h3>
-                <div>
-                    {nextPost.title}
+            </Link>
+            {nextPost && (
+              <Link to={`/articles/${nextPost.slug}`}>
+                <div className="nextPost">
+                  <div className="nextSymbol"></div>
+                  <h3>Next Post</h3>
+                  <div>{nextPost.title}</div>
                 </div>
-              </div>
               </Link>
             )}
-          </div>
+          </NavigationButtons>
         )}
-        
       </Navigation>
       <CommentsWrapper>
         <Utterances
@@ -229,56 +221,50 @@ const Navigation = styled.div`
   text-align: center;
   padding: 1.875rem;
   line-height: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 1.875rem;
-
 
   .prevPost {
     padding: 1rem;
     border-radius: 1rem;
-    color: #4f1ec0;
     width: 12rem;
     display: grid;
-    grid-gap: .5rem;
+    grid-gap: 0.5rem;
     height: 7rem;
     align-content: center;
   }
 
-.prevSymbol {
-  background: #4f1ec0;
-  height: 2rem;
-  width: 4rem;
-  margin: 0 auto;
-  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-}
+  .prevSymbol {
+    background: #4f1ec0;
+    height: 2rem;
+    width: 4rem;
+    margin: 0 auto;
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+  }
 
-.blogBack {
+  .blogBack {
     padding: 1rem;
     border-radius: 1rem;
     width: 12rem;
     color: #f51d7e;
     display: grid;
-    grid-gap: .5rem;
+    grid-gap: 0.5rem;
     height: 7rem;
     align-content: center;
-}
+  }
 
-.blogSymbol {
-  background: #f51d7e;
-  height: 2rem;
-  width: 4rem;
-  margin: 0 auto;
-  clip-path: polygon(0 1%, 50% 44%, 100% 0, 100% 65%, 50% 100%, 0 65%);;
-}
+  .blogSymbol {
+    background: #f51d7e;
+    height: 2rem;
+    width: 4rem;
+    margin: 0 auto;
+    clip-path: polygon(0 1%, 50% 44%, 100% 0, 100% 65%, 50% 100%, 0 65%);
+  }
 
   .nextPost {
     padding: 1rem;
     border-radius: 1rem;
-    color: #4f1ec0;
     width: 12rem;
     display: grid;
-    grid-gap: .5rem;
+    grid-gap: 0.5rem;
     height: 7rem;
     align-content: center;
   }
@@ -289,6 +275,21 @@ const Navigation = styled.div`
     width: 4rem;
     margin: 0 auto;
     clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+  }
+`
+
+const NavigationButtons = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  @media only screen and (max-width: 740px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
   }
 `
 
