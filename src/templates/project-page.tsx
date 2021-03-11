@@ -46,7 +46,7 @@ export default function ArticlePostTemplate({
 }) {
   return (
     <Wrapper>
-      <HeaderBackground image="../images/blobs/HeaderBlob05.svg" />
+      <HeaderBackground image="../images/blobs/HeaderBlob06.svg" />
       <Header>
         <PublishDate>{project.date}</PublishDate>
         <PageTitle>{project.title}</PageTitle>
