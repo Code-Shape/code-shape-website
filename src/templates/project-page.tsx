@@ -223,6 +223,7 @@ const Navigation = styled.div`
   text-align: center;
   padding: 1.875rem;
   line-height: 1.5rem;
+  filter: drop-shadow(.5rem .5rem .3rem rgba(0, 0, 0, .6));
 
   .prevPost {
     padding: 1rem;
