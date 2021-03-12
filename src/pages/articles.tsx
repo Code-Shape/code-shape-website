@@ -31,7 +31,7 @@ export default function ArticlesPage({ data: { posts, projects } }) {
                       <Img
                         fluid={post.coverImage.localFile.childImageSharp.fluid}
                         alt={post.title}
-                        className="featuredImage"
+                        className="featuredImageArticles"
                       />
                     )}
                   </ImageWrapper>
@@ -66,7 +66,7 @@ export default function ArticlesPage({ data: { posts, projects } }) {
                             project.coverImage.localFile.childImageSharp.fluid
                           }
                           alt={project.title}
-                          className="featuredImage"
+                          className="featuredImageProjects"
                         />
                       )}
                     </ImageWrapper>
@@ -195,7 +195,15 @@ const ArticleWrapper = styled.div`
   display: grid;
   grid-gap: 1.875rem;
 `
-const ImageWrapper = styled.div``
+const ImageWrapper = styled.div`
+.featuredImageArticles {
+  height: 12rem;
+}
+
+.featuredImageProjects {
+  height: 17rem;
+}
+`
 
 const TextWrapper = styled.div`
   display: grid;
@@ -205,13 +213,21 @@ const TextWrapper = styled.div`
 
 const ExcerptWrapper = styled(MediumText)``
 
-const Excerpt = styled.div``
+const Excerpt = styled.div`
+@media only screen and (min-width: 600px) {
+height: 10rem;
+}
+`
 
 const ReadMore = styled.div`
   color: #503cce;
 `
 
-const PostTitle = styled(H2)``
+const PostTitle = styled(H2)`
+@media only screen and (min-width: 600px) {
+height: 7rem;
+}
+`
 
 const ProjectWrapper = styled.div`
   margin: 0 auto;
