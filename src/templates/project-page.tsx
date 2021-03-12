@@ -124,7 +124,7 @@ export default function ArticlePostTemplate({
 }
 
 const Wrapper = styled.div`
-  margin: 3rem auto;
+  margin: 8rem auto;
   display: grid;
   grid-gap: 1.875rem;
   max-width: 77rem;
