@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components"
 import { H1, H2, BodyMain, MediumText } from "../components/styles/TextStyles"
 
@@ -24,12 +24,11 @@ export default function CategoryPageTemplate({
               <ContentWrapper key={post.id}>
                 <ArticleWrapper>
                   <ImageWrapper>
-                    {post.coverImage.localFile.childImageSharp.fluid && (
-                      <Img
-                        fluid={post.coverImage.localFile.childImageSharp.fluid}
+                    {post.coverImage.localFile.childImageSharp.gatsbyImageData && (
+                      <GatsbyImage
+                        image={post.coverImage.localFile.childImageSharp.gatsbyImageData}
                         alt={post.title}
-                        className="featuredImage"
-                      />
+                        className="featuredImage" />
                     )}
                   </ImageWrapper>
                   <InnerTextWrapper>
@@ -51,36 +50,31 @@ export default function CategoryPageTemplate({
                 </ArticleWrapper>
               </ContentWrapper>
             </Link>
-          )
+          );
         })}
       </PostWrapper>
     </Wrapper>
-  )
+  );
 }
 
-export const pageQuery = graphql`
-  query RelatedCategoryPosts($slug: String!) {
-    allGraphCmsPost(
-      filter: { categories: { elemMatch: { slug: { eq: $slug } } } }
-    ) {
-      nodes {
-        id
-        date: formattedDate
-        excerpt
-        slug
-        title
-        coverImage {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 600) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+export const pageQuery = graphql`query RelatedCategoryPosts($slug: String!) {
+  allGraphCmsPost(filter: {categories: {elemMatch: {slug: {eq: $slug}}}}) {
+    nodes {
+      id
+      date: formattedDate
+      excerpt
+      slug
+      title
+      coverImage {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(width: 600, layout: CONSTRAINED)
           }
         }
       }
     }
   }
+}
 `
 
 const Wrapper = styled.div``

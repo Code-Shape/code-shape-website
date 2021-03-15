@@ -1,22 +1,19 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components"
 import IntroText from "../intros/IntroText"
 import GlassButton from "../buttons/GlassButton"
 
 export default function CommunityWithImage() {
-  const data = useStaticQuery(graphql`
-    query {
-      discord: file(relativePath: { eq: "discord_community.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 700) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
+  const data = useStaticQuery(graphql`{
+  discord: file(relativePath: {eq: "discord_community.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 700, layout: CONSTRAINED)
     }
-  `)
+  }
+}
+`)
 
   return (
     <Wrapper>
@@ -27,7 +24,7 @@ export default function CommunityWithImage() {
           description="Be a part of a community that cares about each other and how they reach their software development goals and design goals. Are you ready?"
         />
         <ImageWrapper>
-          <Img fluid={data.discord.childImageSharp.fluid} fadeIn={false} />
+          <GatsbyImage image={data.discord.childImageSharp.gatsbyImageData} fadeIn={false} />
         </ImageWrapper>
       </ContentWrapper>
       <ButtonWrapper>
@@ -38,7 +35,7 @@ export default function CommunityWithImage() {
         />
       </ButtonWrapper>
     </Wrapper>
-  )
+  );
 }
 
 const Wrapper = styled.div`

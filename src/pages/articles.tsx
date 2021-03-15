@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components"
 import { H2, MediumText } from "../components/styles/TextStyles"
 import GlassGradientIntro from "../components/intros/GlassGradientIntro"
@@ -27,12 +27,11 @@ export default function ArticlesPage({ data: { posts, projects } }) {
               <ContentWrapper key={post.id}>
                 <ArticleWrapper>
                   <ImageWrapper>
-                    {post.coverImage.localFile.childImageSharp.fluid && (
-                      <Img
-                        fluid={post.coverImage.localFile.childImageSharp.fluid}
+                    {post.coverImage.localFile.childImageSharp.gatsbyImageData && (
+                      <GatsbyImage
+                        image={post.coverImage.localFile.childImageSharp.gatsbyImageData}
                         alt={post.title}
-                        className="featuredImageArticles"
-                      />
+                        className="featuredImageArticles" />
                     )}
                   </ImageWrapper>
                   <TextWrapper>
@@ -45,7 +44,7 @@ export default function ArticlesPage({ data: { posts, projects } }) {
                 </ArticleWrapper>
               </ContentWrapper>
             </Link>
-          )
+          );
         })}
       </PostWrapper>
       <ProjectWrapper>
@@ -60,14 +59,11 @@ export default function ArticlesPage({ data: { posts, projects } }) {
                 <ContentWrapper key={project.id}>
                   <ArticleWrapper>
                     <ImageWrapper>
-                      {project.coverImage.localFile.childImageSharp.fluid && (
-                        <Img
-                          fluid={
-                            project.coverImage.localFile.childImageSharp.fluid
-                          }
+                      {project.coverImage.localFile.childImageSharp.gatsbyImageData && (
+                        <GatsbyImage
+                          image={project.coverImage.localFile.childImageSharp.gatsbyImageData}
                           alt={project.title}
-                          className="featuredImageProjects"
-                        />
+                          className="featuredImageProjects" />
                       )}
                     </ImageWrapper>
                     <TextWrapper>
@@ -82,53 +78,48 @@ export default function ArticlesPage({ data: { posts, projects } }) {
                   </ArticleWrapper>
                 </ContentWrapper>
               </Link>
-            )
+            );
           })}
         </Projects>
       </ProjectWrapper>
     </Wrapper>
-  )
+  );
 }
 
-export const pageQuery = graphql`
-  {
-    posts: allGraphCmsPost(sort: { fields: date, order: DESC }) {
-      nodes {
-        id
-        date: formattedDate
-        excerpt
-        slug
-        title
-        coverImage {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 600) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-    projects: allGraphCmsProject(sort: { fields: date, order: DESC }) {
-      nodes {
-        id
-        date: formattedDate
-        excerpt
-        slug
-        title
-        coverImage {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 600) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+export const pageQuery = graphql`{
+  posts: allGraphCmsPost(sort: {fields: date, order: DESC}) {
+    nodes {
+      id
+      date: formattedDate
+      excerpt
+      slug
+      title
+      coverImage {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(width: 600, layout: CONSTRAINED)
           }
         }
       }
     }
   }
+  projects: allGraphCmsProject(sort: {fields: date, order: DESC}) {
+    nodes {
+      id
+      date: formattedDate
+      excerpt
+      slug
+      title
+      coverImage {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(width: 600, layout: CONSTRAINED)
+          }
+        }
+      }
+    }
+  }
+}
 `
 
 const Wrapper = styled.div`
