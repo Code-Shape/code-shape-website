@@ -40,6 +40,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-mdx`,
+    `gatsby-transformer-remark`,
     {
       resolve: "gatsby-source-graphcms",
       options: {
@@ -49,16 +50,6 @@ module.exports = {
         downloadLocalImages: true,
       },
     },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [`gatsby-remark-reading-time`],
-      },
-    },
-    // {
-    //  resolve: `gatsby-plugin-create-client-paths`,
-    //  options: { prefixes: [`/app/*`] },
-    // },
     {
       resolve: "gatsby-plugin-firebase",
       options: {
@@ -75,8 +66,8 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-postcss",
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 }
