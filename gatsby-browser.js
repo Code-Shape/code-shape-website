@@ -1,7 +1,9 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 import Layout from "./src/components/layout/layout"
-
+import "firebase/auth"
+import "firebase/firestore"
+import "firebase/functions"
 /* eslint-disable */
 const components = {
   wrapper: ({ children }) => <>{children}</>,

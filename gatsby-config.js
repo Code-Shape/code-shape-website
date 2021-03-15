@@ -55,10 +55,10 @@ module.exports = {
         plugins: [`gatsby-remark-reading-time`],
       },
     },
-    // {
-    //  resolve: `gatsby-plugin-create-client-paths`,
-    //  options: { prefixes: [`/app/*`] },
-    // },
+    {
+     resolve: `gatsby-plugin-create-client-paths`,
+     options: { prefixes: [`/app/*`] },
+    },
     {
       resolve: "gatsby-plugin-firebase",
       options: {
