@@ -5,18 +5,17 @@ import MenuButton from "../buttons/MenuButton"
 import { Link } from "gatsby"
 import MenuTooltip from "../tooltips/MenuTooltip"
 import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 export default function Header() {
-  const data = useStaticQuery(graphql`
-    {
-      logo: file(relativePath: { eq: "logo.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 700, layout: CONSTRAINED)
-        }
-      }
+  const data = useStaticQuery(graphql`{
+  logo: file(relativePath: {eq: "logo.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 700, layout: CONSTRAINED)
     }
-  `)
+  }
+}
+`)
   const [isOpen, setIsOpen] = useState(false)
   const ref = useRef()
   const tooltipRef = useRef()
@@ -48,10 +47,7 @@ export default function Header() {
     <Wrapper>
       <Link to="/">
         <Logo>
-          <GatsbyImage
-            image={data.logo.childImageSharp.gatsbyImageData}
-            alt="Code Shape Logo"
-          />
+          <GatsbyImage image={data.logo.childImageSharp.gatsbyImageData} alt="Code Shape Logo" />
         </Logo>
       </Link>
       <MenuWrapper count={menuData.length} ref={ref}>
@@ -66,7 +62,7 @@ export default function Header() {
         <MenuTooltip isOpen={isOpen} />
       </div>
     </Wrapper>
-  )
+  );
 }
 
 const Wrapper = styled.div`

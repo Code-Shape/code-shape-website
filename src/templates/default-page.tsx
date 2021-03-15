@@ -21,7 +21,7 @@ export default function DefaultPageTemplate({ pageContext: { page } }) {
   )
 }
 const Wrapper = styled.div`
-  margin: 6rem auto;
+margin 6rem auto;
 `
 
 const HeaderWrapper = styled.div`

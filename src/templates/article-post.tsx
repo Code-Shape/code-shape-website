@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
 import {
@@ -12,30 +12,25 @@ import {
 import Utterances from "utterances-react"
 import HeaderBackground from "../components/backgrounds/HeaderBackground"
 
-export const pageQuery = graphql`
-  fragment AssetFields on GraphCMS_Asset {
-    id
-    localFile {
-      childImageSharp {
-        gatsbyImageData(layout: FULL_WIDTH)
-      }
+export const pageQuery = graphql`fragment AssetFields on GraphCMS_Asset {
+  id
+  localFile {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH)
     }
   }
+}
 
-  query ArticlePostQuery($id: String!) {
-    authorImage: graphCmsAsset(
-      authorAvatar: {
-        elemMatch: { posts: { elemMatch: { id: { in: [$id] } } } }
-      }
-    ) {
-      ...AssetFields
-    }
-    coverImage: graphCmsAsset(
-      coverImagePost: { elemMatch: { id: { eq: $id } } }
-    ) {
-      ...AssetFields
-    }
+query ArticlePostQuery($id: String!) {
+  authorImage: graphCmsAsset(
+    authorAvatar: {elemMatch: {posts: {elemMatch: {id: {in: [$id]}}}}}
+  ) {
+    ...AssetFields
   }
+  coverImage: graphCmsAsset(coverImagePost: {elemMatch: {id: {eq: $id}}}) {
+    ...AssetFields
+  }
+}
 `
 
 export default function ArticlePostTemplate({
@@ -54,9 +49,8 @@ export default function ArticlePostTemplate({
           <AuthorAvatar>
             <GatsbyImage
               image={authorImage.localFile.childImageSharp.gatsbyImageData}
-              alt="Author Image"
-              className="Image"
-            />
+              fadeIn={false}
+              className="Image" />
           </AuthorAvatar>
           <AuthorTextWrapper>
             <AuthorName>{page.author.name}</AuthorName>
@@ -67,9 +61,8 @@ export default function ArticlePostTemplate({
       <ContentWrapper>
         <GatsbyImage
           image={coverImage.localFile.childImageSharp.gatsbyImageData}
-          alt="Cover Image"
-          className="CoverImage"
-        />
+          fadeIn={false}
+          className="CoverImage" />
         <MDXRenderer>{page.content.markdownNode.childMdx.body}</MDXRenderer>
       </ContentWrapper>
       <Navigation>
@@ -118,7 +111,7 @@ export default function ArticlePostTemplate({
         />
       </CommentsWrapper>
     </Wrapper>
-  )
+  );
 }
 
 const Wrapper = styled.div`
@@ -192,12 +185,13 @@ const AuthorAvatar = styled.div`
     background-position-x: initial;
     background-position-y: initial;
     background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
     background-attachment: initial;
     background-origin: initial;
     background-clip: initial;
     background-color: rgb(255, 255, 255);
     border: 3px solid white;
-    z-index: 1;
   }
 `
 
@@ -220,7 +214,7 @@ const Navigation = styled.div`
   text-align: center;
   padding: 1.875rem;
   line-height: 1.5rem;
-  filter: drop-shadow(0.5rem 0.5rem 0.3rem rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(.5rem .5rem .3rem rgba(0, 0, 0, .6));
 
   .prevPost {
     padding: 1rem;
