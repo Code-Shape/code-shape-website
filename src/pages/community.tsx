@@ -7,17 +7,14 @@ import CommunityWithImage from "../components/additionals/CommunityWithImage"
 import HeaderBackground from "../components/backgrounds/HeaderBackground"
 
 export default function CommunityPage() {
-  const data = useStaticQuery(graphql`
-    query {
-      discord: file(relativePath: { eq: "discord_community.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 700) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
+  const data = useStaticQuery(graphql`{
+  discord: file(relativePath: {eq: "discord_community.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 700, layout: CONSTRAINED)
     }
-  `)
+  }
+}
+`)
 
   return (
     <Wrapper>

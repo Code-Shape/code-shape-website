@@ -5,16 +5,14 @@ import MenuButton from "../buttons/MenuButton"
 import { Link } from "gatsby"
 import MenuTooltip from "../tooltips/MenuTooltip"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function Header() {
   const data = useStaticQuery(graphql`
-    query {
+    {
       logo: file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
-          fluid(maxWidth: 700) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 700, layout: CONSTRAINED)
         }
       }
     }
@@ -50,7 +48,10 @@ export default function Header() {
     <Wrapper>
       <Link to="/">
         <Logo>
-          <Img fluid={data.logo.childImageSharp.fluid} alt="Code Shape Logo" />
+          <GatsbyImage
+            image={data.logo.childImageSharp.gatsbyImageData}
+            alt="Code Shape Logo"
+          />
         </Logo>
       </Link>
       <MenuWrapper count={menuData.length} ref={ref}>

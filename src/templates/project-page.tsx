@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
 import {
@@ -12,32 +12,25 @@ import {
 import Utterances from "utterances-react"
 import HeaderBackground from "../components/backgrounds/HeaderBackground"
 
-export const pageQuery = graphql`
-  fragment AssetFields on GraphCMS_Asset {
-    id
-    localFile {
-      childImageSharp {
-        fluid(maxWidth: 1200) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+export const pageQuery = graphql`fragment AssetFields on GraphCMS_Asset {
+  id
+  localFile {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH)
     }
   }
+}
 
-  query ProjectQuery($id: String!) {
-    authorImage: graphCmsAsset(
-      authorAvatar: {
-        elemMatch: { projects: { elemMatch: { id: { in: [$id] } } } }
-      }
-    ) {
-      ...AssetFields
-    }
-    coverImage: graphCmsAsset(
-      coverImageProject: { elemMatch: { id: { eq: $id } } }
-    ) {
-      ...AssetFields
-    }
+query ProjectQuery($id: String!) {
+  authorImage: graphCmsAsset(
+    authorAvatar: {elemMatch: {projects: {elemMatch: {id: {in: [$id]}}}}}
+  ) {
+    ...AssetFields
   }
+  coverImage: graphCmsAsset(coverImageProject: {elemMatch: {id: {eq: $id}}}) {
+    ...AssetFields
+  }
+}
 `
 
 export default function ArticlePostTemplate({
@@ -54,11 +47,10 @@ export default function ArticlePostTemplate({
       <InformationWrapper>
         <AuthorWrapper>
           <AuthorAvatar>
-            <Img
-              fluid={authorImage.localFile.childImageSharp.fluid}
+            <GatsbyImage
+              image={authorImage.localFile.childImageSharp.gatsbyImageData}
               fadeIn={false}
-              className="Image"
-            />
+              className="Image" />
           </AuthorAvatar>
           <AuthorTextWrapper>
             <AuthorName>{project.author.name}</AuthorName>
@@ -67,11 +59,10 @@ export default function ArticlePostTemplate({
         </AuthorWrapper>
       </InformationWrapper>
       <ContentWrapper>
-        <Img
-          fluid={coverImage.localFile.childImageSharp.fluid}
+        <GatsbyImage
+          image={coverImage.localFile.childImageSharp.gatsbyImageData}
           fadeIn={false}
-          className="CoverImage"
-        />
+          className="CoverImage" />
         <MDXRenderer>{project.content.markdownNode.childMdx.body}</MDXRenderer>
       </ContentWrapper>
       <Navigation>
@@ -120,7 +111,7 @@ export default function ArticlePostTemplate({
         />
       </CommentsWrapper>
     </Wrapper>
-  )
+  );
 }
 
 const Wrapper = styled.div`

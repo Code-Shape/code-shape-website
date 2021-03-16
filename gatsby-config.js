@@ -40,6 +40,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-mdx`,
+    `gatsby-transformer-remark`,
     {
       resolve: "gatsby-source-graphcms",
       options: {
@@ -75,8 +76,8 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-postcss",
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 }
