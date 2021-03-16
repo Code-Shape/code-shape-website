@@ -15,7 +15,7 @@ export default function EntrepreneursPage() {
       <SEO title="Entrepreneurs" />
       <GlassGradientIntro
         title="When time is of the essence"
-        description="We believe that we can create better products for people to enjoy if people come first. To create an excellent experience for you, simplicity and a good communication are our top priorities."
+        description="We believe that we can create better products for people to enjoy if people come first. To create an excellent experience for you, simplicity and good communication are our top priorities."
         gradientColor="-webkit-linear-gradient(left, #F89929, #F5217B)"
       />
       <CommunicationEntrepreneurs />
