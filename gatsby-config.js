@@ -2,8 +2,6 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const path = require("path")
-
 module.exports = {
   siteMetadata: {
     title: `Code Shape`,
@@ -39,8 +37,6 @@ module.exports = {
         path: `${__dirname}/static/images/screenshots`,
       },
     },
-    `gatsby-plugin-mdx`,
-    `gatsby-transformer-remark`,
     {
       resolve: "gatsby-source-graphcms",
       options: {
@@ -51,14 +47,8 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [`gatsby-remark-reading-time`],
-      },
-    },
-    {
-     resolve: `gatsby-plugin-create-client-paths`,
-     options: { prefixes: [`/app/*`] },
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/app/*`] },
     },
     {
       resolve: "gatsby-plugin-firebase",
@@ -74,10 +64,13 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-mdx`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-typescript`,
   ],
 }

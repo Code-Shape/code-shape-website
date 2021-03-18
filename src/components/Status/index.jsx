@@ -3,13 +3,14 @@ import { Link, navigate } from "@reach/router"
 import { getUser, isLoggedIn, logout } from "../../utils/auth"
 import firebase from "gatsby-plugin-firebase"
 
-export default () => {
-
-  let details;
+export default function Status() {
+  let details
   if (!isLoggedIn()) {
     details = (
       <p className="text-right px-5">
-        <Link to="/app/login"><u>Log in</u></Link>
+        <Link to="/app/login">
+          <u>Log in</u>
+        </Link>
       </p>
     )
   } else {
@@ -19,7 +20,13 @@ export default () => {
         Logged in as {displayName} ({email}
         )!
         {` `}
-        <a href="/" onClick={event => { event.preventDefault(); logout(firebase).then(() => navigate(`/app/login`)) }}>
+        <a
+          href="/"
+          onClick={event => {
+            event.preventDefault()
+            logout(firebase).then(() => navigate(`/app/login`))
+          }}
+        >
           <u>log out</u>
         </a>
       </p>
