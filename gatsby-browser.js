@@ -1,6 +1,9 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 import Layout from "./src/components/layout/layout"
+import "firebase/auth"
+import "firebase/firestore"
+// import "firebase/functions" //Currently coursing compile error. Should ideally be active
 
 /* eslint-disable */
 const components = {

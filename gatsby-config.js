@@ -51,6 +51,16 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-reading-time`],
+      },
+    },
+    {
+     resolve: `gatsby-plugin-create-client-paths`,
+     options: { prefixes: [`/app/*`] },
+    },
+    {
       resolve: "gatsby-plugin-firebase",
       options: {
         credentials: {
